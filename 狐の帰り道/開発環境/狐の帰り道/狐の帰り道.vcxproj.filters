@@ -1,0 +1,932 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="シェーダーファイル">
+      <UniqueIdentifier>{440c3278-9b0a-44bd-b4da-151d9921f70d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Drawing">
+      <UniqueIdentifier>{eeca87f4-b2f6-477c-a8aa-9d4ccd2486db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Drawing">
+      <UniqueIdentifier>{024fb656-796d-4ebc-a55a-6ffc869cfb2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene">
+      <UniqueIdentifier>{95e19f16-195c-4cb8-9c24-717dfd3487aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene">
+      <UniqueIdentifier>{f973d107-81db-4f90-abfa-d4d76a3ceb20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameObject">
+      <UniqueIdentifier>{c5e4d58a-1cf4-4033-8f94-8dfeb4846dd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObejct">
+      <UniqueIdentifier>{7f2e0ba1-3a4c-4194-baa7-f23155bc26a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Drawing\Resorce">
+      <UniqueIdentifier>{9549b087-7722-4816-80a4-9cdafd727300}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Drawing\Resorce">
+      <UniqueIdentifier>{5abc5d62-49ce-4070-8404-6efad3699c9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Drawing\3D_Object">
+      <UniqueIdentifier>{e3464dea-8444-436c-aad8-e0cde13f1c18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Drawing\Board_Polygon">
+      <UniqueIdentifier>{a86b2268-1af0-4a09-8c68-ebc0abef1645}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Drawing\3D_Object">
+      <UniqueIdentifier>{ce526c67-e335-498e-b7ba-e54a4ca98983}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Drawing\Board_Polygon">
+      <UniqueIdentifier>{11a23549-ebe8-4103-b6f0-29902b6a7d5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Drawing\Board_Polygon\DebugText">
+      <UniqueIdentifier>{a2a88aa6-47c0-498a-94d3-dcc08a476bc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Drawing\Board_Polygon\GameSprite">
+      <UniqueIdentifier>{a2c95b02-2e36-4f7b-b5f5-8419289cdab6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Drawing\Board_Polygon\DebugText">
+      <UniqueIdentifier>{8746b78a-69d6-4a03-a0e8-b5d73e977acb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Drawing\Board_Polygon\GameSprite">
+      <UniqueIdentifier>{b8587972-c5d1-420e-a9f4-161b79b29c3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameObject\Ground">
+      <UniqueIdentifier>{4a76d6cb-506a-485b-96c4-03d4a2e81b98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObejct\Ground">
+      <UniqueIdentifier>{6ae48636-d0aa-4c57-9694-a5bc19545906}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Drawing\Resorce\ResourceStaticMesh">
+      <UniqueIdentifier>{8c518c22-8edd-479e-8320-85d4e9534e78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Drawing\Resorce\ResourceStaticMesh">
+      <UniqueIdentifier>{3c0104ff-4177-44f5-b114-7caa21429fa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Drawing\Resorce\ResourceSkinMesh">
+      <UniqueIdentifier>{0037e71d-e7cb-4237-ac8c-763db7c05a68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Drawing\Resorce\ResourceSkinMesh">
+      <UniqueIdentifier>{b817c136-f874-405d-8d8e-871674f22f26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Drawing\Resorce\ResourcePolygonMesh">
+      <UniqueIdentifier>{09f7847e-0082-4f8a-9d37-78ad1a77a214}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Drawing\Resorce\ResourcePolygonMesh">
+      <UniqueIdentifier>{b73cd9f9-5133-44e2-849e-72977b02eeca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameObject\Collision_Detection">
+      <UniqueIdentifier>{5cccb314-12ec-4809-baf5-5cd308351845}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObejct\Collision_Detection">
+      <UniqueIdentifier>{0eaf98b7-5b09-4d2d-a3d0-b489c27c044e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Camera">
+      <UniqueIdentifier>{bb4b43a9-5c66-4c12-a56c-728a390ea1f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Camera\StanderdCamera">
+      <UniqueIdentifier>{aa244cfe-fadf-46f3-bd59-b4e2f516f2fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Camera\UpCamera">
+      <UniqueIdentifier>{0bf2f261-dccd-4912-b112-6ce16346d91b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Camera\BossCamera">
+      <UniqueIdentifier>{000ee0a6-d507-45bb-9e47-177e79d02730}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\FileLoad">
+      <UniqueIdentifier>{3994e849-80b6-4a4e-915a-19cf2d408461}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\FileLoad">
+      <UniqueIdentifier>{140100e4-df94-40d9-bbc7-b54fb5d7e0d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObejct\Item">
+      <UniqueIdentifier>{d42b2664-0b43-44f7-bee4-c553615681ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameObject\Item">
+      <UniqueIdentifier>{cc1a0745-1642-4176-81a5-fab64bcd02af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Command">
+      <UniqueIdentifier>{594d72c8-a71f-4cc2-9e85-31ac0a2c89e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Command">
+      <UniqueIdentifier>{d4654a72-2536-4957-8110-d5c2bf5b6391}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Command\TimingCommand">
+      <UniqueIdentifier>{0147ef7c-a7a4-4015-82be-9517937fcda3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Command\TimingCommand">
+      <UniqueIdentifier>{22b8642d-84c3-439d-aaf3-a8ff8182a84b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Command\LongPushCommand">
+      <UniqueIdentifier>{6348c032-4b66-45aa-935b-9b9816f22bfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Command\LongPushCommand">
+      <UniqueIdentifier>{1d409ef8-4c6c-4955-9edd-53fa81703bac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameObject\UI">
+      <UniqueIdentifier>{cbf64466-ae5c-43e6-8f70-b1368c7d8883}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObejct\UI">
+      <UniqueIdentifier>{1f17a212-1588-4ee0-9472-e1e442b20d36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Command\BarrageCommand">
+      <UniqueIdentifier>{27a4ca91-d2dd-4924-bb77-29cad9bca69b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Command\BarrageCommand">
+      <UniqueIdentifier>{3fe3cd74-134c-4a36-b7a0-6c352d3b8226}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Controller">
+      <UniqueIdentifier>{fdaf0a39-e9bf-482d-8559-73b3c578e75c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Sound">
+      <UniqueIdentifier>{7038ff27-0807-421a-9977-3d4707ef3780}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Sound">
+      <UniqueIdentifier>{87593b90-ff09-4417-a5db-7c3e49ca53ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Effect">
+      <UniqueIdentifier>{4784863d-7e04-47dd-8e48-e0816e254a4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Effect">
+      <UniqueIdentifier>{69c6009c-3847-404a-9578-0a14c5365c3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Effect\HitEffect">
+      <UniqueIdentifier>{56ef40e1-8021-4b06-a908-24ec06b9dac6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Effect\HitEffect">
+      <UniqueIdentifier>{da7b2d76-81f2-48c1-a738-024c24a0e9e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Effect\SparkleEffect">
+      <UniqueIdentifier>{6f5204b3-a74b-4b4a-9f94-7f5b6b0d4867}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Effect\SparkleEffect">
+      <UniqueIdentifier>{6f817ee8-8ffd-42f1-a462-f4fcbd70ed1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Effect\SparkleEffect\GreatEffect">
+      <UniqueIdentifier>{7dddaec9-a544-4b33-8a3f-6aa41775bcf4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Effect\SparkleEffect\GreatEffect">
+      <UniqueIdentifier>{60c28950-6fe6-4095-9d83-1d47ec6894ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Effect\SparkleEffect\GoodEffect">
+      <UniqueIdentifier>{88588b8b-0bae-4da2-8691-390799a23970}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Effect\SparkleEffect\GoodEffect">
+      <UniqueIdentifier>{97668d94-cb81-4c51-99d6-4caa96ed4084}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Effect\FlyEffect">
+      <UniqueIdentifier>{2662492f-b8f2-46dd-afa1-8afc6bf42308}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Effect\FlyEffect">
+      <UniqueIdentifier>{53372c65-696f-4042-8c56-0dc651ed3454}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Effect\FlyEffect\EnemyFlyEffect">
+      <UniqueIdentifier>{50187e59-260c-4130-922a-be24b47ff412}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Effect\FlyEffect\EnemyFlyEffect">
+      <UniqueIdentifier>{ad794914-b3d0-4fd1-bd62-0b3e348445fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Effect\FlyEffect\BossFlyEffect">
+      <UniqueIdentifier>{c826d3f6-c437-4873-b77b-75dd2dea07b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Effect\FlyEffect\BossFlyEffect">
+      <UniqueIdentifier>{f02be4e1-a4fe-497d-8f2f-b9eec1b162c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Effect\SparkleEffect\FootEffect">
+      <UniqueIdentifier>{85217d58-0a18-4fe8-a7a0-828715f4f17d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Effect\SparkleEffect\FootEffect">
+      <UniqueIdentifier>{a9671d14-1c1b-4304-976c-49965858d0f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Camera">
+      <UniqueIdentifier>{3b25290b-6d6b-4b4a-824d-5e4305bc9a97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Camera\StanderdCamera">
+      <UniqueIdentifier>{a8966de4-b5e1-4d30-b450-1d07ea2a1dff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Camera\UpCamera">
+      <UniqueIdentifier>{84b36f8e-472a-4f43-b076-ba616871a104}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Camera\BossCamera">
+      <UniqueIdentifier>{15215ce6-675f-4017-98d2-35c665cc4104}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Ray">
+      <UniqueIdentifier>{feb9c3c7-e721-47f2-81ea-17424897748f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Ray">
+      <UniqueIdentifier>{18373ac4-4c73-4b53-a861-7027c8277ffe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameObject\Chara">
+      <UniqueIdentifier>{d0601256-ceb5-4f18-9c02-8aafa19a907f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameObject\Chara\Enemy">
+      <UniqueIdentifier>{6bc36c47-d476-422e-865f-f9cff4c696bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameObject\Chara\Player">
+      <UniqueIdentifier>{d4259fac-92fb-4778-a58d-061280dfdccb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObejct\Chara">
+      <UniqueIdentifier>{bdbd58e0-457c-4256-a80a-28d72a7b128c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObejct\Chara\Player">
+      <UniqueIdentifier>{1178ef49-885e-4014-a3de-a61129bdd6f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObejct\Chara\Enemy">
+      <UniqueIdentifier>{7f8044da-8083-4999-b5ed-b53aec55a535}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Effect\FallDownEffect">
+      <UniqueIdentifier>{647b180a-d9e5-413d-b8a2-7fe108e2da33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Effect\FallDownEffect">
+      <UniqueIdentifier>{fc47de98-1a9b-4947-b8fa-2d15ddb77a49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Effect\SparkleEffect\PunchEffect">
+      <UniqueIdentifier>{7c4faee7-e5e8-47d5-a835-23766420c3fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Effect\SparkleEffect\PunchEffect">
+      <UniqueIdentifier>{9ef8d1a8-475b-4c2c-b4c1-2a3dd16f3326}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Effect\SparkleEffect\StepEffect">
+      <UniqueIdentifier>{3669671e-4fe7-405f-888e-7302bd4301dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Effect\SparkleEffect\StepEffect">
+      <UniqueIdentifier>{1280674c-678a-4444-bdd0-9ae70076d065}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Effect\SparkleEffect\LongPushEffect">
+      <UniqueIdentifier>{fadba130-7e12-4045-8a04-040f26d5a23f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Effect\SparkleEffect\LongPushEffect">
+      <UniqueIdentifier>{d3e408a6-9d1e-4439-9146-b05304343ab9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Effect\LandingEffect">
+      <UniqueIdentifier>{7c8796d6-4750-4248-8138-180a46e2e3e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Effect\LandingEffect">
+      <UniqueIdentifier>{d33a64a2-229e-4ea9-a3d5-1296810e6fa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Effect\HorizonMoveEffect">
+      <UniqueIdentifier>{084587b7-cb45-433c-a198-ae0f9cc4a3ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Effect\HorizonMoveEffect">
+      <UniqueIdentifier>{d7dc5d91-ef6c-4ba7-bfc3-88d5813cc5d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameObject\UI\Clear">
+      <UniqueIdentifier>{779594dd-008a-4f55-9097-33ad1acbc6dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameObject\UI\GameMain">
+      <UniqueIdentifier>{11abeaa5-4af8-45c0-81b2-0317fa4fcd60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameObject\UI\Title">
+      <UniqueIdentifier>{dcd2037a-0caf-4c2c-9f68-ea1870f1fdd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObejct\UI\Clear">
+      <UniqueIdentifier>{e1e2de32-48bf-4a7e-aed7-007720facc94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObejct\UI\GameMain">
+      <UniqueIdentifier>{6b27e121-68c4-42ac-9d00-e26682704400}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObejct\UI\Title">
+      <UniqueIdentifier>{14bee669-0920-4745-b2de-874fed0d919b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameObject\Chara\Enemy\Boss">
+      <UniqueIdentifier>{0a93cd18-67bd-40e2-b585-18b7a8f581f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameObject\Chara\Enemy\NormalEnemy">
+      <UniqueIdentifier>{cef04947-acb1-4ac4-b8a2-98e4516333a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObejct\Chara\Enemy\Boss">
+      <UniqueIdentifier>{3c5faee9-f44b-4f61-96d3-326db2362aa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObejct\Chara\Enemy\NormalEnemy">
+      <UniqueIdentifier>{9abea46d-399d-4342-bbfd-ff7ebe971721}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\BackGround">
+      <UniqueIdentifier>{95078158-a545-485a-99ca-cdb25dc9b282}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\BackGround">
+      <UniqueIdentifier>{c0e5d2cc-8904-49c2-abfe-334c0bd8cd87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Bran">
+      <UniqueIdentifier>{1e22ed00-b312-4e3a-a158-0a792452454f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Bran">
+      <UniqueIdentifier>{71192af6-c43b-4533-be5b-d7bdcf3d44d2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SorceCode\CMain.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Scene\CSceneBase.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Scene\CSceneManager.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Scene\Title\CTitle.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Drawing\CCommon.cpp">
+      <Filter>ソース ファイル\Drawing</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Drawing\3D_Object\CDX9Mesh.cpp">
+      <Filter>ソース ファイル\Drawing\3D_Object</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Drawing\Bord_Polygon\CDepth_Stencil.cpp">
+      <Filter>ソース ファイル\Drawing\Board_Polygon</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Drawing\Bord_Polygon\DebugText\CDebugText.cpp">
+      <Filter>ソース ファイル\Drawing\Board_Polygon\DebugText</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Drawing\Bord_Polygon\GameSprite\CParticle.cpp">
+      <Filter>ソース ファイル\Drawing\Board_Polygon\GameSprite</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Drawing\Bord_Polygon\GameSprite\CSprite.cpp">
+      <Filter>ソース ファイル\Drawing\Board_Polygon\GameSprite</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Drawing\Bord_Polygon\GameSprite\CSpriteUI.cpp">
+      <Filter>ソース ファイル\Drawing\Board_Polygon\GameSprite</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\CGameObject.cpp">
+      <Filter>ソース ファイル\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\Ground\CGround.cpp">
+      <Filter>ソース ファイル\GameObject\Ground</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Scene\Main\CGameMain.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Scene\Clear\CClear.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Drawing\Resource\CResourceBase.cpp">
+      <Filter>ソース ファイル\Drawing\Resorce</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Drawing\Resource\ResourceStaticMesh\CResourceStaticMesh.cpp">
+      <Filter>ソース ファイル\Drawing\Resorce\ResourceStaticMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Drawing\Resource\ResourceSkinMesh\CResourceSkinMesh.cpp">
+      <Filter>ソース ファイル\Drawing\Resorce\ResourceSkinMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Drawing\Resource\ResourceBordPolygon\ResourcePolygon\CResourceSprite.cpp">
+      <Filter>ソース ファイル\Drawing\Resorce\ResourcePolygonMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Drawing\Resource\ResourceBordPolygon\ResourceParticle\CResourceParticle.cpp">
+      <Filter>ソース ファイル\Drawing\Resorce\ResourcePolygonMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Drawing\Resource\ResourceBordPolygon\ResourceSpriteUI\CResourceSpriteUI.cpp">
+      <Filter>ソース ファイル\Drawing\Resorce\ResourcePolygonMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\Collider_Detection\CCollision_Detection.cpp">
+      <Filter>ソース ファイル\GameObject\Collision_Detection</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Drawing\Resource\CResourceManager.cpp">
+      <Filter>ソース ファイル\Drawing\Resorce</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\Collider_Detection\CDebugCollision_Sphere.cpp">
+      <Filter>ソース ファイル\GameObject\Collision_Detection</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Camera\CCameraBase.cpp">
+      <Filter>ソース ファイル\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Camera\StamderdCamera\CStanderdCamera.cpp">
+      <Filter>ソース ファイル\Camera\StanderdCamera</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Camera\UpCamera\CUpCamera.cpp">
+      <Filter>ソース ファイル\Camera\UpCamera</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Camera\CCameraManager.cpp">
+      <Filter>ソース ファイル\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\FileLoad\CFileLoad.cpp">
+      <Filter>ソース ファイル\FileLoad</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\FileLoad\CFileInitPos.cpp">
+      <Filter>ソース ファイル\FileLoad</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\Item\CItemMove.cpp">
+      <Filter>ソース ファイル\GameObject\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Command\CComannd_Base.cpp">
+      <Filter>ソース ファイル\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\FileLoad\CFileCommandSetting.cpp">
+      <Filter>ソース ファイル\FileLoad</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\FileLoad\CFileLoadManager.cpp">
+      <Filter>ソース ファイル\FileLoad</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Command\TimingCommand\CTimingCommand.cpp">
+      <Filter>ソース ファイル\Command\TimingCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Command\LongPushCommand\CLongPushCommand.cpp">
+      <Filter>ソース ファイル\Command\LongPushCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Command\BarrageCommand\CBarrageCommand.cpp">
+      <Filter>ソース ファイル\Command\BarrageCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Sound\CSoundResource.cpp">
+      <Filter>ソース ファイル\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Sound\CSound.cpp">
+      <Filter>ソース ファイル\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Sound\CSEPlayManager.cpp">
+      <Filter>ソース ファイル\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\Item\CItem_Base.cpp">
+      <Filter>ソース ファイル\GameObject\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\Item\CItem_Fish.cpp">
+      <Filter>ソース ファイル\GameObject\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\Item\CItem_Meat.cpp">
+      <Filter>ソース ファイル\GameObject\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\Item\CItem_Rice.cpp">
+      <Filter>ソース ファイル\GameObject\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\Item\CItem_Vegetables.cpp">
+      <Filter>ソース ファイル\GameObject\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\Item\CItemManager.cpp">
+      <Filter>ソース ファイル\GameObject\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\UI\CUI_Base.cpp">
+      <Filter>ソース ファイル\GameObject\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Effect\CEffectBase.cpp">
+      <Filter>ソース ファイル\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Effect\HitEffect\CHitEffect.cpp">
+      <Filter>ソース ファイル\Effect\HitEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Effect\SparkleEffect\CSparkleEffect.cpp">
+      <Filter>ソース ファイル\Effect\SparkleEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Effect\SparkleEffect\GreatEffect\CGreatEffect.cpp">
+      <Filter>ソース ファイル\Effect\SparkleEffect\GreatEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Effect\SparkleEffect\GoodEffect\CGoodEffect.cpp">
+      <Filter>ソース ファイル\Effect\SparkleEffect\GoodEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Effect\FlyEffect\CFlyEffect.cpp">
+      <Filter>ソース ファイル\Effect\FlyEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Effect\FlyEffect\EnemyFlyEffect\CEnemyFlyEffect.cpp">
+      <Filter>ソース ファイル\Effect\FlyEffect\EnemyFlyEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Effect\FlyEffect\BossFlyEffect\CBossFlyEffect.cpp">
+      <Filter>ソース ファイル\Effect\FlyEffect\BossFlyEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Effect\SparkleEffect\CFootEffect\CFootEffect.cpp">
+      <Filter>ソース ファイル\Effect\SparkleEffect\FootEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Ray\CRayDraw.cpp">
+      <Filter>ソース ファイル\Ray</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Ray\CRay.cpp">
+      <Filter>ソース ファイル\Ray</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\Chara\CChara.cpp">
+      <Filter>ソース ファイル\GameObject\Chara</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\Chara\Enemy\CEnemyBase.cpp">
+      <Filter>ソース ファイル\GameObject\Chara\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\Chara\Enemy\CEnemyManager.cpp">
+      <Filter>ソース ファイル\GameObject\Chara\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\Chara\Player\CPlayer.cpp">
+      <Filter>ソース ファイル\GameObject\Chara\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Camera\CameraBoss\CBossBadCamera.cpp">
+      <Filter>ソース ファイル\Camera\BossCamera</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Effect\FallDownEffect\CFallDownEffect.cpp">
+      <Filter>ソース ファイル\Effect\FallDownEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Camera\CameraBoss\CBossGreatCamera.cpp">
+      <Filter>ソース ファイル\Camera\BossCamera</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Effect\SparkleEffect\PunchEffect\CPunchEffect.cpp">
+      <Filter>ソース ファイル\Effect\SparkleEffect\PunchEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Effect\SparkleEffect\StepEffect\CStepEffect.cpp">
+      <Filter>ソース ファイル\Effect\SparkleEffect\StepEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Effect\SparkleEffect\LongPushEffect\CLongPushEffect.cpp">
+      <Filter>ソース ファイル\Effect\SparkleEffect\LongPushEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Effect\LndingEffect\CLandingEffect.cpp">
+      <Filter>ソース ファイル\Effect\LandingEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Drawing\3D_Object\CDX9SkinMesh.cpp">
+      <Filter>ソース ファイル\Drawing\3D_Object</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Drawing\3D_Object\CDX9SkinMeshParser.cpp">
+      <Filter>ソース ファイル\Drawing\3D_Object</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Effect\HorizonMoveEffect\CHorizonMoveEffect.cpp">
+      <Filter>ソース ファイル\Effect\HorizonMoveEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\UI\CClearUI.cpp">
+      <Filter>ソース ファイル\GameObject\UI\Clear</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\UI\CClearUIManager.cpp">
+      <Filter>ソース ファイル\GameObject\UI\Clear</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\UI\CMainUIManager.cpp">
+      <Filter>ソース ファイル\GameObject\UI\GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\UI\CFaceIcon.cpp">
+      <Filter>ソース ファイル\GameObject\UI\GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\UI\CItemIcon.cpp">
+      <Filter>ソース ファイル\GameObject\UI\GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\UI\CTitle_Character.cpp">
+      <Filter>ソース ファイル\GameObject\UI\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\UI\CTitle_Particle.cpp">
+      <Filter>ソース ファイル\GameObject\UI\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\UI\CTitleUIManager.cpp">
+      <Filter>ソース ファイル\GameObject\UI\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\UI\CPushButton.cpp">
+      <Filter>ソース ファイル\GameObject\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Cow_Ghost\CCow_Ghost.cpp">
+      <Filter>ソース ファイル\GameObject\Chara\Enemy\NormalEnemy</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Kappa\CKappa.cpp">
+      <Filter>ソース ファイル\GameObject\Chara\Enemy\NormalEnemy</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Raccoon_Dog\CRaccoon_Dog.cpp">
+      <Filter>ソース ファイル\GameObject\Chara\Enemy\NormalEnemy</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\Chara\Enemy\Boss\Big_Raccoon_Dog\CBig_Raccoon_Dog.cpp">
+      <Filter>ソース ファイル\GameObject\Chara\Enemy\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\CNormalEnemyBase.cpp">
+      <Filter>ソース ファイル\GameObject\Chara\Enemy\NormalEnemy</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\BackGround\CBackGround.cpp">
+      <Filter>ソース ファイル\BackGround</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Fade\CBran.cpp">
+      <Filter>ソース ファイル\Bran</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\UI\CStartCount.cpp">
+      <Filter>ソース ファイル\GameObject\UI\GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\Scene\Load\CLoad.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\UI\CChar_Evaluation.cpp">
+      <Filter>ソース ファイル\GameObject\UI\Clear</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\UI\CItemCount.cpp">
+      <Filter>ソース ファイル\GameObject\UI\GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\UI\CItemPoint_Bar.cpp">
+      <Filter>ソース ファイル\GameObject\UI\GameMain</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SorceCode\Global.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\MyMacro.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\CMain.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Scene\CSceneBase.h">
+      <Filter>ヘッダー ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Scene\CSceneManager.h">
+      <Filter>ヘッダー ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Scene\Title\CTitle.h">
+      <Filter>ヘッダー ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Drawing\CCommon.h">
+      <Filter>ヘッダー ファイル\Drawing</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Drawing\3D_Object\CDX9Mesh.h">
+      <Filter>ヘッダー ファイル\Drawing\3D_Object</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Drawing\Bord_Polygon\CDepth_Stencil.h">
+      <Filter>ヘッダー ファイル\Drawing\Board_Polygon</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Drawing\Bord_Polygon\DebugText\CDebugText.h">
+      <Filter>ヘッダー ファイル\Drawing\Board_Polygon\DebugText</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Drawing\Bord_Polygon\GameSprite\CParticle.h">
+      <Filter>ヘッダー ファイル\Drawing\Board_Polygon\GameSprite</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Drawing\Bord_Polygon\GameSprite\CSprite.h">
+      <Filter>ヘッダー ファイル\Drawing\Board_Polygon\GameSprite</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Drawing\Bord_Polygon\GameSprite\CSpriteUI.h">
+      <Filter>ヘッダー ファイル\Drawing\Board_Polygon\GameSprite</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\CGameObject.h">
+      <Filter>ヘッダー ファイル\GameObejct</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Ground\CGround.h">
+      <Filter>ヘッダー ファイル\GameObejct\Ground</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Scene\Main\CGameMain.h">
+      <Filter>ヘッダー ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Scene\Clear\CClear.h">
+      <Filter>ヘッダー ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Drawing\Resource\CResourceBase.h">
+      <Filter>ヘッダー ファイル\Drawing\Resorce</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Drawing\Resource\ResourceStaticMesh\CResourceStaticMesh.h">
+      <Filter>ヘッダー ファイル\Drawing\Resorce\ResourceStaticMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Drawing\Resource\ResourceSkinMesh\CResourceSkinMesh.h">
+      <Filter>ヘッダー ファイル\Drawing\Resorce\ResourceSkinMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Drawing\Resource\ResourceBordPolygon\ResourcePolygon\CResourceSprite.h">
+      <Filter>ヘッダー ファイル\Drawing\Resorce\ResourcePolygonMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Drawing\Resource\ResourceBordPolygon\ResourceParticle\CResourceParticle.h">
+      <Filter>ヘッダー ファイル\Drawing\Resorce\ResourcePolygonMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Drawing\Resource\ResourceBordPolygon\ResourceSpriteUI\CResourceSpriteUI.h">
+      <Filter>ヘッダー ファイル\Drawing\Resorce\ResourcePolygonMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Collider_Detection\CCollision_Detection.h">
+      <Filter>ヘッダー ファイル\GameObejct\Collision_Detection</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Drawing\Resource\CResourceManager.h">
+      <Filter>ヘッダー ファイル\Drawing\Resorce</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Collider_Detection\CDebugCollisionSphere.h">
+      <Filter>ヘッダー ファイル\GameObejct\Collision_Detection</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Camera\CCameraBase.h">
+      <Filter>ヘッダー ファイル\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Camera\StamderdCamera\CStanderdCamera.h">
+      <Filter>ヘッダー ファイル\Camera\StanderdCamera</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Camera\UpCamera\CUpCamera.h">
+      <Filter>ヘッダー ファイル\Camera\UpCamera</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Camera\CCameraManager.h">
+      <Filter>ヘッダー ファイル\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\FileLoad\CFileLoad.h">
+      <Filter>ヘッダー ファイル\FileLoad</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\FileLoad\CFileInitPos.h">
+      <Filter>ヘッダー ファイル\FileLoad</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Item\CItemMove.h">
+      <Filter>ヘッダー ファイル\GameObejct\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Command\CCommand_Base.h">
+      <Filter>ヘッダー ファイル\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\FileLoad\CFileCommandSetting.h">
+      <Filter>ヘッダー ファイル\FileLoad</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\FileLoad\CFileLoadManager.h">
+      <Filter>ヘッダー ファイル\FileLoad</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Command\enumCommand_Global.h">
+      <Filter>ヘッダー ファイル\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Command\TimingCommand\CTimingCommand.h">
+      <Filter>ヘッダー ファイル\Command\TimingCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Command\LongPushCommand\CLongPushCommand.h">
+      <Filter>ヘッダー ファイル\Command\LongPushCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Command\BarrageCommand\CBarrageCommand.h">
+      <Filter>ヘッダー ファイル\Command\BarrageCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Controller\CXInput.h">
+      <Filter>ヘッダー ファイル\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Sound\CSoundResource.h">
+      <Filter>ヘッダー ファイル\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Sound\CSound.h">
+      <Filter>ヘッダー ファイル\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Sound\CSEPlayManager.h">
+      <Filter>ヘッダー ファイル\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Item\CItem_Base.h">
+      <Filter>ヘッダー ファイル\GameObejct\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Item\CItem_Fish.h">
+      <Filter>ヘッダー ファイル\GameObejct\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Item\CItem_Meat.h">
+      <Filter>ヘッダー ファイル\GameObejct\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Item\CItem_Rice.h">
+      <Filter>ヘッダー ファイル\GameObejct\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Item\CItem_Vegetables.h">
+      <Filter>ヘッダー ファイル\GameObejct\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Item\CItemManager.h">
+      <Filter>ヘッダー ファイル\GameObejct\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Item\enItemType.h">
+      <Filter>ヘッダー ファイル\GameObejct\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\UI\CUI_Base.h">
+      <Filter>ヘッダー ファイル\GameObejct\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Effect\CEffectBase.h">
+      <Filter>ヘッダー ファイル\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Effect\HitEffect\CHitEffect.h">
+      <Filter>ヘッダー ファイル\Effect\HitEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Effect\SparkleEffect\CSparkleEffect.h">
+      <Filter>ヘッダー ファイル\Effect\SparkleEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Effect\SparkleEffect\GreatEffect\CGreatEffect.h">
+      <Filter>ヘッダー ファイル\Effect\SparkleEffect\GreatEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Effect\SparkleEffect\GoodEffect\CGoodEffect.h">
+      <Filter>ヘッダー ファイル\Effect\SparkleEffect\GoodEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Effect\FlyEffect\CFlyEffect.h">
+      <Filter>ヘッダー ファイル\Effect\FlyEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Effect\FlyEffect\EnemyFlyEffect\CEnemyFlyEffect.h">
+      <Filter>ヘッダー ファイル\Effect\FlyEffect\EnemyFlyEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Effect\FlyEffect\BossFlyEffect\CBossFlyEffect.h">
+      <Filter>ヘッダー ファイル\Effect\FlyEffect\BossFlyEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Effect\SparkleEffect\CFootEffect\CFootEffect.h">
+      <Filter>ヘッダー ファイル\Effect\SparkleEffect\FootEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Ray\CRayDraw.h">
+      <Filter>ヘッダー ファイル\Ray</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Ray\CRay.h">
+      <Filter>ヘッダー ファイル\Ray</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Ray\RayStruct.h">
+      <Filter>ヘッダー ファイル\Ray</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Chara\CChara.h">
+      <Filter>ヘッダー ファイル\GameObejct\Chara</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Chara\Enemy\CEnemyBase.h">
+      <Filter>ヘッダー ファイル\GameObejct\Chara\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Chara\Enemy\CEnemyManager.h">
+      <Filter>ヘッダー ファイル\GameObejct\Chara\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Chara\Enemy\EnemyType.h">
+      <Filter>ヘッダー ファイル\GameObejct\Chara\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Chara\Player\CPlayer.h">
+      <Filter>ヘッダー ファイル\GameObejct\Chara\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Camera\CameraBoss\CBossBadCamera.h">
+      <Filter>ヘッダー ファイル\Camera\BossCamera</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Effect\FallDownEffect\CFallDownEffect.h">
+      <Filter>ヘッダー ファイル\Effect\FallDownEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Camera\CameraBoss\CBossGreatCamera.h">
+      <Filter>ヘッダー ファイル\Camera\BossCamera</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Effect\SparkleEffect\PunchEffect\CPunchEffect.h">
+      <Filter>ヘッダー ファイル\Effect\SparkleEffect\PunchEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Effect\SparkleEffect\StepEffect\CStepEffect.h">
+      <Filter>ヘッダー ファイル\Effect\SparkleEffect\StepEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Effect\SparkleEffect\LongPushEffect\CLongPushEffect.h">
+      <Filter>ヘッダー ファイル\Effect\SparkleEffect\LongPushEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Effect\LndingEffect\CLandingEffect.h">
+      <Filter>ヘッダー ファイル\Effect\LandingEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Drawing\3D_Object\CDX9SkinMesh.h">
+      <Filter>ヘッダー ファイル\Drawing\3D_Object</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Drawing\3D_Object\CDX9SkinMeshParser.h">
+      <Filter>ヘッダー ファイル\Drawing\3D_Object</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Effect\HorizonMoveEffect\CHorizonMoveEffect.h">
+      <Filter>ヘッダー ファイル\Effect\HorizonMoveEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\UI\CFaceIcon.h">
+      <Filter>ヘッダー ファイル\GameObejct\UI\GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\UI\CItemIcon.h">
+      <Filter>ヘッダー ファイル\GameObejct\UI\GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\UI\CMainUIManager.h">
+      <Filter>ヘッダー ファイル\GameObejct\UI\GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\UI\CClearUI.h">
+      <Filter>ヘッダー ファイル\GameObejct\UI\Clear</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\UI\CClearUIManager.h">
+      <Filter>ヘッダー ファイル\GameObejct\UI\Clear</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\UI\CTitle_Character.h">
+      <Filter>ヘッダー ファイル\GameObejct\UI\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\UI\CTitle_Particle.h">
+      <Filter>ヘッダー ファイル\GameObejct\UI\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\UI\CTitleUIManager.h">
+      <Filter>ヘッダー ファイル\GameObejct\UI\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\UI\CPushButton.h">
+      <Filter>ヘッダー ファイル\GameObejct\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Chara\Enemy\Boss\Big_Raccoon_Dog\CBig_Raccoon_Dog.h">
+      <Filter>ヘッダー ファイル\GameObejct\Chara\Enemy\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Cow_Ghost\CCow_Ghost.h">
+      <Filter>ヘッダー ファイル\GameObejct\Chara\Enemy\NormalEnemy</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Kappa\CKappa.h">
+      <Filter>ヘッダー ファイル\GameObejct\Chara\Enemy\NormalEnemy</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Raccoon_Dog\CRaccoon_Dog.h">
+      <Filter>ヘッダー ファイル\GameObejct\Chara\Enemy\NormalEnemy</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\CNormalEnemyBase.h">
+      <Filter>ヘッダー ファイル\GameObejct\Chara\Enemy\NormalEnemy</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\BackGround\CBackGround.h">
+      <Filter>ヘッダー ファイル\BackGround</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Fade\CBran.h">
+      <Filter>ヘッダー ファイル\Bran</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\UI\CStartCount.h">
+      <Filter>ヘッダー ファイル\GameObejct\UI\GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Camera\enCameraType.h">
+      <Filter>ヘッダー ファイル\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\Scene\Load\CLoad.h">
+      <Filter>ヘッダー ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\UI\CChar_Evaluation.h">
+      <Filter>ヘッダー ファイル\GameObejct\UI\Clear</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\UI\CItemCount.h">
+      <Filter>ヘッダー ファイル\GameObejct\UI\GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\UI\CItemPoint_Bar.h">
+      <Filter>ヘッダー ファイル\GameObejct\UI\GameMain</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Data\Shader\DebugText.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="Data\Shader\Mesh.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="Data\Shader\Particle.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="Data\Shader\SpriteUI.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="Data\Shader\SkinMesh.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>

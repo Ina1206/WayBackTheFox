@@ -1,0 +1,27 @@
+SkinWeights
+	"null_Joint"
+	"body1_Joint"
+	"entotu_Joint"
+	"back1_Joint"
+	"f2_xP_Joint"
+	"f2_xM_Joint"
+	"b2_xM_Joint"
+	"b2_xP_Joint"
+	"f1_xM_Joint"
+	"f1_xP_Joint"
+	"b1_xM_Joint"
+	"b1_xP_Joint"
+	"b3_xP_Joint"
+	"b3_xM_Joint"
+	"f3_xM_Joint"
+	"f3_xP_Joint"
+	"b4_xP_Joint"
+	"f4_xP_Joint"
+	"b4_xM_Joint"
+	"f4_xM_Joint"
+
+AnimationSet
+	henkei
+	idou
+	tati
+

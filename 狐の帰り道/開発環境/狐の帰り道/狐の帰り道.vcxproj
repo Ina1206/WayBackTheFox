@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{6242C91A-A0F6-4E0C-B7A6-2E54D0561747}</ProjectGuid>
+    <RootNamespace>狐の帰り道</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="SorceCode\BackGround\CBackGround.cpp" />
+    <ClCompile Include="SorceCode\Camera\CameraBoss\CBossBadCamera.cpp" />
+    <ClCompile Include="SorceCode\Camera\CameraBoss\CBossGreatCamera.cpp" />
+    <ClCompile Include="SorceCode\Camera\CCameraBase.cpp" />
+    <ClCompile Include="SorceCode\Camera\CCameraManager.cpp" />
+    <ClCompile Include="SorceCode\Camera\StamderdCamera\CStanderdCamera.cpp" />
+    <ClCompile Include="SorceCode\Camera\UpCamera\CUpCamera.cpp" />
+    <ClCompile Include="SorceCode\CMain.cpp" />
+    <ClCompile Include="SorceCode\Command\BarrageCommand\CBarrageCommand.cpp" />
+    <ClCompile Include="SorceCode\Command\CComannd_Base.cpp" />
+    <ClCompile Include="SorceCode\Command\LongPushCommand\CLongPushCommand.cpp" />
+    <ClCompile Include="SorceCode\Command\TimingCommand\CTimingCommand.cpp" />
+    <ClCompile Include="SorceCode\Drawing\3D_Object\CDX9Mesh.cpp" />
+    <ClCompile Include="SorceCode\Drawing\3D_Object\CDX9SkinMesh.cpp" />
+    <ClCompile Include="SorceCode\Drawing\3D_Object\CDX9SkinMeshParser.cpp" />
+    <ClCompile Include="SorceCode\Drawing\Bord_Polygon\CDepth_Stencil.cpp" />
+    <ClCompile Include="SorceCode\Drawing\Bord_Polygon\DebugText\CDebugText.cpp" />
+    <ClCompile Include="SorceCode\Drawing\Bord_Polygon\GameSprite\CParticle.cpp" />
+    <ClCompile Include="SorceCode\Drawing\Bord_Polygon\GameSprite\CSprite.cpp" />
+    <ClCompile Include="SorceCode\Drawing\Bord_Polygon\GameSprite\CSpriteUI.cpp" />
+    <ClCompile Include="SorceCode\Drawing\CCommon.cpp" />
+    <ClCompile Include="SorceCode\Drawing\Resource\CResourceBase.cpp" />
+    <ClCompile Include="SorceCode\Drawing\Resource\CResourceManager.cpp" />
+    <ClCompile Include="SorceCode\Drawing\Resource\ResourceBordPolygon\ResourceParticle\CResourceParticle.cpp" />
+    <ClCompile Include="SorceCode\Drawing\Resource\ResourceBordPolygon\ResourcePolygon\CResourceSprite.cpp" />
+    <ClCompile Include="SorceCode\Drawing\Resource\ResourceBordPolygon\ResourceSpriteUI\CResourceSpriteUI.cpp" />
+    <ClCompile Include="SorceCode\Drawing\Resource\ResourceSkinMesh\CResourceSkinMesh.cpp" />
+    <ClCompile Include="SorceCode\Drawing\Resource\ResourceStaticMesh\CResourceStaticMesh.cpp" />
+    <ClCompile Include="SorceCode\Effect\CEffectBase.cpp" />
+    <ClCompile Include="SorceCode\Effect\FallDownEffect\CFallDownEffect.cpp" />
+    <ClCompile Include="SorceCode\Effect\FlyEffect\BossFlyEffect\CBossFlyEffect.cpp" />
+    <ClCompile Include="SorceCode\Effect\FlyEffect\CFlyEffect.cpp" />
+    <ClCompile Include="SorceCode\Effect\FlyEffect\EnemyFlyEffect\CEnemyFlyEffect.cpp" />
+    <ClCompile Include="SorceCode\Effect\HitEffect\CHitEffect.cpp" />
+    <ClCompile Include="SorceCode\Effect\HorizonMoveEffect\CHorizonMoveEffect.cpp" />
+    <ClCompile Include="SorceCode\Effect\LndingEffect\CLandingEffect.cpp" />
+    <ClCompile Include="SorceCode\Effect\SparkleEffect\CFootEffect\CFootEffect.cpp" />
+    <ClCompile Include="SorceCode\Effect\SparkleEffect\CSparkleEffect.cpp" />
+    <ClCompile Include="SorceCode\Effect\SparkleEffect\GoodEffect\CGoodEffect.cpp" />
+    <ClCompile Include="SorceCode\Effect\SparkleEffect\GreatEffect\CGreatEffect.cpp" />
+    <ClCompile Include="SorceCode\Effect\SparkleEffect\LongPushEffect\CLongPushEffect.cpp" />
+    <ClCompile Include="SorceCode\Effect\SparkleEffect\PunchEffect\CPunchEffect.cpp" />
+    <ClCompile Include="SorceCode\Effect\SparkleEffect\StepEffect\CStepEffect.cpp" />
+    <ClCompile Include="SorceCode\Fade\CBran.cpp" />
+    <ClCompile Include="SorceCode\FileLoad\CFileCommandSetting.cpp" />
+    <ClCompile Include="SorceCode\FileLoad\CFileInitPos.cpp" />
+    <ClCompile Include="SorceCode\FileLoad\CFileLoad.cpp" />
+    <ClCompile Include="SorceCode\FileLoad\CFileLoadManager.cpp" />
+    <ClCompile Include="SorceCode\GameObject\CGameObject.cpp" />
+    <ClCompile Include="SorceCode\GameObject\Chara\CChara.cpp" />
+    <ClCompile Include="SorceCode\GameObject\Chara\Enemy\Boss\Big_Raccoon_Dog\CBig_Raccoon_Dog.cpp" />
+    <ClCompile Include="SorceCode\GameObject\Chara\Enemy\CEnemyBase.cpp" />
+    <ClCompile Include="SorceCode\GameObject\Chara\Enemy\CEnemyManager.cpp" />
+    <ClCompile Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\CNormalEnemyBase.cpp" />
+    <ClCompile Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Cow_Ghost\CCow_Ghost.cpp" />
+    <ClCompile Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Kappa\CKappa.cpp" />
+    <ClCompile Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Raccoon_Dog\CRaccoon_Dog.cpp" />
+    <ClCompile Include="SorceCode\GameObject\Chara\Player\CPlayer.cpp" />
+    <ClCompile Include="SorceCode\GameObject\Collider_Detection\CCollision_Detection.cpp" />
+    <ClCompile Include="SorceCode\GameObject\Collider_Detection\CDebugCollision_Sphere.cpp" />
+    <ClCompile Include="SorceCode\GameObject\Ground\CGround.cpp" />
+    <ClCompile Include="SorceCode\GameObject\Item\CItemManager.cpp" />
+    <ClCompile Include="SorceCode\GameObject\Item\CItemMove.cpp" />
+    <ClCompile Include="SorceCode\GameObject\Item\CItem_Base.cpp" />
+    <ClCompile Include="SorceCode\GameObject\Item\CItem_Fish.cpp" />
+    <ClCompile Include="SorceCode\GameObject\Item\CItem_Meat.cpp" />
+    <ClCompile Include="SorceCode\GameObject\Item\CItem_Rice.cpp" />
+    <ClCompile Include="SorceCode\GameObject\Item\CItem_Vegetables.cpp" />
+    <ClCompile Include="SorceCode\GameObject\UI\CChar_Evaluation.cpp" />
+    <ClCompile Include="SorceCode\GameObject\UI\CClearUI.cpp" />
+    <ClCompile Include="SorceCode\GameObject\UI\CClearUIManager.cpp" />
+    <ClCompile Include="SorceCode\GameObject\UI\CFaceIcon.cpp" />
+    <ClCompile Include="SorceCode\GameObject\UI\CItemCount.cpp" />
+    <ClCompile Include="SorceCode\GameObject\UI\CItemIcon.cpp" />
+    <ClCompile Include="SorceCode\GameObject\UI\CItemPoint_Bar.cpp" />
+    <ClCompile Include="SorceCode\GameObject\UI\CMainUIManager.cpp" />
+    <ClCompile Include="SorceCode\GameObject\UI\CPushButton.cpp" />
+    <ClCompile Include="SorceCode\GameObject\UI\CStartCount.cpp" />
+    <ClCompile Include="SorceCode\GameObject\UI\CTitleUIManager.cpp" />
+    <ClCompile Include="SorceCode\GameObject\UI\CTitle_Character.cpp" />
+    <ClCompile Include="SorceCode\GameObject\UI\CTitle_Particle.cpp" />
+    <ClCompile Include="SorceCode\GameObject\UI\CUI_Base.cpp" />
+    <ClCompile Include="SorceCode\Ray\CRay.cpp" />
+    <ClCompile Include="SorceCode\Ray\CRayDraw.cpp" />
+    <ClCompile Include="SorceCode\Scene\Clear\CClear.cpp" />
+    <ClCompile Include="SorceCode\Scene\CSceneBase.cpp" />
+    <ClCompile Include="SorceCode\Scene\CSceneManager.cpp" />
+    <ClCompile Include="SorceCode\Scene\Load\CLoad.cpp" />
+    <ClCompile Include="SorceCode\Scene\Main\CGameMain.cpp" />
+    <ClCompile Include="SorceCode\Scene\Title\CTitle.cpp" />
+    <ClCompile Include="SorceCode\Sound\CSEPlayManager.cpp" />
+    <ClCompile Include="SorceCode\Sound\CSound.cpp" />
+    <ClCompile Include="SorceCode\Sound\CSoundResource.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SorceCode\BackGround\CBackGround.h" />
+    <ClInclude Include="SorceCode\Camera\CameraBoss\CBossBadCamera.h" />
+    <ClInclude Include="SorceCode\Camera\CameraBoss\CBossGreatCamera.h" />
+    <ClInclude Include="SorceCode\Camera\CCameraBase.h" />
+    <ClInclude Include="SorceCode\Camera\CCameraManager.h" />
+    <ClInclude Include="SorceCode\Camera\enCameraType.h" />
+    <ClInclude Include="SorceCode\Camera\StamderdCamera\CStanderdCamera.h" />
+    <ClInclude Include="SorceCode\Camera\UpCamera\CUpCamera.h" />
+    <ClInclude Include="SorceCode\Command\BarrageCommand\CBarrageCommand.h" />
+    <ClInclude Include="SorceCode\Command\CCommand_Base.h" />
+    <ClInclude Include="SorceCode\Command\enumCommand_Global.h" />
+    <ClInclude Include="SorceCode\Command\LongPushCommand\CLongPushCommand.h" />
+    <ClInclude Include="SorceCode\Command\TimingCommand\CTimingCommand.h" />
+    <ClInclude Include="SorceCode\Controller\CXInput.h" />
+    <ClInclude Include="SorceCode\Drawing\3D_Object\CDX9Mesh.h" />
+    <ClInclude Include="SorceCode\Drawing\3D_Object\CDX9SkinMesh.h" />
+    <ClInclude Include="SorceCode\Drawing\3D_Object\CDX9SkinMeshParser.h" />
+    <ClInclude Include="SorceCode\Drawing\Bord_Polygon\CDepth_Stencil.h" />
+    <ClInclude Include="SorceCode\Drawing\Bord_Polygon\DebugText\CDebugText.h" />
+    <ClInclude Include="SorceCode\Drawing\Bord_Polygon\GameSprite\CParticle.h" />
+    <ClInclude Include="SorceCode\Drawing\Bord_Polygon\GameSprite\CSprite.h" />
+    <ClInclude Include="SorceCode\Drawing\Bord_Polygon\GameSprite\CSpriteUI.h" />
+    <ClInclude Include="SorceCode\Drawing\CCommon.h" />
+    <ClInclude Include="SorceCode\Drawing\Resource\CResourceBase.h" />
+    <ClInclude Include="SorceCode\Drawing\Resource\CResourceManager.h" />
+    <ClInclude Include="SorceCode\Drawing\Resource\ResourceBordPolygon\ResourceParticle\CResourceParticle.h" />
+    <ClInclude Include="SorceCode\Drawing\Resource\ResourceBordPolygon\ResourcePolygon\CResourceSprite.h" />
+    <ClInclude Include="SorceCode\Drawing\Resource\ResourceBordPolygon\ResourceSpriteUI\CResourceSpriteUI.h" />
+    <ClInclude Include="SorceCode\Drawing\Resource\ResourceSkinMesh\CResourceSkinMesh.h" />
+    <ClInclude Include="SorceCode\Drawing\Resource\ResourceStaticMesh\CResourceStaticMesh.h" />
+    <ClInclude Include="SorceCode\Effect\CEffectBase.h" />
+    <ClInclude Include="SorceCode\Effect\FallDownEffect\CFallDownEffect.h" />
+    <ClInclude Include="SorceCode\Effect\FlyEffect\BossFlyEffect\CBossFlyEffect.h" />
+    <ClInclude Include="SorceCode\Effect\FlyEffect\CFlyEffect.h" />
+    <ClInclude Include="SorceCode\Effect\FlyEffect\EnemyFlyEffect\CEnemyFlyEffect.h" />
+    <ClInclude Include="SorceCode\Effect\HitEffect\CHitEffect.h" />
+    <ClInclude Include="SorceCode\Effect\HorizonMoveEffect\CHorizonMoveEffect.h" />
+    <ClInclude Include="SorceCode\Effect\LndingEffect\CLandingEffect.h" />
+    <ClInclude Include="SorceCode\Effect\SparkleEffect\CFootEffect\CFootEffect.h" />
+    <ClInclude Include="SorceCode\Effect\SparkleEffect\CSparkleEffect.h" />
+    <ClInclude Include="SorceCode\Effect\SparkleEffect\GoodEffect\CGoodEffect.h" />
+    <ClInclude Include="SorceCode\Effect\SparkleEffect\GreatEffect\CGreatEffect.h" />
+    <ClInclude Include="SorceCode\Effect\SparkleEffect\LongPushEffect\CLongPushEffect.h" />
+    <ClInclude Include="SorceCode\Effect\SparkleEffect\PunchEffect\CPunchEffect.h" />
+    <ClInclude Include="SorceCode\Effect\SparkleEffect\StepEffect\CStepEffect.h" />
+    <ClInclude Include="SorceCode\Fade\CBran.h" />
+    <ClInclude Include="SorceCode\FileLoad\CFileCommandSetting.h" />
+    <ClInclude Include="SorceCode\FileLoad\CFileInitPos.h" />
+    <ClInclude Include="SorceCode\FileLoad\CFileLoad.h" />
+    <ClInclude Include="SorceCode\FileLoad\CFileLoadManager.h" />
+    <ClInclude Include="SorceCode\GameObject\CGameObject.h" />
+    <ClInclude Include="SorceCode\GameObject\Chara\CChara.h" />
+    <ClInclude Include="SorceCode\GameObject\Chara\Enemy\Boss\Big_Raccoon_Dog\CBig_Raccoon_Dog.h" />
+    <ClInclude Include="SorceCode\GameObject\Chara\Enemy\CEnemyBase.h" />
+    <ClInclude Include="SorceCode\GameObject\Chara\Enemy\CEnemyManager.h" />
+    <ClInclude Include="SorceCode\GameObject\Chara\Enemy\EnemyType.h" />
+    <ClInclude Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\CNormalEnemyBase.h" />
+    <ClInclude Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Cow_Ghost\CCow_Ghost.h" />
+    <ClInclude Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Kappa\CKappa.h" />
+    <ClInclude Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Raccoon_Dog\CRaccoon_Dog.h" />
+    <ClInclude Include="SorceCode\GameObject\Chara\Player\CPlayer.h" />
+    <ClInclude Include="SorceCode\GameObject\Collider_Detection\CCollision_Detection.h" />
+    <ClInclude Include="SorceCode\GameObject\Collider_Detection\CDebugCollisionSphere.h" />
+    <ClInclude Include="SorceCode\GameObject\Ground\CGround.h" />
+    <ClInclude Include="SorceCode\GameObject\Item\CItemManager.h" />
+    <ClInclude Include="SorceCode\GameObject\Item\CItemMove.h" />
+    <ClInclude Include="SorceCode\GameObject\Item\CItem_Base.h" />
+    <ClInclude Include="SorceCode\GameObject\Item\CItem_Fish.h" />
+    <ClInclude Include="SorceCode\GameObject\Item\CItem_Meat.h" />
+    <ClInclude Include="SorceCode\GameObject\Item\CItem_Rice.h" />
+    <ClInclude Include="SorceCode\GameObject\Item\CItem_Vegetables.h" />
+    <ClInclude Include="SorceCode\GameObject\Item\enItemType.h" />
+    <ClInclude Include="SorceCode\GameObject\UI\CChar_Evaluation.h" />
+    <ClInclude Include="SorceCode\GameObject\UI\CClearUI.h" />
+    <ClInclude Include="SorceCode\GameObject\UI\CClearUIManager.h" />
+    <ClInclude Include="SorceCode\GameObject\UI\CFaceIcon.h" />
+    <ClInclude Include="SorceCode\GameObject\UI\CItemCount.h" />
+    <ClInclude Include="SorceCode\GameObject\UI\CItemIcon.h" />
+    <ClInclude Include="SorceCode\GameObject\UI\CItemPoint_Bar.h" />
+    <ClInclude Include="SorceCode\GameObject\UI\CMainUIManager.h" />
+    <ClInclude Include="SorceCode\GameObject\UI\CPushButton.h" />
+    <ClInclude Include="SorceCode\GameObject\UI\CStartCount.h" />
+    <ClInclude Include="SorceCode\GameObject\UI\CTitleUIManager.h" />
+    <ClInclude Include="SorceCode\GameObject\UI\CTitle_Character.h" />
+    <ClInclude Include="SorceCode\GameObject\UI\CTitle_Particle.h" />
+    <ClInclude Include="SorceCode\GameObject\UI\CUI_Base.h" />
+    <ClInclude Include="SorceCode\Global.h" />
+    <ClInclude Include="SorceCode\CMain.h" />
+    <ClInclude Include="SorceCode\MyMacro.h" />
+    <ClInclude Include="SorceCode\Ray\CRay.h" />
+    <ClInclude Include="SorceCode\Ray\CRayDraw.h" />
+    <ClInclude Include="SorceCode\Ray\RayStruct.h" />
+    <ClInclude Include="SorceCode\Scene\Clear\CClear.h" />
+    <ClInclude Include="SorceCode\Scene\CSceneBase.h" />
+    <ClInclude Include="SorceCode\Scene\CSceneManager.h" />
+    <ClInclude Include="SorceCode\Scene\Load\CLoad.h" />
+    <ClInclude Include="SorceCode\Scene\Main\CGameMain.h" />
+    <ClInclude Include="SorceCode\Scene\Title\CTitle.h" />
+    <ClInclude Include="SorceCode\Sound\CSEPlayManager.h" />
+    <ClInclude Include="SorceCode\Sound\CSound.h" />
+    <ClInclude Include="SorceCode\Sound\CSoundResource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Data\Shader\DebugText.hlsl">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">VS_Main</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">VS_Main</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">VS_Main</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Data\Shader\Mesh.hlsl">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">VS_Main</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">VS_Main</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">VS_Main</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Data\Shader\Particle.hlsl">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">VS_Main</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">VS_Main</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">VS_Main</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Data\Shader\SkinMesh.hlsl">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">VS_Main</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">VS_Main</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Data\Shader\SpriteUI.hlsl">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">VS_Main</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">VS_Main</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">VS_Main</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
