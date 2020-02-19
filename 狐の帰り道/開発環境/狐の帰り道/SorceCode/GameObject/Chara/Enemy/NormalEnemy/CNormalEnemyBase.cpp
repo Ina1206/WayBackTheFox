@@ -1,5 +1,8 @@
 #include "CNormalEnemyBase.h"
 
+/******************************************
+*		’Êí“G‚ÌŠî’êƒNƒ‰ƒX.
+*********/
 CNormalEnemyBase::CNormalEnemyBase()
 	: m_HitNum			(0)
 	, m_HitMoveDirection(0)
@@ -29,7 +32,7 @@ CNormalEnemyBase::~CNormalEnemyBase()
 //==================================.
 //		”ò‚Ô”»’èˆ—ŠÖ”.
 //==================================.
-void CNormalEnemyBase::FlyJudge()
+void CNormalEnemyBase::JudgeFly()
 {
 	m_enInputDecision[STANDERD_USE_COMMAND] = m_pCCommand_Base->GetInputDeision();
 
@@ -51,7 +54,7 @@ void CNormalEnemyBase::FlyJudge()
 //==================================.
 //		”ò‚ñ‚Å‚¢‚­ˆÚ“®ˆ—ŠÖ”.
 //==================================.
-void CNormalEnemyBase::FlyMove()
+void CNormalEnemyBase::MoveFly()
 {
 	//”ò‚ÔŠp“x’²®.
 	m_vPos.x += FLY_SPEED.x * m_HitMoveDirection;

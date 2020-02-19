@@ -1,5 +1,8 @@
 #include "CRaccoon_Dog.h"
 
+/****************************************
+*	タヌキクラス.
+**/
 CRaccoon_Dog::CRaccoon_Dog()
 	:m_pRacconAnim		(nullptr)
 	, m_pAnimController	(nullptr)
@@ -20,7 +23,7 @@ CRaccoon_Dog::~CRaccoon_Dog()
 //==================================.
 //		初期設定処理関数.
 //==================================.
-void CRaccoon_Dog::Init_Process()
+void CRaccoon_Dog::InitProcess()
 {
 	//初期位置.
 	m_vPos = m_vInitPos;
@@ -51,7 +54,7 @@ void CRaccoon_Dog::Init_Process()
 //==================================.
 //		更新処理関数.
 //==================================.
-void CRaccoon_Dog::UpDate()
+void CRaccoon_Dog::Update()
 {
 
 	if (m_HitFlag == false || m_pCCommand_Base->GetButtonLightFinish() == false) {
@@ -71,7 +74,7 @@ void CRaccoon_Dog::UpDate()
 	}
 	else{
 		//当たった後の移動処理関数.
-		FlyMove();
+		MoveFly();
 	}
 	//コマンドの座標.
 	m_pCCommand_Base->SetPos(m_vPos);
@@ -139,7 +142,7 @@ void CRaccoon_Dog::Move()
 
 	//飛んでいく移動処理関数.
 	if (m_HitFlag == false) {
-		FlyJudge();
+		JudgeFly();
 	}
 
 	if (m_HitFlag != m_bOldHit) {

@@ -1,5 +1,8 @@
 #include "CBig_Raccoon_Dog.h"
 
+/***************************************
+*	デカタヌキクラス.
+**/
 CBig_Raccoon_Dog::CBig_Raccoon_Dog()
 	: m_pCStaticMesh		(nullptr)
 	, m_pCMesh				(nullptr)
@@ -40,7 +43,7 @@ CBig_Raccoon_Dog::~CBig_Raccoon_Dog()
 //===================================.
 //		初期化処理関数.
 //===================================.
-void CBig_Raccoon_Dog::Init_Process()
+void CBig_Raccoon_Dog::InitProcess()
 {
 	//初期位置.
 	m_vPos = m_vInitPos;
@@ -91,13 +94,13 @@ void CBig_Raccoon_Dog::Init_Process()
 //===================================.
 //		更新処理関数.
 //===================================.
-void CBig_Raccoon_Dog::UpDate()
+void CBig_Raccoon_Dog::Update()
 {
 	m_enInputDecision = m_pCCommand_Base->GetInputDeision();
 	if (m_enInputDecision == enInput_Decision::Max) {
 		if (m_bMoveStart == false) {
 			//行動開始処理関数.
-			Move_Judgement();
+			MoveJudgement();
 		}
 		if (m_bMoveStart == true) {
 			//殴られた時の音処理関数.
@@ -125,7 +128,7 @@ void CBig_Raccoon_Dog::UpDate()
 	if (m_enInputDecision == enInput_Decision::Good || 
 		m_enInputDecision == enInput_Decision::Great) {
 		//当たった時の処理関数.
-		HitMove();
+		MoveHit();
 	}
 
 	//コマンド失敗時.
@@ -136,7 +139,7 @@ void CBig_Raccoon_Dog::UpDate()
 		}
 		else {
 			//倒れるときの処理関数.
-			FALL_DOWN();
+			Falldown();
 		}
 	}
 
@@ -252,7 +255,7 @@ void CBig_Raccoon_Dog::Release()
 //====================================.
 //		行動処理関数.
 //====================================.
-void CBig_Raccoon_Dog::Move_Judgement()
+void CBig_Raccoon_Dog::MoveJudgement()
 {
 	if (m_fSpeed <= 0.0f) {
 		m_WaitCnt++;
@@ -267,7 +270,7 @@ void CBig_Raccoon_Dog::Move_Judgement()
 //=======================================.
 //		当たった時の処理関数.
 //=======================================.
-void CBig_Raccoon_Dog::HitMove()
+void CBig_Raccoon_Dog::MoveHit()
 {
 	//回転.
 	m_vRot.x += m_fHitRotation;
@@ -306,7 +309,7 @@ void CBig_Raccoon_Dog::HitMove()
 //=======================================.
 //		倒れるときの処理関数.
 //=======================================.
-void CBig_Raccoon_Dog::FALL_DOWN()
+void CBig_Raccoon_Dog::Falldown()
 {
 
 	if (m_vRot.x > FALL_DOWN_ROT_MIN) {
@@ -356,8 +359,8 @@ void CBig_Raccoon_Dog::HitSound()
 	}
 
 	//殴る時のボス側の当たり判定座標設定.
-	D3DXVECTOR3 m_vHitPos = D3DXVECTOR3(m_vInitPos.x, m_vInitPos.y + 1.0f, m_vPos.z - 0.5f);
-	//D3DXVECTOR3 m_vHitPos = m_vInitPos+ HIT_BOSSPOS_ADJUST;
+	const D3DXVECTOR3 AddInitPos = D3DXVECTOR3(0.0f, 1.0f, -0.5f);
+	D3DXVECTOR3 m_vHitPos = D3DXVECTOR3(m_vInitPos.x, m_vInitPos.y, m_vPos.z) + AddInitPos;
 	m_ppCDebug_Collision_Sphere[HIT_TARGET_NUM]->SetPos(m_vHitPos);
 	m_ppCDebug_Collision_Sphere[HIT_TARGET_NUM]->SetScale(1.5f);
 

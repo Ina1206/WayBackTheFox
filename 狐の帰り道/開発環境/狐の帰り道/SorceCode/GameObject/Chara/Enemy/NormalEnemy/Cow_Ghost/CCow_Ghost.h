@@ -4,6 +4,9 @@
 #include "..\CNormalEnemyBase.h"
 #include "..\..\..\..\..\Command\TimingCommand\CTimingCommand.h"
 
+/**********************************************
+*		牛お化けクラス.
+******************/
 class CCow_Ghost
 	: public CNormalEnemyBase
 {
@@ -50,8 +53,8 @@ public:
 
 
 	//=====================関数========================//.
-	void Init_Process();				//初期化処理関数.
-	void UpDate();						//更新処理関数.
+	void InitProcess();				//初期化処理関数.
+	void Update();						//更新処理関数.
 	void Render();						//描画処理関数.
 	void Release();						//解放処理関数.
 
@@ -59,8 +62,8 @@ public:
 private:
 	//=====================関数========================//.
 	void Move();						//移動処理関数.
-	void FarMove();						//遠いときの移動処理関数.
-	void HorizonMove();					//横移動処理関数.
+	void MoveFar();						//遠いときの移動処理関数.
+	void MoveHorizon();					//横移動処理関数.
 
 	//=====================変数========================//.
 	//～クラス～.

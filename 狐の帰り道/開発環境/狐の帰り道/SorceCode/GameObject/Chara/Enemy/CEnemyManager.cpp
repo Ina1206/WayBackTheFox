@@ -1,6 +1,9 @@
 #include <algorithm>
 #include "CEnemyManager.h"
 
+/***************************************************
+*	敵の管理用クラス.
+**/
 CEnemyManager::CEnemyManager()
 	: m_pstNormalEnemyInfo		(nullptr)
 	, m_ppCNormalEnemy			(nullptr)
@@ -53,7 +56,7 @@ CEnemyManager::~CEnemyManager()
 //========================================.
 //		初期化処理関数.
 //========================================.
-void CEnemyManager::Init_Process()
+void CEnemyManager::InitProcess()
 {
 	//ファイル.
 	m_pCFileManager = CFileLoadManager::GetCFileLoadManagerInstance();
@@ -204,7 +207,7 @@ void CEnemyManager::Init_Process()
 //========================================.
 //		更新処理関数.
 //========================================.
-void CEnemyManager::UpDate()
+void CEnemyManager::Update()
 {
 	//コマンド入力処理関数.
 	//Command_Entry();
@@ -331,11 +334,11 @@ void CEnemyManager::NormalEnemyUpDate()
 	for (int enemy = 0; enemy < m_AllNormalEnemyMax; enemy++) {
 
 		//表示判定処理.
-		m_ppCNormalEnemy[enemy]->Disp_Decision();
+		m_ppCNormalEnemy[enemy]->DecisionDisp();
 
 		//地面のスクロール速度に合わせる.
 		m_ppCNormalEnemy[enemy]->SetSpeed(m_fMoveSpeed);
-		m_ppCNormalEnemy[enemy]->Fit_MoveGround();
+		m_ppCNormalEnemy[enemy]->FitMoveGround();
 
 		//プレイヤー位置情報取得.
 		m_ppCNormalEnemy[enemy]->SetPlayerPos(m_vPlayerPos);
@@ -375,11 +378,11 @@ void CEnemyManager::NormalEnemyUpDate()
 void CEnemyManager::BossUpDate()
 {
 	//表示判定処理.
-	m_pCBigRaccoon_Dog->Disp_Decision();
+	m_pCBigRaccoon_Dog->DecisionDisp();
 
 	//地面のスクロール速度に合わせる.
 	m_pCBigRaccoon_Dog->SetSpeed(m_fMoveSpeed);
-	m_pCBigRaccoon_Dog->Fit_MoveGround();
+	m_pCBigRaccoon_Dog->FitMoveGround();
 
 	//プレイヤー位置情報取得.
 	m_pCBigRaccoon_Dog->SetPlayerPos(m_vPlayerPos);
@@ -567,7 +570,7 @@ enInput_Decision CEnemyManager::GetEnemyInputDecision(int enemy, int num)
 //==================================.
 //	カメラの上がるかの判定処理関数.
 //==================================.
-bool CEnemyManager::CameraUpJudge()
+bool CEnemyManager::JudgeCameraUp()
 {
 	int StartEnemyNum = m_pEnemyMax[static_cast<int>(enEnemy::RaccoonDog)] + m_pEnemyMax[static_cast<int>(enEnemy::Cow_Ghost)];
 	D3DXVECTOR3 m_vPos;

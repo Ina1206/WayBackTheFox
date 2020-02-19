@@ -90,8 +90,8 @@ public:
 	};
 
 	//=======================関数========================//.
-	void Init_Process();	//初期化処理関数.
-	void UpDate();			//更新処理関数.
+	void InitProcess();	//初期化処理関数.
+	void Update();			//更新処理関数.
 	void Render();			//描画処理関数.
 	void Release();			//解放処理関数.
 
@@ -110,9 +110,9 @@ public:
 
 private:
 	//=======================定数========================//.
-	void Move_Judgement();			//行動処理関数.
-	void HitMove();					//当たった時の処理関数.
-	void FALL_DOWN();				//倒れるときの処理関数.
+	void MoveJudgement();			//行動処理関数.
+	void MoveHit();					//当たった時の処理関数.
+	void Falldown();				//倒れるときの処理関数.
 	void HitSound();				//殴られた時の音処理関数.
 	void FlyAfter();				//飛んだあとの処理関数.
 

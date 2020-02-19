@@ -1,5 +1,8 @@
 #include "CKappa.h"
 
+/********************************************
+*		カッパクラス.
+**/
 CKappa::CKappa()
 	: m_pKappa			(nullptr)
 	, m_pAnimController	(nullptr)
@@ -30,7 +33,7 @@ CKappa::~CKappa()
 //==================================.
 //		初期設定処理関数.
 //==================================.
-void CKappa::Init_Process()
+void CKappa::InitProcess()
 {
 	//長押しコマンドクラス作成.
 	m_pCCommand_Base = new CLongPushCommand();
@@ -44,7 +47,7 @@ void CKappa::Init_Process()
 //==================================.
 //		更新処理関数.
 //==================================.
-void CKappa::UpDate()
+void CKappa::Update()
 {
 	//移動処理関数.
 	Move();

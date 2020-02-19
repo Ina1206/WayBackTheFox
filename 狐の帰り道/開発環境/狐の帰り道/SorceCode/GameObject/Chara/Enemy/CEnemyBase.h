@@ -20,8 +20,8 @@ public:
 	const float	ANIM_SPEED				= 0.02f;	//アニメーション速度.
 
 	//================関数=====================//.
-	void  Fit_MoveGround();				//グラウンドの動きに合わせる処理関数.
-	void  Disp_Decision();				//表示判定処理関数.
+	void  FitMoveGround();				//グラウンドの動きに合わせる処理関数.
+	void  DecisionDisp();				//表示判定処理関数.
 
 
 	//～情報獲得処理関数～.
@@ -36,7 +36,6 @@ public:
 	void SetJudgePossible	(bool JudgePossible)						{ m_bJudgePossible = JudgePossible; }	//判定可能フラグ.
 	void SetLongPushCnt		(int LongPush)								{ m_LongPushCnt = LongPush; }			//長押しカウント.
 	
-	//void SetInputDecision	(enInput_Decision enDecision, int num = 0)	{ m_enInputDecision[num] = enDecision; }//コマンド判定結果.
 protected:
 	
 	D3DXVECTOR3			m_vPos;				//位置座標.
@@ -48,7 +47,6 @@ protected:
 
 	CCommand_Base*		m_pCCommand_Base;	//コマンド基底クラス.
 	enCommandType		m_enCommandType;	//入力ボタン情報.
-	//enInput_Decision*	m_enInputDecision;	//判定結果.
 	bool				m_bJudgePossible;	//コマンド判定可能フラグ.
 	int					m_LongPushCnt;		//長押しカウント.
 

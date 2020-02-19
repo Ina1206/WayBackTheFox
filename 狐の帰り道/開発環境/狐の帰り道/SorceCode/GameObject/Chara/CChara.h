@@ -29,10 +29,10 @@ public:
 	void Init();																		//初期化処理関数.
 	void Destroy();																		//解放処理関数.
 	void FootStepSE(CDX9SkinMesh* pSkinMesh, CSoundResource::enSoundSE enSoundSE);	//足音のSE.
-	void DebugRender();																	//デバッグ用描画.
+	void RenderDebug();																	//デバッグ用描画.
 
 protected:
-	void ShadowRender();									//影の描画処理関数.
+	void RenderShadow();									//影の描画処理関数.
 
 	//===================変数========================//.
 	CCollision_Detection**	m_ppCCollision_Detection;		//当たり判定のクラス.

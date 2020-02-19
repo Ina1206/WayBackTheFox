@@ -7,10 +7,8 @@
 #include "NormalEnemy/Cow_Ghost/CCow_Ghost.h"
 #include "Boss/Big_Raccoon_Dog/CBig_Raccoon_Dog.h"
 
-//=============追加====================================//.
 //========アイテムのヘッダファイル=========//.
 #include "..\..\Item\CItemManager.h"
-//======================================================//.
 
 //読み込みファイル.
 #include "..\..\..\FileLoad\CFileInitPos.h"
@@ -42,11 +40,11 @@ public:
 	const float	DECISION_END_BACK		= 0.5f;											//判定終了のplayerの座標からの奥行.
 
 	//=====================関数=======================//.
-	void Init_Process();																				//初期化処理関数.
-	void UpDate();																						//更新処理関数.
+	void InitProcess();																					//初期化処理関数.
+	void Update();																						//更新処理関数.
 	void Render(D3DXMATRIX& mView, D3DXMATRIX& mProj, D3DXVECTOR3& vLight, D3DXVECTOR3& vCameraPos);	//描画処理関数.
 	void Release();																						//解放処理関数.
-	bool CameraUpJudge();						//カメラの上がるか判定処理関数.
+	bool JudgeCameraUp();																				//カメラの上がるか判定処理関数.
 
 	//～～情報獲得処理関数～～.
 	//敵の最大数.
@@ -80,16 +78,14 @@ public:
 	//プレイヤー座標.
 	void SetPlayerPos(D3DXVECTOR3 vPos) { m_vPlayerPos = vPos; }	
 	//上がる距離.
-	void SetUpDistance(float Distance) { m_fUpDistance = Distance; }	//Boss.
+	void SetUpDistance(float Distance) { m_fUpDistance = Distance; }	
 	//タイマー.
-	void SetMoveFlag(bool flag) { m_bMoveFlag = flag; }					//Boss.					
+	void SetMoveFlag(bool flag) { m_bMoveFlag = flag; }									
 
-	//=============※追加===================================================================.
 	//アイテムの設定.
 	void SetItem(int enemyType, int num, enItemJudge enJudge);
 	int  GetPoint_WholeSum() { return m_Point_WholeSum; };
 	int GetItem_Sum(int enItem);								//アイテムの合計.
-	//======================================================================================.
 
 
 private:
@@ -168,7 +164,6 @@ private:
 	int					m_RicePoint;		//米ポイント合計.
 	bool				m_bCheckItem_Point;	//アイテムポイントの減算に使用.
 	bool				m_bCheckItem_Number;//アイテム個数の減算に使用.
-	//以下追加.
 	enItemJudge*		m_OldenJudge;		//前判定.
 
 

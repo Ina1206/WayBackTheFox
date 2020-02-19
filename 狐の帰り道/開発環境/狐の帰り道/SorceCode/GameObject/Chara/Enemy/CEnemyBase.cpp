@@ -23,7 +23,7 @@ CEnemyBase::~CEnemyBase()
 //============================================.
 //		グラウンドの動きに合わせる処理関数.
 //============================================.
-void CEnemyBase::Fit_MoveGround()
+void CEnemyBase::FitMoveGround()
 {
 	m_vPos.z -= m_fSpeed;
 }
@@ -31,7 +31,7 @@ void CEnemyBase::Fit_MoveGround()
 //============================================.
 //		表示判定処理関数.
 //============================================.
-void CEnemyBase::Disp_Decision()
+void CEnemyBase::DecisionDisp()
 {
 	//一定の距離まで来ると表示.
 	if (m_vPos.z <= m_vPlayerPos.z + DISP_DISTANCE && m_vPos.z > -2.0f) {

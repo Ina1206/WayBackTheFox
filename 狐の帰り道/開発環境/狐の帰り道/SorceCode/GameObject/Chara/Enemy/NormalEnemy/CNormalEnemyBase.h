@@ -4,7 +4,7 @@
 #include "..\CEnemyBase.h"
 
 /******************************************
-*		’Êí“G‚ÌŒ³ƒNƒ‰ƒX.
+*		’Êí“G‚ÌŠî’êƒNƒ‰ƒX.
 *********/
 class CNormalEnemyBase
 	: public CEnemyBase
@@ -31,8 +31,8 @@ public:
 	};
 
 	//================ŠÖ”======================//.
-	void FlyJudge();	//”ò‚Ô”»’èˆ—ŠÖ”.
-	void FlyMove();		//”ò‚ñ‚Å‚¢‚­ˆÚ“®ˆ—ŠÖ”.
+	void JudgeFly();	//”ò‚Ô”»’èˆ—ŠÖ”.
+	void MoveFly();		//”ò‚ñ‚Å‚¢‚­ˆÚ“®ˆ—ŠÖ”.
 
 	//`î•ñŠl“¾ˆ—ŠÖ”`.
 	int					GetHitNum()						{ return m_HitNum; }									//“–‚½‚Á‚½‰ñ”Šl“¾ˆ—.	

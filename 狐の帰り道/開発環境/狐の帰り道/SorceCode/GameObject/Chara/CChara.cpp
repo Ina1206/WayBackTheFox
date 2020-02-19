@@ -122,7 +122,7 @@ void CChara::FootStepSE(CDX9SkinMesh* pSkinMesh, CSoundResource::enSoundSE enSou
 //====================================.
 //		ƒfƒoƒbƒO—p•`‰æ.
 //====================================.
-void CChara::DebugRender()
+void CChara::RenderDebug()
 {
 	for (int collision = 0; collision < FOOT_SPHERE_MAX; collision++) {
 		m_ppCDebug_Collision_Sphere[collision]->Render(m_mView, m_mProj, m_vLight, m_vCameraPos);
@@ -132,7 +132,7 @@ void CChara::DebugRender()
 //=========================================.
 //		‰e‚Ì•`‰æˆ—ŠÖ”.
 //=========================================.
-void CChara::ShadowRender()
+void CChara::RenderShadow()
 {
 	m_vShadowPos.y = 0.05f;
 	m_pCSprite = CResourceManager::GetResourceManagerInstance()->GetSprite(CResourceSprite::enSprite::Shadow);

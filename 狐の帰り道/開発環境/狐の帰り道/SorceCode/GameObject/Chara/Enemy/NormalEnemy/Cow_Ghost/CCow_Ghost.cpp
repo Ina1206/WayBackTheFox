@@ -1,5 +1,8 @@
 #include "CCow_Ghost.h"
 
+/**********************************************
+*		牛お化けクラス.
+******************/
 CCow_Ghost::CCow_Ghost()
 	: m_pStaticMesh			(nullptr)
 	, m_enVerticalMoveType	(enVerticalMove_Type::Up)
@@ -17,7 +20,7 @@ CCow_Ghost::~CCow_Ghost()
 //================================================.
 //		初期化処理関数.
 //================================================.
-void CCow_Ghost::Init_Process()
+void CCow_Ghost::InitProcess()
 {
 	//座標設定.
 	m_vPos = m_vInitPos;
@@ -37,7 +40,7 @@ void CCow_Ghost::Init_Process()
 //================================================.
 //		更新処理関数.
 //================================================.
-void CCow_Ghost::UpDate()
+void CCow_Ghost::Update()
 {
 
 	if (m_HitFlag == false || m_pCCommand_Base->GetButtonLightFinish() == false) {
@@ -57,7 +60,7 @@ void CCow_Ghost::UpDate()
 	else {
 		
 		//飛んでいく移動処理関数.
-		FlyMove();
+		MoveFly();
 	}
 	//コマンドの座標.
 	m_pCCommand_Base->SetPos(m_vPos);
@@ -120,7 +123,7 @@ void CCow_Ghost::Move()
 {
 	//一定の位置または、横移動判定の時は移動可能.
 	if (m_vPos.z >= m_vPlayerPos.z + STOP_DISTANCE || m_enVerticalMoveType == enVerticalMove_Type::Waiting) {
-		FarMove();
+		MoveFar();
 	}
 	else {
 		//高さを合わせる.
@@ -131,7 +134,7 @@ void CCow_Ghost::Move()
 
 	if (m_HitFlag == false) {
 		//飛んでいく移動処理関数.
-		FlyJudge();
+		JudgeFly();
 	}
 	//================================.
 	//	エフェクト.
@@ -142,7 +145,7 @@ void CCow_Ghost::Move()
 //================================================.
 //		遠い時の移動処理関数.
 //================================================.
-void CCow_Ghost::FarMove()
+void CCow_Ghost::MoveFar()
 {
 	//移動方法.
 	switch (m_enVerticalMoveType) {
@@ -190,7 +193,7 @@ void CCow_Ghost::FarMove()
 	//待機.
 	case enVerticalMove_Type::Waiting:
 		//横移動処理関数.
-		HorizonMove();
+		MoveHorizon();
 
 		//横移動時にSE再生.
 		if (m_bCheckSE == false) {
@@ -207,7 +210,7 @@ void CCow_Ghost::FarMove()
 //===========================================.
 //		横移動処理関数.
 //===========================================.
-void CCow_Ghost::HorizonMove()
+void CCow_Ghost::MoveHorizon()
 {
 	//横移動処理.
 	switch (m_enHorizonMoveType) {
