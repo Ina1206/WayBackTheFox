@@ -1,6 +1,9 @@
 #include"CFileLoadManager.h"
 #include <time.h>
 
+/*****************************************
+*		ファイル読み込み管理クラス.
+*******/
 CFileLoadManager::CFileLoadManager()
 	: m_pCFileInitPos	(nullptr)
 	, m_pCFileCommandSet(nullptr)
@@ -42,7 +45,7 @@ void CFileLoadManager::ALL_Setting()
 
 	//敵の設定処理関数.
 	for (int file = 0; file < m_FileMax; file++) {
-		EnemySetting(file);
+		SettingEnemy(file);
 	}
 
 	//それぞれのファイル解放しておく.
@@ -54,10 +57,10 @@ void CFileLoadManager::ALL_Setting()
 //==========================================.
 //		敵の設定処理関数.
 //==========================================.
-void CFileLoadManager::EnemySetting(int fileNum)
+void CFileLoadManager::SettingEnemy(int fileNum)
 {
 	//番号チェック処理関数.
-	NumCheck(fileNum);
+	CheckNum(fileNum);
 
 	m_pstAllEnemyInfo[fileNum].m_pEnemyMax = new int[static_cast<int>(enEnemy::Max)]();
 
@@ -75,9 +78,9 @@ void CFileLoadManager::EnemySetting(int fileNum)
 		for (int line = 0; line < m_pCFileInitPos->GetFileLineMax(fileNum); line++) {
 			if (m_pCFileInitPos->GetEnemyFile(fileNum, column, line) > 0) {
 				//敵の位置設定.
-				EnemyPosSetting(fileNum, column, line);
+				SettingEnemyPos(fileNum, column, line);
 				//敵事に所持しているボタン番号設定.
-				ButtonSetting(fileNum, column, line);
+				SettingButton(fileNum, column, line);
 
 				//追加.
 				m_pEnemyCnt[m_pCFileInitPos->GetEnemyFile(fileNum, column, line) - 1]++;
@@ -89,7 +92,7 @@ void CFileLoadManager::EnemySetting(int fileNum)
 //==========================================.
 //		番号チェック処理関数.
 //==========================================.
-void CFileLoadManager::NumCheck(int filenum)
+void CFileLoadManager::CheckNum(int filenum)
 {
 	for (int column = 0; column < m_pCFileInitPos->GetFileColumnMax(filenum); column++) {
 		for (int line = 0; line < m_pCFileInitPos->GetFileLineMax(filenum); line++) {
@@ -121,7 +124,7 @@ void CFileLoadManager::EnemyMaxCnt(int fileNum)
 //==========================================.
 //		敵の位置設定処理関数.
 //==========================================.
-void CFileLoadManager::EnemyPosSetting(int fileNum, int column, int line)
+void CFileLoadManager::SettingEnemyPos(int fileNum, int column, int line)
 {
 	//敵の番号.
 	int m_pEnemyNum = m_pCFileInitPos->GetEnemyFile(fileNum,column, line) - 1;
@@ -139,7 +142,7 @@ void CFileLoadManager::EnemyPosSetting(int fileNum, int column, int line)
 //==========================================.
 //		ボタンの種類設定処理関数.
 //==========================================.
-void CFileLoadManager::ButtonSetting(int fileNum, int column, int line)
+void CFileLoadManager::SettingButton(int fileNum, int column, int line)
 {
 	int m_pEnemyNum = m_pCFileInitPos->GetEnemyFile(fileNum, column, line) - 1;
 

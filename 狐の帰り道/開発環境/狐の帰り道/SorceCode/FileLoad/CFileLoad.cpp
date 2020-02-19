@@ -4,13 +4,14 @@
 #include <algorithm>
 #include "CFileLoad.h"
 
-//コンストラクタ.
+/***********************************
+*		ファイル読み込みクラス.
+**/
 CFile::CFile()
 {
 	stData = nullptr;
 }
 
-//デストラクタ.
 CFile::~CFile()
 {
 }
@@ -18,14 +19,14 @@ CFile::~CFile()
 //================================================.
 //		ファイル読み込みまとめ処理関数.
 //================================================.
-void CFile::FileInput(const char* filename) 
+void CFile::InputFile(const char* filename) 
 {
 	//ファイルの読み込み処理関数.
 	Load(filename);
 	//データ読み込み処理関数.
-	DataLoad();
+	LoadData();
 	//行と列に分ける整理処理関数.
-	DataArrange();
+	ArrangeData();
 }
 
 //================================================.
@@ -45,7 +46,7 @@ void CFile::Load(const char* filename)
 //================================================.
 //		データ読み込み処理関数.
 //================================================.
-void CFile::DataLoad()
+void CFile::LoadData()
 {
 	//データの数をコンマ区切りで読み込む.
 	line_max = 0;
@@ -82,7 +83,7 @@ void CFile::splita(std::string input, char delimiter)
 //================================================.
 //		行と列に分けて整理処理関数.
 //================================================.
-void CFile::DataArrange() {
+void CFile::ArrangeData() {
 	//列の最大数.
 	column_max = static_cast<int>(strvec.size()) / line_max;
 

@@ -6,6 +6,9 @@
 #include "..\Global.h"
 #include "..\Command\enumCommand_Global.h"
 
+/**************************************
+*		コマンド設定ファイルクラス.
+*****/
 class CFileCommandSetting
 {
 public:

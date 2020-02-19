@@ -19,7 +19,7 @@ public:
 
 	//===============関数===================//.
 	void SetinngEnemyPos();		//敵の座標設定.
-	void FileRelease();			//ファイル解放処理関数.
+	void ReleaseFile();			//ファイル解放処理関数.
 
 	//==========情報取得処理関数=============//.
 	//敵のデータ取得処理関数.
@@ -35,7 +35,7 @@ public:
 	void SetFileNum(int filenum) { m_FileNum = filenum; }
 private:
 	//===============関数===================//.
-	void FileLoad();			//ファイルの読み込み.
+	void LoadFile();			//ファイルの読み込み.
 
 
 	//===================変数=====================//.

@@ -1,5 +1,8 @@
 #include "CFileCommandSetting.h"
 
+/**************************************
+*		コマンド設定ファイルクラス.
+*****/
 CFileCommandSetting::CFileCommandSetting()
 	: m_pCFile			(nullptr)
 	, m_FileNum			(0)
@@ -36,11 +39,6 @@ void CFileCommandSetting::Load()
 		"Data\\File\\Stage2_CommandDate.csv",
 		"Data\\File\\Stage3_CommandDate.csv",
 	};
-	//char FileName[][128] = {
-	//	"Data\\File\\Extra_CommandDate.csv",
-	//	"Data\\File\\Extra_CommandDate.csv",
-	//	"Data\\File\\Extra_CommandDate.csv",
-	//};
 
 	//ファイルの最大数取得s.
 	m_FileMax = sizeof FileName / sizeof FileName[0];
@@ -53,7 +51,7 @@ void CFileCommandSetting::Load()
 		m_ppCFile[file] = new CFile();
 		
 		//ファイル数分読み込み.
-		m_ppCFile[file]->FileInput(FileName[file]);
+		m_ppCFile[file]->InputFile(FileName[file]);
 	}
 	
 }

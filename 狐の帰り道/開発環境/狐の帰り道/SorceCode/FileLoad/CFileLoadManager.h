@@ -4,6 +4,9 @@
 #include "CFileInitPos.h"
 #include "CFileCommandSetting.h"
 
+/*****************************************
+*		ファイル読み込み管理クラス.
+*******/
 class CFileLoadManager
 {
 public:
@@ -47,11 +50,11 @@ public:
 
 private:
 	//===================関数======================//.
-	void EnemySetting(int fileNum);							//敵の設定処理関数.
-	void NumCheck(int fileNum);								//番号チェック処理関数.
+	void SettingEnemy(int fileNum);							//敵の設定処理関数.
+	void CheckNum(int fileNum);								//番号チェック処理関数.
 	void EnemyMaxCnt(int fileNum);							//敵の最大値をカウント処理関数.
-	void EnemyPosSetting(int fileNum,int column, int line);	//敵の位置設定処理関数.
-	void ButtonSetting(int fileNum, int column, int line);	//ボタンの種類設定処理関数.
+	void SettingEnemyPos(int fileNum,int column, int line);	//敵の位置設定処理関数.
+	void SettingButton(int fileNum, int column, int line);	//ボタンの種類設定処理関数.
 	void Release();											//解放処理関数.
 
 	//==================構造体======================//.

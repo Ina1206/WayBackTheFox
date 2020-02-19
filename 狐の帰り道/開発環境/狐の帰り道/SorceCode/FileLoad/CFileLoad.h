@@ -14,7 +14,7 @@ public:
 	~CFile();
 
 	//========関数==========//.
-	void FileInput(const char* filename);					//ファイル読み込みまとめ.
+	void InputFile(const char* filename);					//ファイル読み込みまとめ.
 	void Close();											//ファイルを閉じる処理関数.
 
 	//=====情報取得関数=====//.
@@ -29,8 +29,8 @@ public:
 private:
 	//==========関数==========//.
 	void Load(const char* filename);						//ファイル読み込み処理関数.
-	void DataLoad();										//データ読み込み処理関数.
-	void DataArrange();										//行と列に分けて整理処理関数.
+	void LoadData();										//データ読み込み処理関数.
+	void ArrangeData();										//行と列に分けて整理処理関数.
 	
 	void splita(std::string input, char delimiter);			//データ分解処理関数.
 
