@@ -1,5 +1,8 @@
 #include "CLongPushCommand.h"
 
+/***************************************
+*		長押しコマンドクラス.
+***********/
 CLongPushCommand::CLongPushCommand()
 	: m_ppCCommandSprite	(nullptr)
 	, m_pvCommandPos		(nullptr)
@@ -40,7 +43,7 @@ CLongPushCommand::~CLongPushCommand()
 //=====================================.
 //		更新処理関数.
 //=====================================.
-void CLongPushCommand::UpDate(enCommandType CommandType)
+void CLongPushCommand::Update(enCommandType CommandType)
 {
 	//長押しコマンドのコマンド画像表示.
 	for (int command = 0; command < static_cast<int>(enCommandSpriteType::Max); command++) {
@@ -50,12 +53,12 @@ void CLongPushCommand::UpDate(enCommandType CommandType)
 	}
 
 	//表示判定処理関数.
-	DispDecision();
+	DecisionDisp();
 
 	if (m_bDispFlag == true) {
 		if (m_vPos.x == m_vPlayerPos.x && m_bJudgePossible == true) {
 			//コマンド判定処理関数.
-			CommandDecision(CommandType);
+			DecisionCommand(CommandType);
 		}
 		//最初に判定した後押しながら横に行くとBad判定.
 		if (m_vPos.x != m_vPlayerPos.x && m_PushCount > 0) {
@@ -119,9 +122,9 @@ void CLongPushCommand::Render()
 		}
 
 		//長押しコマンド描画.
-		CommandRender();
+		RenderCommand();
 		//ボタンコマンド描画.
-		Button_Render();
+		RenderButton();
 		//エフェクト描画.
 		m_pCEffectBase->Render(m_mView, m_mProj, m_vCameraPos);
 	}
@@ -142,7 +145,7 @@ void CLongPushCommand::Release()
 //=====================================.
 //		描画判定処理関数.
 //=====================================.
-void CLongPushCommand::DispDecision()
+void CLongPushCommand::DecisionDisp()
 {
 	//距離によって表示するかどうか.
 	if (m_vPos.z < DISP_ALPHA) {
@@ -162,7 +165,7 @@ void CLongPushCommand::DispDecision()
 //=====================================.
 //		コマンド判定処理関数.
 //=====================================.
-void CLongPushCommand::CommandDecision(enCommandType CommandType)
+void CLongPushCommand::DecisionCommand(enCommandType CommandType)
 {
 	//敵の所持しているボタン番号と入力ボタン番号が一致しているかどうか.
 	if (m_ButtonNum == static_cast<int>(CommandType)) {
@@ -180,12 +183,12 @@ void CLongPushCommand::CommandDecision(enCommandType CommandType)
 
 	//コマンドスタート地点判定処理関数.
 	if (m_PushCount == 1 && m_LongPushCnt == 0) {
-		CommandStartDecision();
+		DecisionCommandStart();
 	}
 
 	//コマンド終了地点の判定処理関数.
 	if (m_PushCount == DECISION_TERMIN) {
-		CommandEndDecision();
+		DecisionCommandEnd();
 	}
 
 }
@@ -193,7 +196,7 @@ void CLongPushCommand::CommandDecision(enCommandType CommandType)
 //=====================================.
 //	コマンドスタート地点判定処理関数.
 //=====================================.
-void CLongPushCommand::CommandStartDecision()
+void CLongPushCommand::DecisionCommandStart()
 {
 	const int COMMAND_START_NUM = static_cast<int>(enCommandSpriteType::CommandStart);
 
@@ -212,7 +215,7 @@ void CLongPushCommand::CommandStartDecision()
 //======================================.
 //	コマンド終了地点の判定処理関数.
 //======================================.
-void CLongPushCommand::CommandEndDecision()
+void CLongPushCommand::DecisionCommandEnd()
 {
 	const int COMMAND_END_NUM = static_cast<int>(enCommandSpriteType::CommandEnd);
 
@@ -235,7 +238,7 @@ void CLongPushCommand::CommandEndDecision()
 //=====================================.
 //		コマンド画像の描画.
 //=====================================.
-void CLongPushCommand::CommandRender()
+void CLongPushCommand::RenderCommand()
 {
 	int m_Intermediate	= static_cast<int>(enCommandSpriteType::Intermediate);	//間の四角.
 

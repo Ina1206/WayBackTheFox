@@ -27,19 +27,20 @@ public:
 	const float START_DIFFERENCE	= 0.9f;																//開始位置の差分.
 	const float LIGHT_ALPHA_SPEED	= 0.15f;															//光の透過速度.
 	const float LIGHT_SCALE_SPEED	= 0.15f;															//光の大きさ速度.
+	
 	//=======================関数===========================//.
-	void UpDate(enCommandType CommandType);				//更新処理関数.
+	void Update(enCommandType CommandType);				//更新処理関数.
 	void Render();										//描画処理関数.
 
 private:
 	//=======================関数===========================//.
 	void Release();										//解放処理関数.
-	void DispDecision();								//表示判定処理関数.
-	void CommandDecision(enCommandType CommandType);	//コマンド判定処理関数.
-	void Circle_ScaleDown();							//円の大きさを小さくする処理関数.
-	void CircleRender();								//丸の描画処理関数.
+	void DecisionDisp();								//表示判定処理関数.
+	void DecisionCommand(enCommandType CommandType);	//コマンド判定処理関数.
+	void ScaleDownCircle();								//円の大きさを小さくする処理関数.
+	void RenderCircle();								//丸の描画処理関数.
 	void ButtonPushCircle();							//ボタン押したときの円の処理関数.
-	void ButtonPushRender();							//ボタンを押したときの丸の描画処理関数.
+	void RenderButtonPush();							//ボタンを押したときの丸の描画処理関数.
 
 	//=======================定数===========================//.
 	CSprite*		m_pCSpriteMaru;						//丸のスプライト.

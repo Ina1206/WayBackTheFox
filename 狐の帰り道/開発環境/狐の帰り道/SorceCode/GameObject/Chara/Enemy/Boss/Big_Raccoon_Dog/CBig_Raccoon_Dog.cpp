@@ -93,7 +93,7 @@ void CBig_Raccoon_Dog::Init_Process()
 //===================================.
 void CBig_Raccoon_Dog::UpDate()
 {
-	m_enInputDecision = m_pCCommand_Base->GetInput_Deision();
+	m_enInputDecision = m_pCCommand_Base->GetInputDeision();
 	if (m_enInputDecision == enInput_Decision::Max) {
 		if (m_bMoveStart == false) {
 			//行動開始処理関数.
@@ -107,7 +107,7 @@ void CBig_Raccoon_Dog::UpDate()
 			m_pCCommand_Base->SetPos(m_vPos);				//座標.
 			m_pCCommand_Base->SetPlayerPos(m_vPlayerPos);	//Player座標.
 			m_pCCommand_Base->SetDispFlag(m_bMoveStart);	//行動開始フラグ.
-			m_pCCommand_Base->UpDate(m_enCommandType);		//更新処理関数.
+			m_pCCommand_Base->Update(m_enCommandType);		//更新処理関数.
 		}
 	}
 	else {
@@ -116,7 +116,7 @@ void CBig_Raccoon_Dog::UpDate()
 	}
 
 	//コマンドエフェクトとSE再生クラス.
-	m_pCCommand_Base->EffectAndSE_Play();
+	m_pCCommand_Base->PlayEffectAndSE();
 
 	//パンチされた時のエフェクト更新処理関数.
 	m_ppCEffectBase[PUNCH_EFFECT_NUM]->UpDate();
@@ -209,9 +209,9 @@ void CBig_Raccoon_Dog::Render()
 	m_pCDepthStencil->SetDepth(true);
 
 	//コマンドクラスの描画.
-	m_pCCommand_Base->Value_Set(m_mView, m_mProj, m_vCameraPos);
+	m_pCCommand_Base->SetValue(m_mView, m_mProj, m_vCameraPos);
 	m_pCCommand_Base->Render();
-	m_pCCommand_Base->EffectRender();
+	m_pCCommand_Base->RenderEffect();
 }
 
 //====================================.

@@ -48,17 +48,17 @@ public:
 	};
 
 	//===================関数======================//.
-	void UpDate(enCommandType CommandType);				//更新処理関数.
+	void Update(enCommandType CommandType);				//更新処理関数.
 	void Render();										//描画処理関数.
 
 private:
 	//===================関数======================//.
 	void Release();										//解放処理関数.
-	void DispDecision();								//描画判定処理関数.
-	void CommandDecision(enCommandType CommandType);	//コマンド判定処理関数.
-	void CommandStartDecision();						//コマンドスタート地点判定処理関数.
-	void CommandEndDecision();							//コマンド終了地点の判定処理関数.
-	void CommandRender();								//コマンド画像の描画.
+	void DecisionDisp();								//描画判定処理関数.
+	void DecisionCommand(enCommandType CommandType);	//コマンド判定処理関数.
+	void DecisionCommandStart();						//コマンドスタート地点判定処理関数.
+	void DecisionCommandEnd();							//コマンド終了地点の判定処理関数.
+	void RenderCommand();								//コマンド画像の描画.
 
 	//===================変数======================//.
 	CSprite**		m_ppCCommandSprite;					//コマンドスプライト.

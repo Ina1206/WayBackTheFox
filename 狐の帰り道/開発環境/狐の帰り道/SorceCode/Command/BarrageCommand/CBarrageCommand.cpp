@@ -1,5 +1,8 @@
 #include "CBarrageCommand.h"
 
+/****************************************
+*		連打コマンドクラス.
+***************/
 CBarrageCommand::CBarrageCommand()
 	: m_fAlpha				(MAX_ALPHA)
 	, m_ppCGageSprite		(nullptr)
@@ -41,18 +44,19 @@ CBarrageCommand::~CBarrageCommand()
 //============================================.
 //		更新処理関数.
 //============================================.
-void CBarrageCommand::UpDate(enCommandType CommandType)
+void CBarrageCommand::Update(enCommandType CommandType)
 {
 	if (m_bDispFlag == true && m_penInput_Decision[STANDERD_COMMAND_USE] == enInput_Decision::Max) {
 		//コマンド判定処理関数.
-		CommandDecision(CommandType);
+		DecisionCommand(CommandType);
 		//時間処理関数.
 		Time();
 		//エフェクト更新処理関数.
 		m_pCHitEffect->UpDate();
 	}
-	//BGM変更.
+
 	if (m_bBGMChange == false && m_bDispFlag == true) {
+		//BGM変更.
 		m_pCSEPlayManager->SetLoopSEPlay(CSoundResource::enLoopSound::GameMain_BGM, false);
 		m_pCSEPlayManager->SetLoopSEPlay(CSoundResource::enLoopSound::Boss_BGM, true);
 		//音量.
@@ -69,16 +73,16 @@ void CBarrageCommand::Render()
 {
 	if (m_bDispFlag == true) {
 		//ボタンの描画.
-		ButtonRender();
+		RenderButton();
 
 		//ボタンの光の描画.
-		PushButtonRender();
+		RenderPushButton();
 
 		//ゲージの描画.
-		GageRender();
+		RenderGage();
 
 		//時間描画処理関数.
-		TimeRender();
+		RenderTime();
 
 		//エフェクトの描画.
 		m_pCHitEffect->Render(m_mView, m_mProj, m_vCameraPos);
@@ -107,10 +111,10 @@ void CBarrageCommand::Release()
 //=============================================.
 //		コマンド判定処理関数.
 //=============================================.
-void CBarrageCommand::CommandDecision(enCommandType CommandType)
+void CBarrageCommand::DecisionCommand(enCommandType CommandType)
 {
 	//ボタン変更処理関数.
-	ButtonChange();
+	ChangeButton();
 
 	//変更後のカウント.
 	m_ChangeAfterCnt++;
@@ -212,7 +216,7 @@ void CBarrageCommand::Time()
 //===========================================.
 //		時間描画処理関数.
 //===========================================.
-void CBarrageCommand::TimeRender()
+void CBarrageCommand::RenderTime()
 {
 	//画像パターンの設定.
 	D3DXVECTOR2* Pattern = nullptr;
@@ -241,7 +245,7 @@ void CBarrageCommand::TimeRender()
 //===========================================.
 //		ボタン変更処理関数.
 //===========================================.
-void CBarrageCommand::ButtonChange()
+void CBarrageCommand::ChangeButton()
 {
 	//連打ゲージの区切り.
 	int m_BurrageButton_Delimiter = BARRAGE_MAX / USE_BUTTON_MAX;
@@ -278,7 +282,7 @@ void CBarrageCommand::ButtonChange()
 //===========================================.
 //		ボタンの描画.
 //===========================================.
-void CBarrageCommand::ButtonRender()
+void CBarrageCommand::RenderButton()
 {
 	//画像の列挙体のコマンド開始番号.
 	int m_SpriteStart = static_cast<int>(CResourceSprite::enSprite::CommandStart);
@@ -318,7 +322,7 @@ void CBarrageCommand::ButtonRender()
 //===========================================.
 //		ゲージの描画.
 //===========================================.
-void CBarrageCommand::GageRender()
+void CBarrageCommand::RenderGage()
 {
 	for (int gagenum = 0; gagenum < GAGE_SPRITE_MAX; gagenum++) {
 		int sprite = static_cast<int>(CResourceSpriteUI::enSpriteUI::GageGround) + gagenum;
@@ -332,7 +336,7 @@ void CBarrageCommand::GageRender()
 	//ゲージの位置.
 	m_vPos.x = GAGE_POS.x;
 	m_vPos.y = GAGE_POS.y;
-	m_vPos.z = 0.01f;
+	m_vPos.z = GAGE_POS.z;
 	D3DXVECTOR3 GagePos = D3DXVECTOR3(m_vPos.x + (((SizeW * GAGE_LENGTH_MAX) / GAGE_HALF) - GAGE_POS_START), m_vPos.y, m_vPos.z);
 	//ゲージ調整.
 	GagePos.x += GAGE_POS_ADJUST.x;
@@ -352,7 +356,7 @@ void CBarrageCommand::GageRender()
 //================================================.
 //		ボタンを押したときの描画処理関数.
 //================================================.
-void CBarrageCommand::PushButtonRender()
+void CBarrageCommand::RenderPushButton()
 {
 	m_pCPushButtonSprite = m_pCResourceManager->GetSprite(CResourceSprite::enSprite::HitButton);
 	//座標.
@@ -366,7 +370,10 @@ void CBarrageCommand::PushButtonRender()
 	m_pCPushButtonSprite->Render(m_mView, m_mProj, m_vCameraPos);
 }
 
-void CBarrageCommand::DispDecision()
+//=================================================.
+//		表示判定処理関数.
+//=================================================.
+void CBarrageCommand::DecisionDisp()
 {
 
 }

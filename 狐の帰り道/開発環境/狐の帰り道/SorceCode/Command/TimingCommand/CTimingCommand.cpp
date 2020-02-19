@@ -1,5 +1,8 @@
 #include "CTimingCommand.h"
 
+/**************************************
+*		タイミングコマンド.
+**/
 CTimingCommand::CTimingCommand()
 	: m_pCSpriteMaru		(nullptr)
 	, m_vMaruPos			(D3DXVECTOR3(0.0f, 0.0f, 0.0f))
@@ -17,22 +20,22 @@ CTimingCommand::~CTimingCommand()
 //=========================================.
 //		更新処理関数.
 //=========================================.
-void CTimingCommand::UpDate(enCommandType CommandType) 
+void CTimingCommand::Update(enCommandType CommandType) 
 {
 
 	//表示判定処理関数.
 	if (m_penInput_Decision[STANDERD_COMMAND_USE] == enInput_Decision::Max) {
-		DispDecision();
+		DecisionDisp();
 	}
 
 	if (m_bDispFlag == true) {
 		//丸の大きさの縮小.
-		Circle_ScaleDown();
+		ScaleDownCircle();
 		//同じレーンにいればコマンド判定.
 		if (m_bCircleDispry == true && m_bJudgePossible == true) {
 			if (m_LongPushCnt == 0) {
 				//コマンド判定処理関数.
-				CommandDecision(CommandType);
+				DecisionCommand(CommandType);
 			}
 		}
 
@@ -51,20 +54,20 @@ void CTimingCommand::Render()
 	//丸.
 	if (m_bCircleDispry == true) {
 		//丸の描画処理関数.
-		CircleRender();
+		RenderCircle();
 	}
 
 	//ボタン.
 	if (m_bDispFlag == true) {
 		//ボタンの描画処理関数.
 		m_vPos.y += m_fDispHight;
-		Button_Render();
+		RenderButton();
 	}
 
 	//ボタンの光.
 	if (m_bButtonPushFlag == true && m_bButtonLightFinish == false) {
 		//ボタンを押した時の丸の描画処理関数.
-		ButtonPushRender();
+		RenderButtonPush();
 	}
 }
 
@@ -80,7 +83,7 @@ void CTimingCommand::Release()
 //==========================================.
 //		表示判定処理関数.
 //==========================================.
-void CTimingCommand::DispDecision()
+void CTimingCommand::DecisionDisp()
 {
 	if (m_vPlayerPos.z + DISPRY_DISTANCE > m_vPos.z) {
 		//ボタン画像表示.
@@ -107,7 +110,7 @@ void CTimingCommand::DispDecision()
 //==========================================.
 //		コマンド判定処理関数.
 //==========================================.
-void CTimingCommand::CommandDecision(enCommandType CommandType)
+void CTimingCommand::DecisionCommand(enCommandType CommandType)
 {
 	//敵のボタンと同じものを押したのか.
 	if (m_ButtonNum == static_cast<int>(CommandType)) {
@@ -136,7 +139,7 @@ void CTimingCommand::CommandDecision(enCommandType CommandType)
 //==========================================.
 //		円の大きさを小さくする処理関数.
 //==========================================.
-void CTimingCommand::Circle_ScaleDown()
+void CTimingCommand::ScaleDownCircle()
 {
 	m_fScale = (((m_vPos.z - START_DIFFERENCE )- m_vPlayerPos.z) / DISPRY_DISTANCE) + CIRCLE_SIZE_MIN;
 }
@@ -144,7 +147,7 @@ void CTimingCommand::Circle_ScaleDown()
 //==========================================.
 //		丸の描画処理.
 //==========================================.
-void CTimingCommand::CircleRender()
+void CTimingCommand::RenderCircle()
 {
 
 	//円画像.
@@ -192,7 +195,7 @@ void CTimingCommand::ButtonPushCircle()
 //================================================.
 //		ボタンを押したときの丸の描画処理関数.
 //================================================.
-void CTimingCommand::ButtonPushRender()
+void CTimingCommand::RenderButtonPush()
 {
 	//画像アドレス取得.
 	m_pCButtonLightSprite = m_pCResourceManager->GetSprite(CResourceSprite::enSprite::HitButton);

@@ -58,12 +58,12 @@ void CKappa::UpDate()
 	//長押しカウント.
 	m_pCCommand_Base->SetLongPushCnt(m_LongPushCnt);
 	//コマンド更新処理関数.
-	m_pCCommand_Base->UpDate(m_enCommandType);
+	m_pCCommand_Base->Update(m_enCommandType);
 	//SE再生処理関数.
-	m_pCCommand_Base->EffectAndSE_Play();
+	m_pCCommand_Base->PlayEffectAndSE();
 	//判定結果の取得.
 	for (int command = 0; command < DECISION_MAX; command++) {
-		m_enInputDecision[command] = m_pCCommand_Base->GetInput_Deision(command);
+		m_enInputDecision[command] = m_pCCommand_Base->GetInputDeision(command);
 	}
 }
 
@@ -97,10 +97,10 @@ void CKappa::Render()
 	m_pGrassMesh->Render(m_mView, m_mProj, m_vLight, m_vCameraPos);
 
 	//コマンドの描画.
-	m_pCCommand_Base->Value_Set(m_mView, m_mProj, m_vCameraPos);
+	m_pCCommand_Base->SetValue(m_mView, m_mProj, m_vCameraPos);
 	m_pCCommand_Base->Render();
 	//エフェクトの描画.
-	m_pCCommand_Base->EffectRender();
+	m_pCCommand_Base->RenderEffect();
 }
 
 //==================================.

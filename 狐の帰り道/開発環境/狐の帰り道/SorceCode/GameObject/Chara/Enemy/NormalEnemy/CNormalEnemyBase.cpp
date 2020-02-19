@@ -31,7 +31,7 @@ CNormalEnemyBase::~CNormalEnemyBase()
 //==================================.
 void CNormalEnemyBase::FlyJudge()
 {
-	m_enInputDecision[STANDERD_USE_COMMAND] = m_pCCommand_Base->GetInput_Deision();
+	m_enInputDecision[STANDERD_USE_COMMAND] = m_pCCommand_Base->GetInputDeision();
 
 	//Great,Good‚ÌŽž‚ª‚Â‚¢‚½‚Æ‚«.
 	if (m_enInputDecision[STANDERD_USE_COMMAND] == enInput_Decision::Great || 

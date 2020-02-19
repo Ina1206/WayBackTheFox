@@ -11,7 +11,7 @@
 #include "..\Effect\SparkleEffect\GoodEffect\CGoodEffect.h"
 
 /************************************************
-*		コマンドの元となるクラス.
+*		コマンド基底クラス.
 **/
 class CCommand_Base
 {
@@ -22,19 +22,19 @@ public:
 	//===================定数=======================//.
 	const int	COMMAND_DECISION_MAX	= 2;			//コマンド判定最大数.
 	const int	STANDERD_COMMAND_USE	= 0;			//基本的に使うコマンドの要素番号.
-	const float ALPHA_MAX			= 1.0f;				//透過値最大.
-	const float ALPHA_MIN			= 0.6f;				//透過値最小.
-	const float	LIGHT_SCALE_MAX		= 2.0f;				//ボタンの光の大きさ最大数.			
-	const float LIGHT_SCALE_MIN		= 1.0f;				//ボタンの光の大きさ最小値.
-	const float LIGHT_ALPHA_MAX		= 1.0f;				//ボタンの光の透過値最大値.
-	const float LIGHT_ALPHA_MIN		= 0.0f;				//ボタンの光の透過値最小値.
+	const float ALPHA_MAX				= 1.0f;			//透過値最大.
+	const float ALPHA_MIN				= 0.6f;			//透過値最小.
+	const float	LIGHT_SCALE_MAX			= 2.0f;			//ボタンの光の大きさ最大数.			
+	const float LIGHT_SCALE_MIN			= 1.0f;			//ボタンの光の大きさ最小値.
+	const float LIGHT_ALPHA_MAX			= 1.0f;			//ボタンの光の透過値最大値.
+	const float LIGHT_ALPHA_MIN			= 0.0f;			//ボタンの光の透過値最小値.
 
 	//===================関数=======================//.
-	void	Value_Set(D3DXMATRIX mView, D3DXMATRIX mProj, D3DXVECTOR3 vCamePos);	//値設定処理関数.
-	virtual void UpDate(enCommandType CommandType) = 0;								//更新処理関数.
+	void	SetValue(D3DXMATRIX mView, D3DXMATRIX mProj, D3DXVECTOR3 vCamePos);		//値設定処理関数.
+	virtual void Update(enCommandType CommandType) = 0;								//更新処理関数.
 	virtual void Render() = 0;														//描画処理関数.
-	void	EffectAndSE_Play();														//SE再生処理関数.
-	void	EffectRender();															//エフェクト描画.
+	void	PlayEffectAndSE();														//SE再生処理関数.
+	void	RenderEffect();															//エフェクト描画.
 
 	//～情報置換処理関数～.
 	//敵の個人の座標.
@@ -54,17 +54,17 @@ public:
 	//長押しカウント.
 	void	SetLongPushCnt(int Cnt) { m_LongPushCnt = Cnt; }										
 	//～情報取得処理関数～.
-	enInput_Decision GetInput_Deision(int command = 0) { return m_penInput_Decision[command]; }		
+	enInput_Decision GetInputDeision(int command = 0) { return m_penInput_Decision[command]; }		
 	bool GetButtonLightFinish() { return m_bButtonLightFinish; }
 
 protected:
 	//===================関数========================//.
-	virtual void Release() = 0;														//解放処理関数.
-	virtual void DispDecision() = 0;												//表示判定処理関数.
-	virtual void CommandDecision(enCommandType CommandType) = 0;					//コマンド判定処理関数.
+	virtual void Release() = 0;										//解放処理関数.
+	virtual void DecisionDisp() = 0;								//表示判定処理関数.
+	virtual void DecisionCommand(enCommandType CommandType) = 0;	//コマンド判定処理関数.
 
-	void	Init();																	//初期設定処理関数.
-	void	Button_Render();														//ボタン描画処理関数.
+	void	Init();													//初期設定処理関数.
+	void	RenderButton();										//ボタン描画処理関数.
 
 	//===================変数========================//.
 	D3DXVECTOR3			m_vCameraPos;			//カメラ位置.

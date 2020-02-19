@@ -66,7 +66,7 @@ void CRaccoon_Dog::UpDate()
 		//長押しカウント.
 		m_pCCommand_Base->SetLongPushCnt(m_LongPushCnt);
 		//コマンド更新処理関数.
-		m_pCCommand_Base->UpDate(m_enCommandType);
+		m_pCCommand_Base->Update(m_enCommandType);
 
 	}
 	else{
@@ -76,7 +76,7 @@ void CRaccoon_Dog::UpDate()
 	//コマンドの座標.
 	m_pCCommand_Base->SetPos(m_vPos);
 	//コマンドSEとエフェクト再生処理.
-	m_pCCommand_Base->EffectAndSE_Play();
+	m_pCCommand_Base->PlayEffectAndSE();
 }
 
 //==================================.
@@ -109,10 +109,10 @@ void CRaccoon_Dog::Render()
 	}
 
 	//コマンド描画処理.
-	m_pCCommand_Base->Value_Set(m_mView, m_mProj, m_vCameraPos);
+	m_pCCommand_Base->SetValue(m_mView, m_mProj, m_vCameraPos);
 	m_pCCommand_Base->Render();
 	//コマンドエフェクト描画処理.
-	m_pCCommand_Base->EffectRender();
+	m_pCCommand_Base->RenderEffect();
 
 }
 

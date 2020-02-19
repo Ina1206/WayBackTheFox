@@ -98,7 +98,7 @@ public:
 	//～情報獲得処理関数～.
 	D3DXVECTOR3			GetRotation() { return m_vRot; }										//角度獲得処理.
 	bool				GetCommandStart() { return m_bCommandDispStart; }						//コマンド表示開始フラグ獲得処理.
-	enInput_Decision	GetInputDecision() { return m_pCCommand_Base->GetInput_Deision(); }		//コマンド判定結果.
+	enInput_Decision	GetInputDecision() { return m_pCCommand_Base->GetInputDeision(); }		//コマンド判定結果.
 	bool				GetMoveStart() { return m_bMoveStart; }									//行動開始フラグ獲得処理.
 
 	//～情報置換処理関数～.

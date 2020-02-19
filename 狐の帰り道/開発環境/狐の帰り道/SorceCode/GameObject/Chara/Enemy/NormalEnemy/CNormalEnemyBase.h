@@ -36,7 +36,7 @@ public:
 
 	//～情報獲得処理関数～.
 	int					GetHitNum()						{ return m_HitNum; }									//当たった回数獲得処理.	
-	enInput_Decision	GetInputDecision(int num = 0)	{ return m_pCCommand_Base->GetInput_Deision(num); }		//コマンド判定結果.
+	enInput_Decision	GetInputDecision(int num = 0)	{ return m_pCCommand_Base->GetInputDeision(num); }		//コマンド判定結果.
 
 
 	//～情報置換処理関数～.

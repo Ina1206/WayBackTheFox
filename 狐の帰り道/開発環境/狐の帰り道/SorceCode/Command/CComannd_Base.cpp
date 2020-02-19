@@ -1,5 +1,8 @@
 #include "CCommand_Base.h"
 
+/************************************************
+*		コマンド基底クラス.
+**/
 CCommand_Base::CCommand_Base()
 	: m_mView				()
 	, m_mProj				()
@@ -62,7 +65,7 @@ CCommand_Base::~CCommand_Base()
 //============================================.
 //		値設定処理関数.
 //============================================.
-void CCommand_Base::Value_Set(D3DXMATRIX mView, D3DXMATRIX mProj, D3DXVECTOR3 vCamePos)
+void CCommand_Base::SetValue(D3DXMATRIX mView, D3DXMATRIX mProj, D3DXVECTOR3 vCamePos)
 {
 	//読み込みクラス.
 	m_pCResourceManager = CResourceManager::GetResourceManagerInstance();
@@ -94,7 +97,6 @@ void CCommand_Base::Init()
 	m_pCSEPlayManager = CSEPlayManager::GetSEPlayManagerInstance();
 
 	//エフェクト.
-	//エフェクトはGoodまで.
 	int effect_Max = static_cast<int>(enInput_Decision::Bad);
 	m_ppCEffectBase = new CEffectBase*[effect_Max]();
 	//クラス取得.
@@ -105,13 +107,12 @@ void CCommand_Base::Init()
 //===========================================.
 //		ボタン描画処理関数.
 //===========================================.
-void CCommand_Base::Button_Render()
+void CCommand_Base::RenderButton()
 {
-	//プレイヤーが敵と同じレーンにいるかどうか.
+	//半透明処理.
 	if (m_vPos.x == m_vPlayerPos.x) {
 		m_fAlpha = ALPHA_MAX;
 	}
-	//違うレーンにいれば半透明.
 	else {
 		m_fAlpha = ALPHA_MIN;
 	}
@@ -137,9 +138,7 @@ void CCommand_Base::Button_Render()
 	m_pCSprite->SetAlpha(m_fAlpha);
 
 	//描画.
-	//m_pCDepth_Stencil->SetDepth(false);
 	m_pCSprite->Render(m_mView, m_mProj, m_vCameraPos);
-	//m_pCDepth_Stencil->SetDepth(true);
 
 	//他に影響が出ないように戻しておく.
 	m_pCSprite->SetAlpha(ALPHA_MAX);
@@ -149,7 +148,7 @@ void CCommand_Base::Button_Render()
 //==================================================.
 //		SE再生処理関数.
 //==================================================.
-void CCommand_Base::EffectAndSE_Play()
+void CCommand_Base::PlayEffectAndSE()
 {
 	//エフェクト更新処理.
 	for (int effect = 0; effect < static_cast<int>(enInput_Decision::Bad); effect++) {
@@ -165,9 +164,9 @@ void CCommand_Base::EffectAndSE_Play()
 			//前回のコマンドと違っていたら鳴らす.
 			if (m_penInput_Decision[command] != m_penOld_Decision[command]) {
 				//判定結果.
-				int m_Decision = static_cast<int>(m_penInput_Decision[command]);					
+				const int m_Decision = static_cast<int>(m_penInput_Decision[command]);					
 				//流す音番号.
-				int m_SoundNum = m_Decision + static_cast<int>(CSoundResource::enSoundSE::Great);	
+				const int m_SoundNum = m_Decision + static_cast<int>(CSoundResource::enSoundSE::Great);	
 				
 				//エフェクト再生.
 				if (m_Decision < static_cast<int>(enInput_Decision::Bad)) {
@@ -188,7 +187,7 @@ void CCommand_Base::EffectAndSE_Play()
 //==================================================.
 //		エフェクト描画処理関数.
 //==================================================.
-void CCommand_Base::EffectRender()
+void CCommand_Base::RenderEffect()
 {
 	for (int effect = 0; effect < static_cast<int>(enInput_Decision::Bad); effect++) {
 		//描画処理関数.
