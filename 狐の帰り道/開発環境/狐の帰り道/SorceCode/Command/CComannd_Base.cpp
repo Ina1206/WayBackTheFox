@@ -153,7 +153,7 @@ void CCommand_Base::PlayEffectAndSE()
 	//エフェクト更新処理.
 	for (int effect = 0; effect < static_cast<int>(enInput_Decision::Bad); effect++) {
 		if (m_ppCEffectBase[effect]->GetEffectStartFlag() == true) {
-			m_ppCEffectBase[effect]->UpDate();
+			m_ppCEffectBase[effect]->Update();
 		}
 	}
 

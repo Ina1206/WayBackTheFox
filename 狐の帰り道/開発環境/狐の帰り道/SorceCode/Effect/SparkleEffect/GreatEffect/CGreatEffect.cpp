@@ -1,5 +1,8 @@
 #include "CGreatEffect.h"
 
+/***************************************************
+*		Great判定のエフェクト.
+*****/
 CGreatEffect::CGreatEffect()
 {
 	//初期化処理関数.

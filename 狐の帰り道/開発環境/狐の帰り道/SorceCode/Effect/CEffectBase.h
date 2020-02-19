@@ -13,7 +13,7 @@ public:
 	virtual ~CEffectBase();
 
 	//==================関数====================//.
-	virtual void	UpDate() = 0;															//更新処理関数.
+	virtual void	Update() = 0;															//更新処理関数.
 	virtual void	Render(D3DXMATRIX mView, D3DXMATRIX mProj, D3DXVECTOR3 vCamePos) = 0;	//描画処理関数.
 
 	//----- 情報置換処理関数 ----//.

@@ -52,7 +52,7 @@ void CBarrageCommand::Update(enCommandType CommandType)
 		//時間処理関数.
 		Time();
 		//エフェクト更新処理関数.
-		m_pCHitEffect->UpDate();
+		m_pCHitEffect->Update();
 	}
 
 	if (m_bBGMChange == false && m_bDispFlag == true) {

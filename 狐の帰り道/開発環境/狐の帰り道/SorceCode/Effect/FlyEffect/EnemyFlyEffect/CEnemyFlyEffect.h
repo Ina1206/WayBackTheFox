@@ -23,7 +23,7 @@ public:
 	const float ALPHA_MAX			= 1.0f;		//透過値の最大値.
 
 	//====================関数======================//.
-	void UpDate();															//更新処理関数.
+	void Update();															//更新処理関数.
 	void Render(D3DXMATRIX mView, D3DXMATRIX mProj, D3DXVECTOR3 vCamePos);	//描画処理関数.
 
 private:

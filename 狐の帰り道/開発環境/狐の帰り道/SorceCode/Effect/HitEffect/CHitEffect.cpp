@@ -1,5 +1,8 @@
 #include "CHitEffect.h"
 
+/**********************************************
+*		当たった時のエフェクト.
+**/
 CHitEffect::CHitEffect()
 	: m_fMoving_Distance	(0.0f)
 	, m_enMoveType			(enMoveType::Right)
@@ -18,7 +21,7 @@ CHitEffect::~CHitEffect()
 //========================================.
 //		更新処理関数.
 //========================================.
-void CHitEffect::UpDate()
+void CHitEffect::Update()
 {
 	//表示しているとき.
 	if (m_bDispFlag == true) {

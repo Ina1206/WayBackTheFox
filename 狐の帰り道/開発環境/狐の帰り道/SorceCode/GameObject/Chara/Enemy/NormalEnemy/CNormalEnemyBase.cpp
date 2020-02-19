@@ -82,6 +82,6 @@ void CNormalEnemyBase::FlyMove()
 	//ˆÊ’uÝ’è.
 	m_pCEnemyFlyEffect->SetCenterPos(m_vPos);
 	//XVˆ—ŠÖ”.
-	m_pCEnemyFlyEffect->UpDate();
+	m_pCEnemyFlyEffect->Update();
 }
 

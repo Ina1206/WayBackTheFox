@@ -1,5 +1,8 @@
 #include "CLongPushEffect.h"
 
+/*****************************************
+*		長押し時のエフェクトクラス.
+***/
 CLongPushEffect::CLongPushEffect()
 	: m_PopTime_Cnt			(0)
 	, m_pbIndividual_Disp	(nullptr)
@@ -17,7 +20,7 @@ CLongPushEffect::~CLongPushEffect()
 //============================.
 //		更新処理関数.
 //============================.
-void CLongPushEffect::UpDate()
+void CLongPushEffect::Update()
 {
 	//表示処理関数.
 	Disp();
@@ -99,7 +102,7 @@ void CLongPushEffect::Disp()
 		for (int sparkle = 0; sparkle < SPARKLE_MAX; sparkle++) {
 			if (m_pbIndividual_Disp[sparkle] == false && m_Sparkle_Cnt < SPARKLE_HORIZON_MAX) {
 				//位置座標設定処理関数.
-				Position_Setting(sparkle);
+				SettingPosition(sparkle);
 				m_pbIndividual_Disp[sparkle] = true;
 				//カウント.
 				m_Sparkle_Cnt++;
@@ -113,7 +116,7 @@ void CLongPushEffect::Disp()
 //============================.
 //		個別表示フラグ.
 //============================.
-void CLongPushEffect::Position_Setting(int sparkle) 
+void CLongPushEffect::SettingPosition(int sparkle)
 {
 	//引く値(奇数になれば引く).
 	float Start_Distance = ((sparkle / SPARKLE_HORIZON_MAX) % 2) * INTERVAL.x;		//左側.

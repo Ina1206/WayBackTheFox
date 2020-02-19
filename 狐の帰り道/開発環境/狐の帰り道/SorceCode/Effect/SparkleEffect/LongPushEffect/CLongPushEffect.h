@@ -27,14 +27,14 @@ public:
 	const float			SCALING_SPEED		= 0.02f;						//拡縮の速度.
 
 	//====================関数========================//.
-	void UpDate();															//更新処理関数.
+	void Update();															//更新処理関数.
 	void Render(D3DXMATRIX mView, D3DXMATRIX mProj, D3DXVECTOR3 vCamePos);	//描画処理関数.
 private:
 	//====================関数=======================//.
 	void Init();							//初期化処理関数.
 	void Release();							//解放処理関数.
 	void Disp();							//表示処理関数.
-	void Position_Setting(int sparkle);		//位置座標設定関数.
+	void SettingPosition(int sparkle);		//位置座標設定関数.
 	void Move();							//移動処理関数.
 	void Scaling(int sparkle);				//拡縮処理関数.
 

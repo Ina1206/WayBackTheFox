@@ -22,7 +22,7 @@ CSparkleEffect::~CSparkleEffect()
 //===========================================.
 //		更新処理関数.
 //===========================================.
-void CSparkleEffect::UpDate()
+void CSparkleEffect::Update()
 {
 	//フラグが変わってすぐ.
 	if (m_bDispFlag != m_bOldDispFlag) {

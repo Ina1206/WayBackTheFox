@@ -25,9 +25,9 @@ public:
 
 protected:
 	//==================ŠÖ”=======================//.
-	void SmokeDisp();						//‰Œ‚Ì•\¦ˆ—ŠÖ”.
+	void DispSmoke();						//‰Œ‚Ì•\¦ˆ—ŠÖ”.
 	void SetPosition(int smoke);			//ˆÊ’uİ’èˆ—ŠÖ”.
-	void SmokeMove(int smoke);				//‰Œ‚Ì“®‚«ˆ—ŠÖ”.
+	void MoveSmoke(int smoke);				//‰Œ‚Ì“®‚«ˆ—ŠÖ”.
 	void Ratation(int smoke,bool CameraRot);//‰Œ‚Ì‰ñ“]ˆ—ŠÖ”.
 
 	//==================•Ï”=======================//.

@@ -1,5 +1,8 @@
 #include "CEffectBase.h"
 
+/***********************************************
+*		エフェクト元クラス.
+**/
 CEffectBase::CEffectBase()
 	: m_vCenterPos			(D3DXVECTOR3(0.0f, 0.0f, 0.0f))
 	, m_pvPos				(nullptr)

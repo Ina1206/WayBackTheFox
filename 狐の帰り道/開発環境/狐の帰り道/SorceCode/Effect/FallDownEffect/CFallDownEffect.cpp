@@ -1,5 +1,8 @@
 #include "CFallDownEffect.h"
 
+/**********************************
+*		倒れる時のエフェクト.
+********/
 CFallDownEffect::CFallDownEffect()
 	: m_pfAlpha			(nullptr)
 	, m_pFadeStartCnt	(nullptr)
@@ -20,7 +23,7 @@ CFallDownEffect::~CFallDownEffect()
 //====================================.
 //		更新処理関数.
 //====================================.
-void CFallDownEffect::UpDate()
+void CFallDownEffect::Update()
 {
 	if (m_bDispFlag != m_bOldDispFlag) {
 		//表示処理関数.
@@ -156,7 +159,7 @@ void CFallDownEffect::Move()
 
 		if (m_pFadeStartCnt[smoke] >= FADE_WAIT_TIME) {
 			//透過値の変更処理関数.
-			AlphaChange(smoke);
+			ChangeAlpha(smoke);
 		}
 		else {
 			m_pFadeStartCnt[smoke]++;
@@ -177,7 +180,7 @@ void CFallDownEffect::Scaling(int smoke)
 //=======================================.
 //		透過値の変更処理関数.
 //=======================================.
-void CFallDownEffect::AlphaChange(int smoke)
+void CFallDownEffect::ChangeAlpha(int smoke)
 {
 	if (m_pfAlpha[smoke] > ALPHA_MIN) {
 		m_pfAlpha[smoke] -= ALPHA_SPEED;
@@ -190,9 +193,9 @@ void CFallDownEffect::AlphaChange(int smoke)
 void CFallDownEffect::Rotation(int smoke)
 {
 	//左右の回転方向.
-	int Direction = -1;
+	int Direction = LEFT_DIRECTION;
 	if (smoke >= SMOKE_MAX / 2) {
-		Direction = 1;
+		Direction = RIGHT_DIRECTION;
 	}
 	m_pvRot[smoke].z += Direction * ROTATION_SPEED;
 

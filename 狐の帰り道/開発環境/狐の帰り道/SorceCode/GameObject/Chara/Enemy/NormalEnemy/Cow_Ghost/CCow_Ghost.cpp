@@ -135,7 +135,7 @@ void CCow_Ghost::Move()
 	}
 	//================================.
 	//	エフェクト.
-	m_pCEffectBase->UpDate();
+	m_pCEffectBase->Update();
 
 }
 

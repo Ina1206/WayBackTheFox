@@ -1,5 +1,8 @@
 #include "CLandingEffect.h"
 
+/*************************************
+*		着地エフェクトクラス.
+***************/
 CLandingEffect::CLandingEffect()
 	: m_pfAlpha	(nullptr)
 {
@@ -16,7 +19,7 @@ CLandingEffect::~CLandingEffect()
 //================================.
 //		更新処理関数.
 //================================.
-void CLandingEffect::UpDate()
+void CLandingEffect::Update()
 {
 	if (m_bDispFlag != m_bOldDispFlag) {
 		for (int smoke = 0; smoke < SMOKE_MAX; smoke++) {
@@ -108,8 +111,10 @@ void CLandingEffect::Position_Setting(int smoke)
 void CLandingEffect::Move()
 {
 	for (int smoke = 0; smoke < SMOKE_MAX; smoke++) {
+		//左方向.
+		const int LeftDirection = -1;
 		//移動方向(外側に移動).
-		int TravelDirection = -1 + ((smoke % 2) * 2);
+		const int TravelDirection = LeftDirection + ((smoke % 2) * 2);
 		//移動処理.
 		m_pvPos[smoke].x += MOVE_SPEED.x * TravelDirection;
 		m_pvPos[smoke].y += MOVE_SPEED.y;

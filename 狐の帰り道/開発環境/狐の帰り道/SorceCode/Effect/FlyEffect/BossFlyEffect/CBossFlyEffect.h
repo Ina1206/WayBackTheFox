@@ -34,7 +34,7 @@ public:
 	const float MOVE_UPPER_LIMIT	= 0.7f;				//移動上限値.
 
 	//================関数==================//.
-	void UpDate();															//更新処理関数.
+	void Update();															//更新処理関数.
 	void Render(D3DXMATRIX mView, D3DXMATRIX mProj, D3DXVECTOR3 vCamePos);	//描画処理関数.
 private:
 	//================関数==================//.

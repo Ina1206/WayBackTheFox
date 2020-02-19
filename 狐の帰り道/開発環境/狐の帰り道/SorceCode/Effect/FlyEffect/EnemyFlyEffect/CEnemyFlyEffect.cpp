@@ -1,5 +1,8 @@
 #include "CEnemyFlyEffect.h"
 
+/*************************************
+*		敵が飛ぶ時のエフェクト.
+*******/
 CEnemyFlyEffect::CEnemyFlyEffect()
 {
 	//初期化処理関数.
@@ -15,10 +18,10 @@ CEnemyFlyEffect::~CEnemyFlyEffect()
 //=======================================.
 //		更新処理関数.
 //=======================================.
-void CEnemyFlyEffect::UpDate()
+void CEnemyFlyEffect::Update()
 {
 	//煙の表示処理関数.
-	SmokeDisp();
+	DispSmoke();
 	//煙の回転処理関数.
 	for (int smoke = 0; smoke < SMOKE_MAX; smoke++) {
 		Ratation(smoke, false);
@@ -91,11 +94,11 @@ void CEnemyFlyEffect::Release()
 	}
 
 	//解放.
-	SAFE_DELETE_ARRAY(m_pbSmokeDispFlag);	//煙が出るフラグ.
-	SAFE_DELETE_ARRAY(m_pfAlpha);			//透過値.
-	SAFE_DELETE_ARRAY(m_ppCSprite);			//スプライトクラス.
-	SAFE_DELETE_ARRAY(m_pfScale);			//大きさ.
-	SAFE_DELETE_ARRAY(m_pvRot);				//角度.
-	SAFE_DELETE_ARRAY(m_pvPos);				//座標.
+	SAFE_DELETE_ARRAY(m_pbSmokeDispFlag);	
+	SAFE_DELETE_ARRAY(m_pfAlpha);			
+	SAFE_DELETE_ARRAY(m_ppCSprite);			
+	SAFE_DELETE_ARRAY(m_pfScale);			
+	SAFE_DELETE_ARRAY(m_pvRot);				
+	SAFE_DELETE_ARRAY(m_pvPos);				
 }
 

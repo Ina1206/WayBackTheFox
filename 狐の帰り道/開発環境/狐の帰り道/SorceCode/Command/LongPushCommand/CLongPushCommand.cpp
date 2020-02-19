@@ -94,7 +94,7 @@ void CLongPushCommand::Update(enCommandType CommandType)
 			m_pCEffectBase->SetEffectStart(true);
 		}
 		//エフェクト更新処理関数.
-		m_pCEffectBase->UpDate();
+		m_pCEffectBase->Update();
 	}
 	//鳴らしている場合.
 	else if(m_bSoundCheck == true){

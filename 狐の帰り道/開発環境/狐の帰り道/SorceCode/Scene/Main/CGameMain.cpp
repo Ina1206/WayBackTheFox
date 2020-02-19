@@ -153,7 +153,7 @@ void CGameMain::UpDate()
 	m_PointSum = m_pCEnemyManager->GetPoint_WholeSum();
 
 	//------------ エフェクト試し ------------//.
-	m_pCEffectBase->UpDate();
+	m_pCEffectBase->Update();
 }
 
 //=====================================.

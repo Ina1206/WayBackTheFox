@@ -452,7 +452,7 @@ void CPlayer::Jump()
 	for (int effect = 0; effect < EFFECT_MAX; effect++) {
 		//エフェクト更新処理関数.
 		if (m_ppCEffectBase[effect]->GetEffectStartFlag() == true) {
-			m_ppCEffectBase[effect]->UpDate();
+			m_ppCEffectBase[effect]->Update();
 		}
 	}
 }

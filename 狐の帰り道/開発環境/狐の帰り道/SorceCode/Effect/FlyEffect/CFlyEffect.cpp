@@ -1,5 +1,8 @@
 #include "CFlyEffect.h"
 
+/**********************************************
+*		飛ぶエフェクトクラス.
+*****/
 CFlyEffect::CFlyEffect()
 	: m_pfAlpha				(nullptr)
 	, m_fStartPos_x			(0.0f)
@@ -20,7 +23,7 @@ CFlyEffect::~CFlyEffect()
 //=========================================.
 //		煙の表示処理関数.
 //=========================================.
-void CFlyEffect::SmokeDisp()
+void CFlyEffect::DispSmoke()
 {
 	//出現時間になるまでカウント.
 	m_DispCnt++;
@@ -42,7 +45,7 @@ void CFlyEffect::SmokeDisp()
 	for (int smoke = 0; smoke < m_SmokeMax; smoke++) {
 		if (m_pbSmokeDispFlag[smoke] == true) {
 			//煙の動きの処理.
-			SmokeMove(smoke);
+			MoveSmoke(smoke);
 		}
 	}
 
@@ -65,7 +68,7 @@ void CFlyEffect::SetPosition(int smoke)
 //=========================================.
 //		煙の動き処理関数.
 //=========================================.
-void CFlyEffect::SmokeMove(int smoke)
+void CFlyEffect::MoveSmoke(int smoke)
 {
 	//拡大と透過.
 	if (m_pfScale[smoke] < m_fMax_Scale) {

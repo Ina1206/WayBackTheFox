@@ -119,7 +119,7 @@ void CBig_Raccoon_Dog::UpDate()
 	m_pCCommand_Base->PlayEffectAndSE();
 
 	//パンチされた時のエフェクト更新処理関数.
-	m_ppCEffectBase[PUNCH_EFFECT_NUM]->UpDate();
+	m_ppCEffectBase[PUNCH_EFFECT_NUM]->Update();
 
 	//コマンド成功時.
 	if (m_enInputDecision == enInput_Decision::Good || 
@@ -299,7 +299,7 @@ void CBig_Raccoon_Dog::HitMove()
 	//エフェクト表示.
 	m_ppCEffectBase[HIT_FLY_EFFECT_NUM]->SetEffectStart(true);
 	//エフェクト更新処理.
-	m_ppCEffectBase[HIT_FLY_EFFECT_NUM]->UpDate();
+	m_ppCEffectBase[HIT_FLY_EFFECT_NUM]->Update();
 
 }
 
@@ -333,7 +333,7 @@ void CBig_Raccoon_Dog::FALL_DOWN()
 		//エフェクト処理.
 		m_ppCEffectBase[FALLDOWN_EFFECT_NUM]->SetCenterPos(m_vPos);
 		m_ppCEffectBase[FALLDOWN_EFFECT_NUM]->SetEffectStart(true);
-		m_ppCEffectBase[FALLDOWN_EFFECT_NUM]->UpDate();
+		m_ppCEffectBase[FALLDOWN_EFFECT_NUM]->Update();
 	}
 
 }

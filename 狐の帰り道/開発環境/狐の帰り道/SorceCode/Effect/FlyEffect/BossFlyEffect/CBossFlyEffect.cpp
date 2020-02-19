@@ -1,5 +1,8 @@
 #include "CBossFlyEffect.h"
 
+/****************************************
+*		ボスが飛ぶ時のエフェクト.
+****/
 CBossFlyEffect::CBossFlyEffect()
 	: m_pfMoveSpeed			(nullptr)
 	, m_pbIndiviDispFlag	(nullptr)
@@ -19,7 +22,7 @@ CBossFlyEffect::~CBossFlyEffect()
 //=============================================.
 //		更新処理関数.
 //=============================================.
-void CBossFlyEffect::UpDate()
+void CBossFlyEffect::Update()
 {
 	//表示判定処理関数.
 	Disp();
@@ -181,14 +184,14 @@ void CBossFlyEffect::Rotation()
 {
 	for (int smoke = 0; smoke < SMOKE_MAX; smoke++) {
 		//煙が並んだ時の縦の番号.
-		int m_fVerticalNum	= smoke / 2;
+		const int m_fVerticalNum	= smoke / 2;
 		//両端から中央までを基準にした番号.
-		float m_fSmokeNum	= SMOKE_QUATER - m_fVerticalNum;
-		//回転する方向(正か負か).
-		float m_fRotationDirection =  (fabsf(m_fSmokeNum)/ m_fSmokeNum) * RIGHT_ROTATION_NUM;
+		const float m_fSmokeNum	= SMOKE_QUATER - m_fVerticalNum;
 		//回転する方向がない場合は左回転.
-		if (m_fSmokeNum == 0) {
-			m_fRotationDirection = RIGHT_ROTATION_NUM;
+		float m_fRotationDirection = RIGHT_ROTATION_NUM;
+		if (m_fSmokeNum != 0) {
+			//回転する方向(正か負か).
+			m_fRotationDirection =  (fabsf(m_fSmokeNum)/ m_fSmokeNum) * RIGHT_ROTATION_NUM;
 		}
 
 		m_pvRot[smoke].z += m_fRotationDirection * ROTATION_SPEED;

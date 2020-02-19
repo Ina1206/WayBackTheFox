@@ -1,5 +1,8 @@
 #include "CHorizonMoveEffect.h"
 
+/****************************************
+*		横移動時のエフェクトクラス.
+******/
 CHorizonMoveEffect::CHorizonMoveEffect()
 	: m_pfAlpha				(nullptr)
 	, m_pbPerson_DispFlag	(nullptr)
@@ -20,7 +23,7 @@ CHorizonMoveEffect::~CHorizonMoveEffect()
 //======================================.
 //		更新処理関数.
 //======================================.
-void CHorizonMoveEffect::UpDate()
+void CHorizonMoveEffect::Update()
 {
 	if (m_vCenterPos.x != m_vOldCenterPos.x) {
 		m_PopCnt++;

@@ -26,7 +26,7 @@ public:
 	const float			CENTER_ADJUST_X		= 0.1f;						//中心x軸の調整.
 
 	//======================関数==========================//.
-	void UpDate();															//更新処理関数.
+	void Update();															//更新処理関数.
 	void Render(D3DXMATRIX mView, D3DXMATRIX mProj, D3DXVECTOR3 vCamePos);	//描画処理関数.
 private:
 	void Init();					//初期化処理関数.

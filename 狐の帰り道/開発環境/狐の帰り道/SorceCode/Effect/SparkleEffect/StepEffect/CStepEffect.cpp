@@ -1,5 +1,8 @@
 #include "CStepEffect.h"
 
+/**************************************
+*	敵を踏むときのエフェクトクラス.
+******/
 CStepEffect::CStepEffect()
 {
 	//初期化処理関数.
@@ -42,19 +45,19 @@ void CStepEffect::Render(D3DXMATRIX mView, D3DXMATRIX mProj, D3DXVECTOR3 vCamePo
 void CStepEffect::Init()
 {
 	//配列動的確保.
-	m_pvPos				= new D3DXVECTOR3[SPARKLE_MAX]();	//位置.
-	m_pvRot				= new D3DXVECTOR3[SPARKLE_MAX]();	//角度.
-	m_pfScale			= new float[SPARKLE_MAX]();			//大きさ.
-	m_ppCSprite			= new CSprite*[SPARKLE_MAX]();		//スプライトクラス.
-	m_penScalingType	= new enScalingType[SPARKLE_MAX]();	//拡縮処理のタイプ.
+	m_pvPos				= new D3DXVECTOR3[SPARKLE_MAX]();	
+	m_pvRot				= new D3DXVECTOR3[SPARKLE_MAX]();	
+	m_pfScale			= new float[SPARKLE_MAX]();			
+	m_ppCSprite			= new CSprite*[SPARKLE_MAX]();		
+	m_penScalingType	= new enScalingType[SPARKLE_MAX]();	
 
 	//初期化.
 	for (int sparkle = 0; sparkle < SPARKLE_MAX; sparkle++) {
-		m_pvPos[sparkle]			= D3DXVECTOR3(0.0f, 0.0f, 0.0f);	//位置.
-		m_pvRot[sparkle]			= D3DXVECTOR3(0.0f, 0.0f, 0.0f);	//角度.
-		m_pfScale[sparkle]			= 0.5f;								//大きさ.
-		m_ppCSprite[sparkle]		= nullptr;							//スプライトクラス.
-		m_penScalingType[sparkle]	= enScalingType::Large;				//拡縮処理のタイプ.
+		m_pvPos[sparkle]			= D3DXVECTOR3(0.0f, 0.0f, 0.0f);	
+		m_pvRot[sparkle]			= D3DXVECTOR3(0.0f, 0.0f, 0.0f);	
+		m_pfScale[sparkle]			= 0.5f;								
+		m_ppCSprite[sparkle]		= nullptr;							
+		m_penScalingType[sparkle]	= enScalingType::Large;				
 	}
 
 	//値設定.

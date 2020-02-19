@@ -48,8 +48,11 @@ public:
 	const float CONTROL_POINT_END	= -2.0f;	//制御点の最後.
 	const float CONTROL_ADJUST_HEI	= 0.02f;	//制御点の微調整.
 
+	const int	LEFT_DIRECTION		= -1;		//左方向.
+	const int	RIGHT_DIRECTION		= 1;		//右方向.
+
 	//======================関数============================//.
-	void UpDate();															//更新処理関数.
+	void Update();															//更新処理関数.
 	void Render(D3DXMATRIX mView, D3DXMATRIX mProj, D3DXVECTOR3 vCamePos);	//描画処理関数.
 private:
 	//======================関数============================//.
@@ -58,7 +61,7 @@ private:
 	void Disp();															//表示処理関数.
 	void Move();															//行動処理関数.
 	void Scaling(int smoke);												//大きさ変更処理関数.
-	void AlphaChange(int smoke);											//透過値の変更処理関数.
+	void ChangeAlpha(int smoke);											//透過値の変更処理関数.
 	void Rotation(int smoe);												//煙の回転処理関数.
 
 	//======================変数============================//.

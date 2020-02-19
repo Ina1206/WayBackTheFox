@@ -1,5 +1,8 @@
 #include "CGoodEffect.h"
 
+/*********************************************
+*		Good判定のエフェクト.
+***/
 CGoodEffect::CGoodEffect()
 {
 	//初期化処理関数.

@@ -1,5 +1,8 @@
 #include "CPunchEffect.h"
 
+/**********************************************
+*		パンチエフェクトクラス.
+*****/
 CPunchEffect::CPunchEffect()
 	: m_StartNum	(0)
 	, m_pbDispFlag	(nullptr)
@@ -18,7 +21,7 @@ CPunchEffect::~CPunchEffect()
 //========================================.
 //		更新処理関数.
 //========================================.
-void CPunchEffect::UpDate()
+void CPunchEffect::Update()
 {
 
 	if (m_bDispFlag != m_bOldDispFlag) {
