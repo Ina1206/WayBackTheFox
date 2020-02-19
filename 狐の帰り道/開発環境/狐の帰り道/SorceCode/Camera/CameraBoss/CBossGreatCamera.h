@@ -29,6 +29,7 @@ public:
 	const float			SWING_CAMERA_SPEED		= 0.05f;										//カメラが揺れる速度.
 	const int			UP_DIRECTION_NUM		= 1;											//上方向の番号.
 	const int			CHANGE_DIRECTION_NUM	= -1;											//カメラの方向変更数値.
+	const float			PLAYER_LOOK_SPEED		= 0.02f;										//プレイヤーの見る速度.
 
 	//=================列挙体===================//.
 	//カメラの種類.

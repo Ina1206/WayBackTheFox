@@ -40,17 +40,14 @@ void CBossGreatCamera::Move()
 {	
 	//カメラの種類ごとに見るものの変更.
 	switch (m_enCameraType) {
-	//ボスを見ているとき.
 	case enCameraType::Boss:
 		//ボスが飛ぶ時のカメラ移動.
 		BossFlyMove();
 		break;
-	//プレイヤーを見ているとき.
 	case enCameraType::Player:
 		//プレイヤーを見るカメラ移動.
 		PlayerLook();
 		break;
-	//カメラを戻す.
 	case enCameraType::Return:
 		//戻る処理関数.
 		Return();
@@ -76,7 +73,6 @@ void CBossGreatCamera::Return()
 		//少し待つ.
 		m_WaitTime++;
 		if (m_WaitTime > WAIT_TIME) {
-			//Playerを見るカメラへ.
 			m_enCameraType = enCameraType::Player;
 		}
 
@@ -120,11 +116,11 @@ void CBossGreatCamera::PlayerLook()
 {
 	//カメラ移動.
 	if (m_Camera.vPos.x < PLAYER_CAMERA_POS.x ) {
-		m_Camera.vPos += D3DXVECTOR3(PLAYER_RATIO_HORIZON, -PLAYER_RATIO_HEIGHT, PLAYER_RATIO_BACK) * 0.02f;
+		m_Camera.vPos += D3DXVECTOR3(PLAYER_RATIO_HORIZON, -PLAYER_RATIO_HEIGHT, PLAYER_RATIO_BACK) * PLAYER_LOOK_SPEED;
 	}
 	//注視点移動.
 	if (m_Camera.vLook.y < m_vTargetPos.y + PLAYER_LOOK_ASSIST.y) {
-		m_Camera.vLook.y -= ((m_vTargetPos.y + PLAYER_LOOK_ASSIST.y) / CAMERA_MOVE_ORIGIN) * 0.02f;
+		m_Camera.vLook.y -= ((m_vTargetPos.y + PLAYER_LOOK_ASSIST.y) / CAMERA_MOVE_ORIGIN) * PLAYER_LOOK_SPEED;
 	}
 	else {
 		//プレイヤーを追う.

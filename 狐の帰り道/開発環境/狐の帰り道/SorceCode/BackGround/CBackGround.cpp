@@ -1,5 +1,8 @@
 #include "CBackGround.h"
 
+/********************************************
+*		背景オブジェクトクラス.
+*****/
 CBackGround::CBackGround()
 	: m_pCDx9Mesh(nullptr)
 {
@@ -33,6 +36,7 @@ void CBackGround::Render(D3DXMATRIX& mView, D3DXMATRIX& mProj, D3DXVECTOR3& vLig
 //==================================.
 void CBackGround::Init()
 {
+	//背景のオブジェクトアドレス取得.
 	CResourceManager* m_pCResoueceManager = CResourceManager::GetResourceManagerInstance();
 	m_pCDx9Mesh = m_pCResoueceManager->GetStaticMesh(CResourceStaticMesh::enStaticMesh::BackGround);
 }

@@ -11,6 +11,7 @@ CCameraManager::CCameraManager()
 	, m_bChangeMove			(false)
 	, m_vTargetPos			(D3DXVECTOR3(0.0f, 0.0f, 0.0f))
 {
+	//開始時は標準カメラで.
 	m_pCCamera = new CStanderdCamera();
 }
 
@@ -59,10 +60,13 @@ void CCameraManager::ChangeCamera()
 //================================.
 void CCameraManager::UpDate()
 {
+	//ビュー行列変換処理関数.
 	m_pCCamera->Change_mView();
+
 	m_pCCamera->SetTargetPos(m_vTargetPos);
 	m_pCCamera->UpDate(m_bChangeMove);
 
+	//値取得.
 	m_vPos = m_pCCamera->GetCameraPos();
 	m_mView = m_pCCamera->GetMATRIX_View();
 }
