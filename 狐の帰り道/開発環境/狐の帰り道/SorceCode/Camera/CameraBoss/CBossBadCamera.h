@@ -15,7 +15,7 @@ public:
 
 
 	//==================関数=====================//.
-	void UpDate(bool CameraFlag);	//更新処理関数.
+	void Update(bool CameraFlag);	//更新処理関数.
 private:
 	//==================関数=====================//.
 	void Move();					//移動処理関数.

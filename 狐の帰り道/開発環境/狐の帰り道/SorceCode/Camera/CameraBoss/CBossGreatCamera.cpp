@@ -27,7 +27,7 @@ CBossGreatCamera::~CBossGreatCamera()
 //======================================.
 //		XVˆ—ŠÖ”.
 //======================================.
-void CBossGreatCamera::UpDate(bool CameraFlag)
+void CBossGreatCamera::Update(bool CameraFlag)
 {
 	//ˆÚ“®ˆ—ŠÖ”.
 	Move();

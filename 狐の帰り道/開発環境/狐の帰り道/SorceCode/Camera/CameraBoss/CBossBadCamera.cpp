@@ -1,5 +1,8 @@
 #include "CBossBadCamera.h"
 
+/*******************************************
+*		ボス戦のカメラ.
+**/
 CBossBadCamera::CBossBadCamera()
 {
 	//最初のカメラの設定.
@@ -14,7 +17,7 @@ CBossBadCamera::~CBossBadCamera()
 //===================================.
 //		更新処理関数.
 //===================================.
-void CBossBadCamera::UpDate(bool CameraFlag)
+void CBossBadCamera::Update(bool CameraFlag)
 {
 	//移動処理関数.
 	Move();

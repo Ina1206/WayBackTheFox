@@ -35,12 +35,12 @@ public:
 
 
 	//================関数====================//.
-	void Change_mView();												//ビュー変換処理関数.
-	virtual void UpDate(bool CameraFlag) = 0;							//更新処理関数.
+	void ChangeView();													//ビュー変換処理関数.
+	virtual void Update(bool CameraFlag) = 0;							//更新処理関数.
 
 	//===========情報取得処理関数==============//.
 	D3DXVECTOR3 GetCameraPos() { return m_Camera.vPos; }				//カメラ座標.
-	D3DXMATRIX	GetMATRIX_View() { return m_mView; }					//ビュー行列.
+	D3DXMATRIX	GetMatrixView() { return m_mView; }					//ビュー行列.
 	bool		GetCameraChangeFlag() { return m_CameraChangeFlag; }	//カメラ種類変更フラグ.
 	
 	//===========情報置換処理関数==============//.

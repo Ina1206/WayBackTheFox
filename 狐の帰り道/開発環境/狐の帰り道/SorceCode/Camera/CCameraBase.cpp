@@ -15,7 +15,7 @@ CCameraBase::~CCameraBase()
 //=====================================.
 //		ビュー変換処理関数.
 //=====================================.
-void CCameraBase::Change_mView()
+void CCameraBase::ChangeView()
 {
 	//ビュー(カメラ)変換.
 	D3DXVECTOR3 vUpVec(UP_VECTOR);	//上方(ベクトル).

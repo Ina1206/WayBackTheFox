@@ -1,6 +1,9 @@
 #include "CStanderdCamera.h"
 
 
+/*******************************************
+*	基準のカメラ.
+**/
 CStanderdCamera::CStanderdCamera()
 {
 	//初期位置.
@@ -15,7 +18,7 @@ CStanderdCamera::~CStanderdCamera()
 //=======================================.
 //		更新処理関数.
 //=======================================.
-void CStanderdCamera::UpDate(bool CameraFlag)
+void CStanderdCamera::Update(bool CameraFlag)
 {
 	//行動処理関数.
 	Move();

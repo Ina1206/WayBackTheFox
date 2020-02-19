@@ -1,5 +1,8 @@
 #include "CUpCamera.h"
 
+/*******************************************
+*		上に上がるカメラ.
+**/
 CUpCamera::CUpCamera()
 {
 	//初期位置.
@@ -14,7 +17,7 @@ CUpCamera::~CUpCamera()
 //=================================.
 //		更新処理関数.
 //=================================.
-void CUpCamera::UpDate(bool CameraFlag)
+void CUpCamera::Update(bool CameraFlag)
 {
 	if (CameraFlag == true) {
 		//行動処理関数.
