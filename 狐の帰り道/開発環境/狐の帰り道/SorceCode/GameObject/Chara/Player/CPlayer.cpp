@@ -38,7 +38,7 @@ CPlayer::~CPlayer()
 }
 
 //‰ŠúÝ’èŠÖ”.
-void CPlayer::Init_Process()
+void CPlayer::InitProcess()
 {
 	m_PlayerParam.m_vPos	= D3DXVECTOR3(0.0f, 0.0f, POISITION_Z);
 	m_PlayerParam.m_vOldPos = m_PlayerParam.m_vPos;
@@ -65,7 +65,7 @@ void CPlayer::Init_Process()
 //===================================.
 //XVˆ—ŠÖ”.
 //===================================.
-void CPlayer::UpDate()
+void CPlayer::Update()
 {
 	m_pCInput->UpdateStatus();//‚±‚ê“ü‚ê‚È‚¢‚Æ“®‚©‚È‚¢.
 

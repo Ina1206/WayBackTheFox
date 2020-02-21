@@ -39,8 +39,8 @@ public:
 	const float	GAET_DISP_DISTANCE		= 25.0f;		//門の表示距離.
 
 	//==========関数=========//.	
-	void Init_Process();								//初期化処理関数.
-	void UpDate();										//更新処理関数.
+	void InitProcess();								//初期化処理関数.
+	void Update();										//更新処理関数.
 	void Render();										//描画処理関数.
 	void Release();										//解放処理関数.
 
@@ -75,7 +75,7 @@ public:
 private:
 	//===========関数=========//.
 	void Move();										//移動処理関数.
-	void Scroll_Speed_Deceleration();					//スクロールスピードの減速処理関数.
+	void ScrollSpeedDeceleration();					//スクロールスピードの減速処理関数.
 	void Swing();										//揺れる処理関数.
 
 	//=========クラス========//.

@@ -36,8 +36,8 @@ public:
 	~CPlayer();	//デストラクタ.
 
 	//=============関数==================//.
-	void Init_Process();			//初期設定関数.
-	void UpDate();					//更新処理関数.
+	void InitProcess();			//初期設定関数.
+	void Update();					//更新処理関数.
 	void Render();					//描画処理関数.
 	void Release();					//解放処理関数.
 	void Progress();				//前進処理.

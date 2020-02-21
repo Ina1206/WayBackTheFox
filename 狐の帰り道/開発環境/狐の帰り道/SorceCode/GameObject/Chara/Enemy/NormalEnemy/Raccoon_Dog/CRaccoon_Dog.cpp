@@ -90,7 +90,7 @@ void CRaccoon_Dog::Render()
 	//‰e‚Ì•`‰æ.
 	if (m_vPos.y < SHADOW_UP_LIMIT) {
 		m_vShadowPos = m_vPos;
-		ShadowRender();
+		RenderShadow();
 	}
 	//ˆÊ’u.
 	m_pRacconAnim->SetPosition(m_vPos);

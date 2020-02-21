@@ -31,18 +31,18 @@ void CGameMain::Init_Process()
 {
 	//---------プレイヤー-------//.
 	m_pCPlayer = new CPlayer();
-	m_pCPlayer->Init_Process();
+	m_pCPlayer->InitProcess();
 
 	//-------------敵-------------//.
 	m_pCEnemyManager = new CEnemyManager();
-	m_pCEnemyManager->Init_Process();
+	m_pCEnemyManager->InitProcess();
 
 	//------------背景------------//.
 	m_pCBackGround = new CBackGround();
 
 	//------------地面------------//.
 	m_pCGround = new CGround();
-	m_pCGround->Init_Process();
+	m_pCGround->InitProcess();
 	//ゲートの設定.
 	m_pCGround->SetGatePosition(m_pCEnemyManager->GetEnemyPos(static_cast<int>(enEnemy::Big_RaccoonDog)));
 
@@ -80,7 +80,7 @@ void CGameMain::UpDate()
 {
 	//-----------カメラ-----------//.
 	//長押しを押したかどうかのフラグ.
-	m_pCEnemyManager->CameraUpJudge();
+	m_pCEnemyManager->JudgeCameraUp();
 	m_pCCameraManager->SetChangeCamera(m_pCEnemyManager->GetMoveUpCamera());
 	m_pCCameraManager->SetLongPush(m_pCEnemyManager->GetMoveUpCamera());
 	//コマンド判定.
@@ -96,7 +96,7 @@ void CGameMain::UpDate()
 
 
 	//----------プレイヤー---------//.
-	m_pCPlayer->UpDate();
+	m_pCPlayer->Update();
 	m_pCPlayer->SetFixedPosFlag(m_pCEnemyManager->GetDeceleration());
 	m_pCPlayer->SetStartCountFlag(m_pCUIManager->GetStartCountDispFlag());
 	if (m_pCGround->GetMoveSpeed() == 0.0f
@@ -110,7 +110,7 @@ void CGameMain::UpDate()
 	}
 
 	//------------地面------------//.
-	m_pCGround->UpDate();
+	m_pCGround->Update();
 	//長押しを押したかどうかのフラグ.
 	m_pCGround->SetUpCamera(m_pCEnemyManager->GetMoveUpCamera());
 	//減速するかのフラグ.
@@ -134,7 +134,7 @@ void CGameMain::UpDate()
 	m_pCEnemyManager->SetMovingDistance(m_pCGround->GetMovingDistance());
 
 	//更新処理関数.
-	m_pCEnemyManager->UpDate();
+	m_pCEnemyManager->Update();
 
 	//------------コマンド--------------//.
 	for (int enemyType = 0; enemyType < static_cast<int>(enEnemy::Max); enemyType++) {

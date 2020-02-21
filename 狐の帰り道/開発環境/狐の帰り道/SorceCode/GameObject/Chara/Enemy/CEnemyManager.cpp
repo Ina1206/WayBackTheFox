@@ -175,7 +175,7 @@ void CEnemyManager::InitProcess()
 		//ボタン番号.
 		m_ppCNormalEnemy[enemy]->SetButtonNum(m_pButtonNum[enemy]);
 		//敵の初期化.
-		m_ppCNormalEnemy[enemy]->Init_Process();
+		m_ppCNormalEnemy[enemy]->InitProcess();
 	}
 
 	//==============================デカタヌキ================================//
@@ -189,7 +189,7 @@ void CEnemyManager::InitProcess()
 	}
 
 	//ボスの初期化処理関数.
-	m_pCBigRaccoon_Dog->Init_Process();
+	m_pCBigRaccoon_Dog->InitProcess();
 
 	//アイテムの設定.
 	int Boss_Num = m_AllEnemyMax - 1;
@@ -358,7 +358,7 @@ void CEnemyManager::NormalEnemyUpDate()
 			m_ppCNormalEnemy[enemy]->SetHitNum(m_EnemyHit);
 
 			//更新処理関数.
-			m_ppCNormalEnemy[enemy]->UpDate();
+			m_ppCNormalEnemy[enemy]->Update();
 
 			//コマンド判定結果取得.
 			for (int command = 0; command < COMMAND_DECISION_MAX; command++) {
@@ -404,7 +404,7 @@ void CEnemyManager::BossUpDate()
 		m_pCBigRaccoon_Dog->SetUpDistance(m_fUpDistance);
 
 		//更新処理関数.
-		m_pCBigRaccoon_Dog->UpDate();
+		m_pCBigRaccoon_Dog->Update();
 	}
 
 

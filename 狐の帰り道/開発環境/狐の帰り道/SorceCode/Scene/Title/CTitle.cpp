@@ -21,7 +21,7 @@ CTitle::~CTitle()
 void CTitle::Init_Process()
 {
 	m_pCGround = new CGround();
-	m_pCGround->Init_Process();
+	m_pCGround->InitProcess();
 
 	m_pCBackGround = new CBackGround();
 

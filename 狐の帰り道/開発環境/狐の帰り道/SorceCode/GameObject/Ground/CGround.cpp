@@ -28,7 +28,7 @@ CGround::~CGround()
 //=====================================.
 //		初期化処理関数.
 //=====================================.
-void CGround::Init_Process()
+void CGround::InitProcess()
 {
 	//要素数動的確保.
 	m_ppGround	= new CDX9Mesh*[STAGE_MAX_BACK * STAGE_MAX_HORIZON];		//メッシュ.
@@ -63,7 +63,7 @@ void CGround::Init_Process()
 //=====================================.
 //		更新処理関数.
 //=====================================.
-void CGround::UpDate()
+void CGround::Update()
 {
 	//全体の移動距離.
 	m_fMoving_Distance += m_fScroll_Speed;
@@ -201,7 +201,7 @@ void CGround::Move()
 
 	//スクロール速度.
 	if (m_bDeceleration_Start == true) {
-		Scroll_Speed_Deceleration();
+		ScrollSpeedDeceleration();
 	}
 	else {
 		if (m_bMoveCamera == false) {
@@ -221,7 +221,7 @@ void CGround::Move()
 //=====================================.
 //	スクロールスピードの減速処理関数.
 //=====================================.
-void CGround::Scroll_Speed_Deceleration()
+void CGround::ScrollSpeedDeceleration()
 {
 	//減速処理.
 	if (m_fScroll_Speed > 0.0f) {

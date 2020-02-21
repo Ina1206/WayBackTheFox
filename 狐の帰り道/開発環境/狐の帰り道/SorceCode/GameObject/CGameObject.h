@@ -31,8 +31,8 @@ public:
 	virtual ~CGameObject();
 	//=============関数==================//.
 	void Value_Set(D3DXMATRIX& mView, D3DXMATRIX& mProj, D3DXVECTOR3& vLight, D3DXVECTOR3& vCameraPos);		//値セット処理関数.
-	virtual void Init_Process() = 0;																		//初期化処理関数.
-	virtual void UpDate() = 0;																				//更新処理関数.
+	virtual void InitProcess() = 0;																		//初期化処理関数.
+	virtual void Update() = 0;																				//更新処理関数.
 	virtual void Render() = 0;																				//描画処理関数.
 	virtual void Release() = 0;																				//解放処理関数.
 	

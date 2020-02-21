@@ -77,7 +77,7 @@ void CCow_Ghost::Render()
 	if (m_vPos.y < SHADOW_DISP_UP_LIMIT) {
 		m_vShadowPos = m_vPos;
 		//‰e‚Ì•`‰æˆ—ŠÖ”.
-		ShadowRender();
+		RenderShadow();
 	}
 
 	//=======================.
