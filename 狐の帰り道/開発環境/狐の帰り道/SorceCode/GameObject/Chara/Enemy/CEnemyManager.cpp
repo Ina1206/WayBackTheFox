@@ -41,9 +41,7 @@ CEnemyManager::CEnemyManager()
 	, m_bCheckItem_Point(false)
 	, m_bCheckItem_Number(false)
 
-	//---追加---.
 	, m_OldenJudge(nullptr)
-	//-----------.
 {
 }
 
@@ -62,21 +60,19 @@ void CEnemyManager::InitProcess()
 	m_pCFileManager = CFileLoadManager::GetCFileLoadManagerInstance();
 
 	//====================敵の列挙体====================//.
-	const enEnemy m_enRaccoonDog	= enEnemy::RaccoonDog;		//タヌキ.
-	const enEnemy m_enKappa			= enEnemy::Kappa;			//カッパ.
-	const enEnemy m_enCowGhost		= enEnemy::Cow_Ghost;		//牛お化け.
+	const enEnemy m_enRaccoonDog	= enEnemy::RaccoonDog;		
+	const enEnemy m_enKappa			= enEnemy::Kappa;			
+	const enEnemy m_enCowGhost		= enEnemy::Cow_Ghost;		
 
 	//=====================敵の番号======================//.
-	const int RaccoonDogNum = static_cast<int>(m_enRaccoonDog);		//タヌキ.
-	const int KappaNum		= static_cast<int>(m_enKappa);			//カッパ.
-	const int COW_GHOST		= static_cast<int>(m_enCowGhost);		//牛お化け.
+	const int RaccoonDogNum = static_cast<int>(m_enRaccoonDog);	
+	const int KappaNum		= static_cast<int>(m_enKappa);		
+	const int COW_GHOST		= static_cast<int>(m_enCowGhost);	
 
 	//配列動的確保.
 	m_pstNormalEnemyInfo	= new stNormalEnemyInfo[static_cast<int>(enEnemy::NormalEnemyMax)]();	//敵ごとの情報.
 	m_pEnemyMax				= new int[ENEMY_MAX]();													//敵の最大数.
 	m_pCommandMax			= new int[ENEMY_MAX]();													//コマンドの最大数.
-
-	int fileNum = 2;
 
 	//ファイルからの情報取得.
 	for (int enemyType = 0; enemyType < ENEMY_MAX; enemyType++) {
@@ -101,21 +97,20 @@ void CEnemyManager::InitProcess()
 	m_ppCNormalEnemy = new CNormalEnemyBase*[m_AllNormalEnemyMax]();
 
 	//コマンド系の動的確保.
-	m_penInputDecision		= new enInput_Decision[m_AllEnemyMax]();		//コマンド結果.
-	m_pbDecisionPossible	= new bool[m_AllEnemyMax]();					//コマンド判定可能フラグ.
+	m_penInputDecision		= new enInput_Decision[m_AllEnemyMax]();		
+	m_pbDecisionPossible	= new bool[m_AllEnemyMax]();					
 	m_ppenInputDecision		= new enInput_Decision*[m_AllEnemyMax]();
-	m_pButtonNum			= new int[m_pCFileManager->GetAllEnemyMax(/*fileNum*/)]();
+	m_pButtonNum			= new int[m_pCFileManager->GetAllEnemyMax()]();
 
 	//ボタン番号取得.
-	for (int button = 0; button < m_pCFileManager->GetAllEnemyMax(/*fileNum*/); button++) {
-		//ボタン番号取得.
-		m_pButtonNum[button] = m_pCFileManager->GetButtonNum(/*fileNum, */button) - 1;
+	for (int button = 0; button < m_pCFileManager->GetAllEnemyMax(); button++) {
+		m_pButtonNum[button] = m_pCFileManager->GetButtonNum(button) - 1;
 	}
 
 	//コマンド系の初期化.
 	for (int enemy = 0; enemy < m_AllEnemyMax; enemy++) {
 
-		//コマンド判定結果.
+		//ボスのコマンド判定結果.
 		m_penInputDecision[enemy] = enInput_Decision::Max;
 		//コマンド判定可能フラグ.
 		if (enemy < m_AllNormalEnemyMax) {
@@ -124,7 +119,7 @@ void CEnemyManager::InitProcess()
 
 		m_ppenInputDecision[enemy] = new enInput_Decision[COMMAND_DECISION_MAX]();
 		
-		//コマンド判定結果.
+		//通常敵のコマンド判定結果.
 		for (int command = 0; command < COMMAND_DECISION_MAX; command++) {
 			m_ppenInputDecision[enemy][command] = enInput_Decision::Max;
 		}
@@ -171,7 +166,7 @@ void CEnemyManager::InitProcess()
 	
 	for (int enemy = 0; enemy < m_AllNormalEnemyMax; enemy++) {
 		//初期位置設定.
-		m_ppCNormalEnemy[enemy]->SetInitPosition(m_pCFileManager->GetEnemyPos(/*fileNum, */enemy));
+		m_ppCNormalEnemy[enemy]->SetInitPosition(m_pCFileManager->GetEnemyPos(enemy));
 		//ボタン番号.
 		m_ppCNormalEnemy[enemy]->SetButtonNum(m_pButtonNum[enemy]);
 		//敵の初期化.
@@ -182,7 +177,7 @@ void CEnemyManager::InitProcess()
 	m_pCBigRaccoon_Dog = new CBig_Raccoon_Dog();
 
 	//ボスの初期位置設定.
-	m_pCBigRaccoon_Dog->SetInitPosition(m_pCFileManager->GetEnemyPos(/*fileNum, */EnemyMax + 1));
+	m_pCBigRaccoon_Dog->SetInitPosition(m_pCFileManager->GetEnemyPos(EnemyMax + 1));
 	//コマンドボタン設定.
 	for (int button = 0; button < 3; button++) {
 		m_pCBigRaccoon_Dog->SetButtonNum(m_pButtonNum[EnemyMax + button], button);
@@ -210,8 +205,7 @@ void CEnemyManager::InitProcess()
 void CEnemyManager::Update()
 {
 	//コマンド入力処理関数.
-	//Command_Entry();
-	Command_LongPushCheck();
+	CheckCommandLongPush();
 
 	//通常敵の更新処理関数.
 	NormalEnemyUpDate();
@@ -263,43 +257,28 @@ void CEnemyManager::Release()
 	const int m_EnemyMax = ENEMY_MAX - 1;
 	
 	//～クラス解放～.
-	//アイテムマネージャークラスの解放.
 	SAFE_DELETE_ARRAY(m_pCItemManager);
-
-	//コントローラクラス.
 	SAFE_DELETE(m_pCInput);
-	//ボスのクラス解放.
 	m_pCBigRaccoon_Dog->Release();
 	SAFE_DELETE(m_pCBigRaccoon_Dog);
-	//通常敵のクラス解放.
 	for (int enemy = m_AllNormalEnemyMax - 1; enemy >= 0; enemy--) {
 		m_ppCNormalEnemy[enemy]->Release();
 		SAFE_DELETE(m_ppCNormalEnemy[enemy]);
 	}
 
 	//～配列解放～.
-	//---追加---.
-	//アイテム.
 	SAFE_DELETE_ARRAY(m_OldenJudge);
-	//----------.
-	//ボタン番号.
 	SAFE_DELETE_ARRAY(m_pButtonNum);
-	//通常敵のみに関係する変数配列.
 	SAFE_DELETE_ARRAY(m_ppCNormalEnemy);
-
-	SAFE_DELETE_ARRAY(m_pbDecisionPossible);//コマンド判定可能フラグ.
-	//コマンド結果解放.
+	SAFE_DELETE_ARRAY(m_pbDecisionPossible);
 	for (int enemy = m_AllEnemyMax - 1; enemy >= 0; enemy--) {
 		SAFE_DELETE_ARRAY(m_ppenInputDecision[enemy]);
 	}
 	SAFE_DELETE_ARRAY(m_ppenInputDecision);
-	SAFE_DELETE_ARRAY(m_penInputDecision);	//コマンド結果.
-	SAFE_DELETE_ARRAY(m_pCommandMax);		//コマンドの最大数.
-	SAFE_DELETE_ARRAY(m_pEnemyMax);			//敵の最大数.
-	SAFE_DELETE_ARRAY(m_pstNormalEnemyInfo);//通常敵の情報構造体.
-	
-	//ファイル読み込みクラス.
-	//SAFE_DELETE(m_pCFileManager);
+	SAFE_DELETE_ARRAY(m_penInputDecision);	
+	SAFE_DELETE_ARRAY(m_pCommandMax);		
+	SAFE_DELETE_ARRAY(m_pEnemyMax);			
+	SAFE_DELETE_ARRAY(m_pstNormalEnemyInfo);
 }
 
 //======================================.
@@ -413,7 +392,7 @@ void CEnemyManager::BossUpDate()
 	if (m_vPlayerPos.z + DECELERATION_DISTANCE >= m_vBossPos.z) {
 		m_bDecelerationStart = true;
 		//アイテムのボスフラグを立てる.
-		int BossNum = m_AllEnemyMax - 1;
+		const int BossNum = m_AllEnemyMax - 1;
 		m_pCItemManager[BossNum].SetBossFlag(true);
 	}
 	//行動フラグ.
@@ -534,7 +513,7 @@ HRESULT CEnemyManager::Command_Entry()
 //==================================.
 //	コマンド長押し確認処理関数.
 //==================================.
-void CEnemyManager::Command_LongPushCheck()
+void CEnemyManager::CheckCommandLongPush()
 {
 	Command_Entry();
 
@@ -572,7 +551,7 @@ enInput_Decision CEnemyManager::GetEnemyInputDecision(int enemy, int num)
 //==================================.
 bool CEnemyManager::JudgeCameraUp()
 {
-	int StartEnemyNum = m_pEnemyMax[static_cast<int>(enEnemy::RaccoonDog)] + m_pEnemyMax[static_cast<int>(enEnemy::Cow_Ghost)];
+	const int StartEnemyNum = m_pEnemyMax[static_cast<int>(enEnemy::RaccoonDog)] + m_pEnemyMax[static_cast<int>(enEnemy::Cow_Ghost)];
 	D3DXVECTOR3 m_vPos;
 
 	for (int enemy = StartEnemyNum; enemy < m_AllNormalEnemyMax; enemy++) {
@@ -665,7 +644,6 @@ void CEnemyManager::ItemUpDate()
 //========================================.
 void CEnemyManager::Point_WholeSum(int item)
 {
-	//=======================変更===============================.
 	m_bCheckItem_Point = false;
 
 	if (m_pCItemManager[item].GetItemJudge() == enItemJudge::Success)
@@ -732,7 +710,6 @@ void CEnemyManager::Point_WholeSum(int item)
 	m_Point_WholeSum = m_MeatPoint + m_FishPoint + m_VegetablesPoint + m_RicePoint;
 	m_OldenJudge[item] = m_pCItemManager[item].GetItemJudge();
 
-	//=======================================================================.
 }
 
 //===================================.
@@ -740,7 +717,6 @@ void CEnemyManager::Point_WholeSum(int item)
 //===================================.
 void CEnemyManager::Item_WholeSum(int item)
 {
-	//=========================追加=============================.
 	int m_OldVegetablesSum = 0;
 	int m_OldMeatSum = 0;
 	int m_OldFishSum = 0;
@@ -823,7 +799,6 @@ void CEnemyManager::Item_WholeSum(int item)
 			if (m_FishSum < 0) { m_FishSum = 0; }
 		}
 	}
-	//=======================================================================.
 }
 
 //========================================.

@@ -94,7 +94,7 @@ private:
 	void BossUpDate();							//ボスの更新処理関数.
 	void Command_Possible();					//コマンド判定可能処理関数.
 	HRESULT Command_Entry();					//コマンド入力処理関数.
-	void Command_LongPushCheck();				//コマンド長押し確認処理関数.
+	void CheckCommandLongPush();				//コマンド長押し確認処理関数.
 
 	//アイテム.
 	void ItemUpDate();							//アイテムの更新処理関数.
