@@ -1,10 +1,10 @@
-#include "CKappa.h"
+#include "CUpRaccoonDog.h"
 
 /********************************************
-*		カッパクラス.
+*		上がる狸クラス.
 **/
-CKappa::CKappa()
-	: m_pKappa			(nullptr)
+CUpRaccoonDog::CUpRaccoonDog()
+	: m_pRaccoonDog		(nullptr)
 	, m_pAnimController	(nullptr)
 	, m_bCheckSound		(false)
 	, m_pGrassMesh		(nullptr)
@@ -12,28 +12,28 @@ CKappa::CKappa()
 	CResourceManager* m_pCResourceManager = CResourceManager::GetResourceManagerInstance();
 
 	//カッパ.
-	m_pKappa = m_pCResourceManager->GetSkinMesh(CResourceSkinMesh::enSkincMesh::Raccoon_Dog);
+	m_pRaccoonDog = m_pCResourceManager->GetSkinMesh(CResourceSkinMesh::enSkincMesh::Raccoon_Dog);
 	//アニメーションコントローラーコピー.
-	m_pKappa->GetAnimationController()->CloneAnimationController(
-		m_pKappa->GetAnimationController()->GetMaxNumAnimationOutputs(),
-		m_pKappa->GetAnimationController()->GetMaxNumAnimationSets(),
-		m_pKappa->GetAnimationController()->GetMaxNumTracks(),
-		m_pKappa->GetAnimationController()->GetMaxNumEvents(),
+	m_pRaccoonDog->GetAnimationController()->CloneAnimationController(
+		m_pRaccoonDog->GetAnimationController()->GetMaxNumAnimationOutputs(),
+		m_pRaccoonDog->GetAnimationController()->GetMaxNumAnimationSets(),
+		m_pRaccoonDog->GetAnimationController()->GetMaxNumTracks(),
+		m_pRaccoonDog->GetAnimationController()->GetMaxNumEvents(),
 		&m_pAnimController
 	);
 
 	
-	m_pKappa->ChangeAnimSet(ANIMATION_NUM,  m_pAnimController);
+	m_pRaccoonDog->ChangeAnimSet(ANIMATION_NUM,  m_pAnimController);
 }
 
-CKappa::~CKappa()
+CUpRaccoonDog::~CUpRaccoonDog()
 {
 }
 
 //==================================.
 //		初期設定処理関数.
 //==================================.
-void CKappa::InitProcess()
+void CUpRaccoonDog::InitProcess()
 {
 	//長押しコマンドクラス作成.
 	m_pCCommand_Base = new CLongPushCommand();
@@ -47,7 +47,7 @@ void CKappa::InitProcess()
 //==================================.
 //		更新処理関数.
 //==================================.
-void CKappa::Update()
+void CUpRaccoonDog::Update()
 {
 	//移動処理関数.
 	Move();
@@ -73,21 +73,21 @@ void CKappa::Update()
 //==================================.
 //		描画処理関数.
 //==================================.
-void CKappa::Render()
+void CUpRaccoonDog::Render()
 {
 	CResourceManager* m_pCResourceManager = CResourceManager::GetResourceManagerInstance();
 
 	//カッパ.
-	m_pKappa = m_pCResourceManager->GetSkinMesh(CResourceSkinMesh::enSkincMesh::Raccoon_Dog);
-	_ASSERT_EXPR(m_pKappa != nullptr, L"m_pKappa == nullptr");
+	m_pRaccoonDog = m_pCResourceManager->GetSkinMesh(CResourceSkinMesh::enSkincMesh::Raccoon_Dog);
+	_ASSERT_EXPR(m_pRaccoonDog != nullptr, L"m_pRaccoonDog == nullptr");
 	//位置設定.
-	m_pKappa->SetPosition(m_vPos);
+	m_pRaccoonDog->SetPosition(m_vPos);
 	//角度設定.
-	m_pKappa->SetRotation(m_vRot);
+	m_pRaccoonDog->SetRotation(m_vRot);
 	//大きさ設定.
-	m_pKappa->SetScale(SCALE_SIZE);
+	m_pRaccoonDog->SetScale(SCALE_SIZE);
 	//描画処理関数.
-	m_pKappa->Render(m_mView, m_mProj, m_vLight, m_vCameraPos, m_pAnimController);
+	m_pRaccoonDog->Render(m_mView, m_mProj, m_vLight, m_vCameraPos, m_pAnimController);
 
 	//タヌキが隠れている草の描画.
 	m_pGrassMesh = m_pCResourceManager->GetStaticMesh(CResourceStaticMesh::enStaticMesh::Grass);
@@ -109,19 +109,19 @@ void CKappa::Render()
 //==================================.
 //		解放処理関数.
 //==================================.
-void CKappa::Release()
+void CUpRaccoonDog::Release()
 {
 	//長押しコマンドクラス解放.
 	SAFE_DELETE(m_pCCommand_Base);
 
 	m_pGrassMesh	= nullptr;
-	m_pKappa		= nullptr;
+	m_pRaccoonDog = nullptr;
 }
 
 //==================================.
 //		移動処理関数.
 //==================================.
-void CKappa::Move()
+void CUpRaccoonDog::Move()
 {
 	//プレイヤーがタヌキに近づいてから処理.
 	if (m_vPos.z <= m_vPlayerPos.z + UP_MOVE_DISTANCE) {

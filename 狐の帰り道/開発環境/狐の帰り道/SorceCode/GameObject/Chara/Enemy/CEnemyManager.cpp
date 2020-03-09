@@ -155,9 +155,9 @@ void CEnemyManager::InitProcess()
 	//次の敵の開始番号.
 	EnemyMax += m_pEnemyMax[COW_GHOST];
 
-	//=============================カッパ==================================//.
+	//============================上がる狸==================================//.
 	for (int enemy = EnemyMax; enemy < m_pEnemyMax[KappaNum] + EnemyMax; enemy++) {
-		m_ppCNormalEnemy[enemy] = new CKappa();
+		m_ppCNormalEnemy[enemy] = new CUpRaccoonDog();
 		//アイテムの設定.
 		m_pCItemManager[enemy].SetEnemyType(enEnemy::Kappa);
 	}

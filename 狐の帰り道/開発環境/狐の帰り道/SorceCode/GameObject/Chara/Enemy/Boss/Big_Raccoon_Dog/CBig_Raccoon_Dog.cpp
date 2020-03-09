@@ -257,6 +257,7 @@ void CBig_Raccoon_Dog::Release()
 //====================================.
 void CBig_Raccoon_Dog::MoveJudgement()
 {
+	//—h‚êŠJnˆ—.
 	if (m_fSpeed <= 0.0f) {
 		m_WaitCnt++;
 		if (m_WaitCnt >= WAIT_TIME) {

@@ -5,14 +5,14 @@
 #include "..\..\..\..\..\Command\LongPushCommand\CLongPushCommand.h"
 
 /********************************************
-*		カッパクラス.
+*		上がる狸クラス.
 **/
-class CKappa
+class CUpRaccoonDog
 	: public CNormalEnemyBase
 {
 public:
-	CKappa();
-	~CKappa();
+	CUpRaccoonDog();
+	~CUpRaccoonDog();
 	//=====================定数======================//.
 	const int	ANIMATION_NUM		= 0;		//アニメーション番号.
 	const float UP_MOVE_DISTANCE	= 10.0f;	//上に上がる距離.
@@ -31,7 +31,7 @@ private:
 	void Move();					//移動処理関数.
 
 	//=====================変数======================//.
-	CDX9SkinMesh*				m_pKappa;			//カッパメッシュ.
+	CDX9SkinMesh*				m_pRaccoonDog;		//狸メッシュ.
 	LPD3DXANIMATIONCONTROLLER	m_pAnimController;	//アニメーションコントローラ.
 	bool						m_bCheckSound;		//再生チェック.
 	CDX9Mesh*					m_pGrassMesh;		//草のメッシュ.

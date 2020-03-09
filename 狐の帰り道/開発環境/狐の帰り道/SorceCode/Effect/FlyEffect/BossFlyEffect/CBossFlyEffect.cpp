@@ -70,14 +70,14 @@ void CBossFlyEffect::Render(D3DXMATRIX mView, D3DXMATRIX mProj, D3DXVECTOR3 vCam
 void CBossFlyEffect::Init()
 {
 	//配列動的確保.
-	m_pvPos				= new D3DXVECTOR3[SMOKE_MAX]();	//座標.
-	m_pvRot				= new D3DXVECTOR3[SMOKE_MAX]();	//角度.
-	m_pfScale			= new float[SMOKE_MAX]();		//大きさ.
-	m_ppCSprite			= new CSprite*[SMOKE_MAX]();	//スプライトクラス.
-	m_pfAlpha			= new float[SMOKE_MAX]();		//透過値.
-	m_pbSmokeDispFlag	= new bool[SMOKE_MAX]();		//煙が出るフラグ.
-	m_pfMoveSpeed		= new float[SMOKE_MAX]();		//移動速度.
-	m_pbIndiviDispFlag	= new bool[SMOKE_MAX]();		//個別表示フラグ.
+	m_pvPos				= new D3DXVECTOR3[SMOKE_MAX]();	
+	m_pvRot				= new D3DXVECTOR3[SMOKE_MAX]();	
+	m_pfScale			= new float[SMOKE_MAX]();		
+	m_ppCSprite			= new CSprite*[SMOKE_MAX]();	
+	m_pfAlpha			= new float[SMOKE_MAX]();		
+	m_pbSmokeDispFlag	= new bool[SMOKE_MAX]();		
+	m_pfMoveSpeed		= new float[SMOKE_MAX]();		
+	m_pbIndiviDispFlag	= new bool[SMOKE_MAX]();		
 
 	//初期化処理.
 	for (int smoke = 0; smoke < SMOKE_MAX; smoke++) {
@@ -106,14 +106,14 @@ void CBossFlyEffect::Release()
 	}
 
 	//解放.
-	SAFE_DELETE_ARRAY(m_pbIndiviDispFlag);	//個別表示フラグ.
-	SAFE_DELETE_ARRAY(m_pfMoveSpeed);		//移動速度.
-	SAFE_DELETE_ARRAY(m_pbSmokeDispFlag);	//煙が出るフラグ.
-	SAFE_DELETE_ARRAY(m_pfAlpha);			//透過値.
-	SAFE_DELETE_ARRAY(m_ppCSprite);			//スプライトクラス.
-	SAFE_DELETE_ARRAY(m_pfScale);			//大きさ.
-	SAFE_DELETE_ARRAY(m_pvRot);				//角度.
-	SAFE_DELETE_ARRAY(m_pvPos);				//座標.
+	SAFE_DELETE_ARRAY(m_pbIndiviDispFlag);	
+	SAFE_DELETE_ARRAY(m_pfMoveSpeed);		
+	SAFE_DELETE_ARRAY(m_pbSmokeDispFlag);	
+	SAFE_DELETE_ARRAY(m_pfAlpha);			
+	SAFE_DELETE_ARRAY(m_ppCSprite);			
+	SAFE_DELETE_ARRAY(m_pfScale);			
+	SAFE_DELETE_ARRAY(m_pvRot);				
+	SAFE_DELETE_ARRAY(m_pvPos);				
 
 }
 

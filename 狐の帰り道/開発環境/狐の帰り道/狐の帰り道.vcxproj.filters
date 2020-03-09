@@ -573,9 +573,6 @@
     <ClCompile Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Cow_Ghost\CCow_Ghost.cpp">
       <Filter>ソース ファイル\GameObject\Chara\Enemy\NormalEnemy</Filter>
     </ClCompile>
-    <ClCompile Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Kappa\CKappa.cpp">
-      <Filter>ソース ファイル\GameObject\Chara\Enemy\NormalEnemy</Filter>
-    </ClCompile>
     <ClCompile Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Raccoon_Dog\CRaccoon_Dog.cpp">
       <Filter>ソース ファイル\GameObject\Chara\Enemy\NormalEnemy</Filter>
     </ClCompile>
@@ -605,6 +602,9 @@
     </ClCompile>
     <ClCompile Include="SorceCode\GameObject\UI\CItemPoint_Bar.cpp">
       <Filter>ソース ファイル\GameObject\UI\GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\UpRaccoonDog\CUpRaccoonDog.cpp">
+      <Filter>ソース ファイル\GameObject\Chara\Enemy\NormalEnemy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -878,9 +878,6 @@
     <ClInclude Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Cow_Ghost\CCow_Ghost.h">
       <Filter>ヘッダー ファイル\GameObejct\Chara\Enemy\NormalEnemy</Filter>
     </ClInclude>
-    <ClInclude Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Kappa\CKappa.h">
-      <Filter>ヘッダー ファイル\GameObejct\Chara\Enemy\NormalEnemy</Filter>
-    </ClInclude>
     <ClInclude Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Raccoon_Dog\CRaccoon_Dog.h">
       <Filter>ヘッダー ファイル\GameObejct\Chara\Enemy\NormalEnemy</Filter>
     </ClInclude>
@@ -910,6 +907,9 @@
     </ClInclude>
     <ClInclude Include="SorceCode\GameObject\UI\CItemPoint_Bar.h">
       <Filter>ヘッダー ファイル\GameObejct\UI\GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\UpRaccoonDog\CUpRaccoonDog.h">
+      <Filter>ヘッダー ファイル\GameObejct\Chara\Enemy\NormalEnemy</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -57,11 +57,11 @@ void CFootEffect::Render(D3DXMATRIX mView, D3DXMATRIX mProj, D3DXVECTOR3 vCamePo
 void CFootEffect::Init()
 {
 	//動的確保.
-	m_pvPos				= new D3DXVECTOR3[SPARKLE_MAX]();	//位置.
-	m_pvRot				= new D3DXVECTOR3[SPARKLE_MAX]();	//角度.
-	m_ppCSprite			= new CSprite*[SPARKLE_MAX]();		//スプライトクラス.
-	m_pfScale			= new float[SPARKLE_MAX]();			//大きさ.
-	m_penScalingType	= new enScalingType[SPARKLE_MAX]();	//拡縮処理タイプ.
+	m_pvPos				= new D3DXVECTOR3[SPARKLE_MAX]();	
+	m_pvRot				= new D3DXVECTOR3[SPARKLE_MAX]();	
+	m_ppCSprite			= new CSprite*[SPARKLE_MAX]();		
+	m_pfScale			= new float[SPARKLE_MAX]();			
+	m_penScalingType	= new enScalingType[SPARKLE_MAX]();	
 
 	//値設定.
 	m_Sparkle_max			= SPARKLE_MAX;			//キラキラの最大数.
@@ -86,9 +86,9 @@ void CFootEffect::Release()
 	}
 
 	//解放.
-	SAFE_DELETE_ARRAY(m_penScalingType);//拡縮処理タイプ.
-	SAFE_DELETE_ARRAY(m_pfScale);		//大きさ.
-	SAFE_DELETE_ARRAY(m_ppCSprite);		//スプライトクラス.
-	SAFE_DELETE_ARRAY(m_pvRot);			//角度.
-	SAFE_DELETE_ARRAY(m_pvPos);			//位置.
+	SAFE_DELETE_ARRAY(m_penScalingType);
+	SAFE_DELETE_ARRAY(m_pfScale);		
+	SAFE_DELETE_ARRAY(m_ppCSprite);		
+	SAFE_DELETE_ARRAY(m_pvRot);			
+	SAFE_DELETE_ARRAY(m_pvPos);			
 }

@@ -73,10 +73,10 @@ void CGreatEffect::Release()
 	}
 
 	//解放.
-	SAFE_DELETE_ARRAY(m_penScalingType);//拡縮処理タイプ.
-	SAFE_DELETE_ARRAY(m_pfScale);		//大きさ.
-	SAFE_DELETE_ARRAY(m_ppCSprite);		//スプライトクラス.
-	SAFE_DELETE_ARRAY(m_pvRot);			//角度.
-	SAFE_DELETE_ARRAY(m_pvPos);			//位置.
+	SAFE_DELETE_ARRAY(m_penScalingType);
+	SAFE_DELETE_ARRAY(m_pfScale);		
+	SAFE_DELETE_ARRAY(m_ppCSprite);		
+	SAFE_DELETE_ARRAY(m_pvRot);			
+	SAFE_DELETE_ARRAY(m_pvPos);			
 }
 

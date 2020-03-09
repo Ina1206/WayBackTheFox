@@ -59,11 +59,11 @@ void CLongPushEffect::Render(D3DXMATRIX mView, D3DXMATRIX mProj, D3DXVECTOR3 vCa
 void CLongPushEffect::Init()
 {
 	//配列動的確保.
-	m_pvPos				= new D3DXVECTOR3[SPARKLE_MAX]();					//位置.
-	m_pvRot				= new D3DXVECTOR3[SPARKLE_MAX]();					//角度.
-	m_pfScale			= new float[SPARKLE_MAX]();							//大きさ.
-	m_ppCSprite			= new CSprite*[SPARKLE_MAX]();						//スプライトクラス.
-	m_pbIndividual_Disp = new bool[SPARKLE_MAX]();							//個別表示フラグ.
+	m_pvPos				= new D3DXVECTOR3[SPARKLE_MAX]();					
+	m_pvRot				= new D3DXVECTOR3[SPARKLE_MAX]();					
+	m_pfScale			= new float[SPARKLE_MAX]();							
+	m_ppCSprite			= new CSprite*[SPARKLE_MAX]();						
+	m_pbIndividual_Disp = new bool[SPARKLE_MAX]();							
 
 	for (int sparkle = 0; sparkle < SPARKLE_MAX; sparkle++) {
 		m_pvPos[sparkle]				= D3DXVECTOR3(0.0f, 0.0f, 0.0f);	//位置.

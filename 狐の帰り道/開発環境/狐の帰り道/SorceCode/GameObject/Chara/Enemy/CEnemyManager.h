@@ -152,19 +152,19 @@ private:
 	bool				m_bMoveUpCamera;			//上にカメラが上がる時のフラグ.
 
 	//アイテム関連.
-	CItemManager*		m_pCItemManager;	//アイテムマネージャークラス.
-	int					m_Point_WholeSum;	//ポイントの全体合計.
-	int					m_VegetablesSum;	//野菜個数合計.
-	int					m_VegetablesPoint;	//野菜ポイント合計.
-	int					m_MeatSum;			//肉個数合計.
-	int					m_MeatPoint;		//肉ポイント合計.
-	int					m_FishSum;			//魚個数合計.
-	int					m_FishPoint;		//魚ポイント合計.
-	int					m_RiceSum;			//米個数合計.
-	int					m_RicePoint;		//米ポイント合計.
-	bool				m_bCheckItem_Point;	//アイテムポイントの減算に使用.
-	bool				m_bCheckItem_Number;//アイテム個数の減算に使用.
-	enItemJudge*		m_OldenJudge;		//前判定.
+	CItemManager*		m_pCItemManager;			//アイテムマネージャークラス.
+	int					m_Point_WholeSum;			//ポイントの全体合計.
+	int					m_VegetablesSum;			//野菜個数合計.
+	int					m_VegetablesPoint;			//野菜ポイント合計.
+	int					m_MeatSum;					//肉個数合計.
+	int					m_MeatPoint;				//肉ポイント合計.
+	int					m_FishSum;					//魚個数合計.
+	int					m_FishPoint;				//魚ポイント合計.
+	int					m_RiceSum;					//米個数合計.
+	int					m_RicePoint;				//米ポイント合計.
+	bool				m_bCheckItem_Point;			//アイテムポイントの減算に使用.
+	bool				m_bCheckItem_Number;		//アイテム個数の減算に使用.
+	enItemJudge*		m_OldenJudge;				//前判定.
 
 
 };

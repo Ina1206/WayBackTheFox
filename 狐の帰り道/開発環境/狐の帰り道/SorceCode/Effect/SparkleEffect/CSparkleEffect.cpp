@@ -1,5 +1,8 @@
 #include "CSparkleEffect.h"
 
+/***********************************************
+*		キラキラエフェクトクラス.
+***/
 CSparkleEffect::CSparkleEffect()
 	: m_Sparkle_max			(0)
 	, m_penScalingType		(nullptr)

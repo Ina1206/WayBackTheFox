@@ -63,6 +63,7 @@ void CCameraManager::UpDate()
 	//ビュー行列変換処理関数.
 	m_pCCamera->ChangeView();
 
+	//カメラ更新処理関数.
 	m_pCCamera->SetTargetPos(m_vTargetPos);
 	m_pCCamera->Update(m_bChangeMove);
 

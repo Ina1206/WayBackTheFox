@@ -53,7 +53,7 @@ public:
 
 
 	//=====================ŠÖ”========================//.
-	void InitProcess();				//‰Šú‰»ˆ—ŠÖ”.
+	void InitProcess();					//‰Šú‰»ˆ—ŠÖ”.
 	void Update();						//XVˆ—ŠÖ”.
 	void Render();						//•`‰æˆ—ŠÖ”.
 	void Release();						//‰ğ•úˆ—ŠÖ”.

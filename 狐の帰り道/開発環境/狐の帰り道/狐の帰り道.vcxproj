@@ -181,8 +181,8 @@
     <ClCompile Include="SorceCode\GameObject\Chara\Enemy\CEnemyManager.cpp" />
     <ClCompile Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\CNormalEnemyBase.cpp" />
     <ClCompile Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Cow_Ghost\CCow_Ghost.cpp" />
-    <ClCompile Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Kappa\CKappa.cpp" />
     <ClCompile Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Raccoon_Dog\CRaccoon_Dog.cpp" />
+    <ClCompile Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\UpRaccoonDog\CUpRaccoonDog.cpp" />
     <ClCompile Include="SorceCode\GameObject\Chara\Player\CPlayer.cpp" />
     <ClCompile Include="SorceCode\GameObject\Collider_Detection\CCollision_Detection.cpp" />
     <ClCompile Include="SorceCode\GameObject\Collider_Detection\CDebugCollision_Sphere.cpp" />
@@ -279,8 +279,8 @@
     <ClInclude Include="SorceCode\GameObject\Chara\Enemy\EnemyType.h" />
     <ClInclude Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\CNormalEnemyBase.h" />
     <ClInclude Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Cow_Ghost\CCow_Ghost.h" />
-    <ClInclude Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Kappa\CKappa.h" />
     <ClInclude Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\Raccoon_Dog\CRaccoon_Dog.h" />
+    <ClInclude Include="SorceCode\GameObject\Chara\Enemy\NormalEnemy\UpRaccoonDog\CUpRaccoonDog.h" />
     <ClInclude Include="SorceCode\GameObject\Chara\Player\CPlayer.h" />
     <ClInclude Include="SorceCode\GameObject\Collider_Detection\CCollision_Detection.h" />
     <ClInclude Include="SorceCode\GameObject\Collider_Detection\CDebugCollisionSphere.h" />

@@ -40,7 +40,7 @@ public:
 
 	//===========情報取得処理関数==============//.
 	D3DXVECTOR3 GetCameraPos() { return m_Camera.vPos; }				//カメラ座標.
-	D3DXMATRIX	GetMatrixView() { return m_mView; }					//ビュー行列.
+	D3DXMATRIX	GetMatrixView() { return m_mView; }						//ビュー行列.
 	bool		GetCameraChangeFlag() { return m_CameraChangeFlag; }	//カメラ種類変更フラグ.
 	
 	//===========情報置換処理関数==============//.

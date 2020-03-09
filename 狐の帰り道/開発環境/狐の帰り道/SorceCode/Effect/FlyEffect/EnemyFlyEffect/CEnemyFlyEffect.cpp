@@ -58,12 +58,12 @@ void CEnemyFlyEffect::Render(D3DXMATRIX mView, D3DXMATRIX mProj, D3DXVECTOR3 vCa
 void CEnemyFlyEffect::Init()
 {
 	//配列の動的確保.
-	m_pvPos				= new D3DXVECTOR3[SMOKE_MAX]();	//座標.
-	m_pvRot				= new D3DXVECTOR3[SMOKE_MAX]();	//角度.
-	m_pfScale			= new float[SMOKE_MAX]();		//大きさ.
-	m_ppCSprite			= new CSprite*[SMOKE_MAX]();	//スプライトクラス.
-	m_pfAlpha			= new float[SMOKE_MAX]();		//透過値.
-	m_pbSmokeDispFlag	= new bool[SMOKE_MAX]();		//煙が出るフラグ.
+	m_pvPos				= new D3DXVECTOR3[SMOKE_MAX]();	
+	m_pvRot				= new D3DXVECTOR3[SMOKE_MAX]();	
+	m_pfScale			= new float[SMOKE_MAX]();		
+	m_ppCSprite			= new CSprite*[SMOKE_MAX]();	
+	m_pfAlpha			= new float[SMOKE_MAX]();		
+	m_pbSmokeDispFlag	= new bool[SMOKE_MAX]();		
 	
 	//初期化処理.
 	for (int smoke = 0; smoke < SMOKE_MAX; smoke++) {

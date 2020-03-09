@@ -51,20 +51,17 @@ void CTimingCommand::Update(enCommandType CommandType)
 //==========================================.
 void CTimingCommand::Render()
 {
-	//丸.
 	if (m_bCircleDispry == true) {
 		//丸の描画処理関数.
 		RenderCircle();
 	}
 
-	//ボタン.
 	if (m_bDispFlag == true) {
 		//ボタンの描画処理関数.
 		m_vPos.y += m_fDispHight;
 		RenderButton();
 	}
 
-	//ボタンの光.
 	if (m_bButtonPushFlag == true && m_bButtonLightFinish == false) {
 		//ボタンを押した時の丸の描画処理関数.
 		RenderButtonPush();
@@ -101,7 +98,6 @@ void CTimingCommand::DecisionDisp()
 		if (m_vPlayerPos.z > m_vPos.z) {
 			m_bDispFlag = false;
 			m_bCircleDispry = false;
-			//最大値に戻す.
 			m_fScale = CIRCLE_SIZE_MAX;
 		}
 	}
@@ -141,6 +137,7 @@ void CTimingCommand::DecisionCommand(enCommandType CommandType)
 //==========================================.
 void CTimingCommand::ScaleDownCircle()
 {
+	//Playerとの距離で拡縮.
 	m_fScale = (((m_vPos.z - START_DIFFERENCE )- m_vPlayerPos.z) / DISPRY_DISTANCE) + CIRCLE_SIZE_MIN;
 }
 
@@ -149,7 +146,6 @@ void CTimingCommand::ScaleDownCircle()
 //==========================================.
 void CTimingCommand::RenderCircle()
 {
-
 	//円画像.
 	m_pCSpriteMaru = m_pCResourceManager->GetSprite(CResourceSprite::enSprite::TimingCommand);
 
@@ -186,7 +182,6 @@ void CTimingCommand::ButtonPushCircle()
 		m_bCircleDispry = false;
 		m_bDispFlag		= false;
 		m_bButtonLightFinish = true;
-		//最大値に戻す.
 		m_fScale = CIRCLE_SIZE_MAX;
 
 	}

@@ -77,7 +77,7 @@ void CFileCommandSetting::Init()
 //========================================.
 void CFileCommandSetting::Close()
 {
-
+	//‚·‚×‚Ä‚Ìƒtƒ@ƒCƒ‹‚ð•Â‚¶‚é.
 	for (int file = m_FileMax - 1; file >= 0; file--) {
 		m_ppCFile[file]->Close();
 	}

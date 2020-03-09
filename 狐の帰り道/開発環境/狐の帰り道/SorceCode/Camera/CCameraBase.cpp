@@ -18,7 +18,7 @@ CCameraBase::~CCameraBase()
 void CCameraBase::ChangeView()
 {
 	//ビュー(カメラ)変換.
-	D3DXVECTOR3 vUpVec(UP_VECTOR);	//上方(ベクトル).
+	D3DXVECTOR3 vUpVec(UP_VECTOR);				//上方(ベクトル).
 	D3DXMatrixLookAtLH(
 		&m_mView,								//(out)ビュー計算結果.
 		&m_Camera.vPos, &m_Camera.vLook, &vUpVec);

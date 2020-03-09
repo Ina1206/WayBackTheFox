@@ -64,7 +64,7 @@ protected:
 	virtual void DecisionCommand(enCommandType CommandType) = 0;	//コマンド判定処理関数.
 
 	void	Init();													//初期設定処理関数.
-	void	RenderButton();										//ボタン描画処理関数.
+	void	RenderButton();											//ボタン描画処理関数.
 
 	//===================変数========================//.
 	D3DXVECTOR3			m_vCameraPos;			//カメラ位置.

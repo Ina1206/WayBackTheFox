@@ -122,11 +122,12 @@ void CFallDownEffect::Disp()
 //======================================.
 void CFallDownEffect::Move()
 {
-
+	//速度変更.
 	m_fSpeed -= SPEED_DECREMENT;
 	if (m_fSpeed < MOVE_SPEED_MIN) {
 		m_fSpeed = MOVE_SPEED_MIN;
 	}
+
 	for (int smoke = 0; smoke < SMOKE_MAX; smoke++) {
 		//速度.
 		m_pfMoveSpeed[smoke] -= m_fSpeed;
@@ -134,20 +135,20 @@ void CFallDownEffect::Move()
 		int halfSmokeNum = smoke / 2;
 		int smokeNum = abs((SMOKE_MAX / 2) - smoke);
 		D3DXVECTOR3 TargetPos			= D3DXVECTOR3(m_pvInitPos[smoke].x,  MOVE_TARGET_HEIGHT, m_vCenterPos.z);
-		D3DXVECTOR3 Control_Pos_Start	= D3DXVECTOR3(m_pvInitPos[smoke].x + (CONTROL_POINT_WIDTH -( halfSmokeNum * CONTROL_WIDTH_ADJUST )), CONTROL_POINT_START - (smokeNum/*abs((SMOKE_MAX / 2) - smoke)*/ * CONTROL_ADJUST_HEI), m_vCenterPos.z);
-		D3DXVECTOR3 Control_Pos_End		= D3DXVECTOR3(m_pvInitPos[smoke].x, CONTROL_POINT_END, m_vCenterPos.z);
+		D3DXVECTOR3 ControlPosStart		= D3DXVECTOR3(m_pvInitPos[smoke].x + (CONTROL_POINT_WIDTH -( halfSmokeNum * CONTROL_WIDTH_ADJUST )), CONTROL_POINT_START - (smokeNum * CONTROL_ADJUST_HEI), m_vCenterPos.z);
+		D3DXVECTOR3 ControlPosEnd		= D3DXVECTOR3(m_pvInitPos[smoke].x, CONTROL_POINT_END, m_vCenterPos.z);
 		D3DXVECTOR3 InitPos				= D3DXVECTOR3(m_pvInitPos[smoke].x, m_pvInitPos[smoke].y, m_vCenterPos.z);
 		//移動.
 		float TimeSpeed = 1 - m_pfMoveSpeed[smoke];
 		//煙の移動計算.
 		m_pvPos[smoke].x =	powf(TimeSpeed, 3.0f) * InitPos.x
-							+ 3 * powf(TimeSpeed, 2.0f) * m_pfMoveSpeed[smoke] * Control_Pos_Start.x
-							+ 3 * TimeSpeed * powf(m_pfMoveSpeed[smoke], 2.0f) * Control_Pos_End.x
+							+ 3 * powf(TimeSpeed, 2.0f) * m_pfMoveSpeed[smoke] * ControlPosStart.x
+							+ 3 * TimeSpeed * powf(m_pfMoveSpeed[smoke], 2.0f) * ControlPosEnd.x
 							+ powf(m_pfMoveSpeed[smoke], 3.0f) * TargetPos.x;
 
 		m_pvPos[smoke].y =	powf(TimeSpeed, 3.0f) * InitPos.y
-							+ 3 * powf(TimeSpeed, 2.0f) * m_pfMoveSpeed[smoke] * Control_Pos_Start.y
-							+ 3 * TimeSpeed * powf(m_pfMoveSpeed[smoke], 2.0f) * Control_Pos_End.y
+							+ 3 * powf(TimeSpeed, 2.0f) * m_pfMoveSpeed[smoke] * ControlPosStart.y
+							+ 3 * TimeSpeed * powf(m_pfMoveSpeed[smoke], 2.0f) * ControlPosEnd.y
 							+ powf(m_pfMoveSpeed[smoke], 3.0f) * TargetPos.y;
 
 		m_pvPos[smoke].z = m_vCenterPos.z;

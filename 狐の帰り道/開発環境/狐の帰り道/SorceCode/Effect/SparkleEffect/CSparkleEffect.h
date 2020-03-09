@@ -4,7 +4,7 @@
 #include "..\CEffectBase.h"
 
 /***********************************************
-*		キラキラエフェクト関連クラス.
+*		キラキラエフェクトクラス.
 ***/
 class CSparkleEffect
 	: public CEffectBase
