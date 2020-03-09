@@ -17,13 +17,15 @@ public:
 	virtual ~CChara();
 
 	//===================定数========================//.
-	const int	FOOT_MAX		= 2;		//足の最大数.
-	const int	LEFT_FOOT_NUM	= 0;		//左足番号.
-	const int	RIGHT_FOOT_NUM	= 1;		//右足番号.
-	const int	HIT_GROUND_NUM	= 2;		//地面の番号.
-	const int	FOOT_SPHERE_MAX = 3;		//デバッグ用球体の最大数.
-	const float GROUND_HIT_H	= -0.25f;	//地面の当たり判定の高さ.
-
+	const int	FOOT_MAX			= 2;		//足の最大数.
+	const float	HIT_FOOT_SCALE		= 0.2f;		//足の当たり判定大きさ.
+	const float	HIT_GROUND_SCALE	= 0.8f;		//地面の当たり判定大きさ.
+	const int	LEFT_FOOT_NUM		= 0;		//左足番号.
+	const int	RIGHT_FOOT_NUM		= 1;		//右足番号.
+	const int	HIT_GROUND_NUM		= 2;		//地面の番号.
+	const int	FOOT_SPHERE_MAX		= 3;		//デバッグ用球体の最大数.
+	const float GROUND_HIT_H		= -0.25f;	//地面の当たり判定の高さ.
+	const float	SHADOW_HIGHT		= 0.05f;	//影の高さ.
 
 	//===================関数========================//.
 	void Init();																		//初期化処理関数.

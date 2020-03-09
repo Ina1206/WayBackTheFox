@@ -1,5 +1,8 @@
 #include "CSEPlayManager.h"
 
+/**************************************
+*		サウンド再生管理クラス.
+**/
 CSEPlayManager::CSEPlayManager()
 	: m_ppCOneCSound	(nullptr)
 	, m_ppCLoopSound	(nullptr)

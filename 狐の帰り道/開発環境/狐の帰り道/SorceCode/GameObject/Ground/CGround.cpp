@@ -1,5 +1,8 @@
 #include "CGround.h"
 
+/*****************************************
+*	地面クラス.
+**/
 CGround::CGround()
 	: m_ppGround			(nullptr)
 	, m_pvPos				(nullptr)
@@ -22,6 +25,7 @@ CGround::CGround()
 
 CGround::~CGround()
 {
+	//解放処理関数.
 	Release();
 }
 
@@ -121,25 +125,6 @@ void CGround::Render()
 		m_ppGround[stage]->SetPosition(m_pvPos[stage]);								//座標.
 		//角度.
 		m_ppGround[stage]->SetRotation(D3DXVECTOR3(0.0f, STANDERD_ROT_Y, 0.0f));	//角度.
-		//影.
-		//タイトルは処理しない.
-		//if (m_vPlayerShadowPos.z > 0) {
-		//	SHADOW m_shadow[10];
-		//	m_shadow[0] = { m_vPlayerShadowPos, true };
-		//	for (int enemy = 0; enemy < 9; enemy++) {
-		//		m_shadow[enemy + 1] = { m_pvEnemyShadowPos[enemy], true };
-		//		if (m_pvEnemyShadowPos[enemy].y > 10) {
-		//			m_shadow[enemy + 1].bDispFlag = false;
-		//		}
-		//	}
-
-		//	
-		//	//SHADOW m_ss[] = {
-		//	//	{D3DXVECTOR3(m_vPlayerShadowPos), true},
-		//	//	
-		//	//};
-		//	m_ppGround[stage]->SetShadow(m_shadow, 10);
-		//}
 		//描画.
 		m_ppGround[stage]->Render(m_mView, m_mProj, m_vLight, m_vCameraPos);
 	}

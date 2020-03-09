@@ -83,9 +83,9 @@ private:
 	HRESULT Create(int sound, const char* pfilename, 
 				   clsSound* pCSound, char* paliasname);				//作成処理関数.
 	HRESULT Check(int sound, clsSound* pCSound);							//調べる処理関数.
-	void	Add_Alias_Name(char* alias_name, int name);						//エイリアス名の結合処理関数.												
-	HRESULT	OneceSELoad();													//単発SEの読み込み処理関数.
-	HRESULT LoopSoundLoad();												//ループSEの読み込み処理関数.
+	void	AddAliasName(char* alias_name, int name);						//エイリアス名の結合処理関数.												
+	HRESULT	OneceLoadSE();													//単発SEの読み込み処理関数.
+	HRESULT LoopLoadSound();												//ループSEの読み込み処理関数.
 
 	//=============変数==============//.
 	HWND		m_hWnd;				//ウィンドウハンドル.

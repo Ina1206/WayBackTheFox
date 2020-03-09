@@ -7,7 +7,7 @@
 
 #include <D3DX11.h>
 #include <D3D11.h>
-#include <D3DX10.h>					//「D3DX～」の定義使用時に必要.
+#include <D3DX10.h>				
 #include <D3D10.h>
 
 
@@ -16,17 +16,12 @@
 #include "Scene\CSceneManager.h"
 #include "Scene\Load\CLoad.h"
 
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.
-
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.
-
-//#include "CEffect.h"				//Effekseerを制御するクラス.
 
 //ライブラリ読み込み.
 #pragma comment( lib, "winmm.lib")
 #pragma comment( lib, "d3dx11.lib")
 #pragma comment( lib, "d3d11.lib")
-#pragma comment( lib, "d3dx10.lib")	//「D3DX～」の定義使用時に必要.
+#pragma comment( lib, "d3dx10.lib")	
 
 //=================================================.
 //	定数.
@@ -102,10 +97,10 @@ public:
 	//Direct3D終了処理.
 	void DestroyD3D();
 
-	////メッシュの読み込み関数.
+	//メッシュの読み込み関数.
 	HRESULT LoadMesh();
 
-	////バックバッファクリア関数.
+	//バックバッファクリア関数.
 	void ClearBackBuffer();
 	//カメラ関数.
 	void Camera();
@@ -141,14 +136,6 @@ private:
 
 	D3DXMATRIX				m_mView;		//ビュー行列.
 	D3DXMATRIX				m_mProj;		//プロジェクション行列.
-
-	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.
-																				//
-	//ﾃﾞﾊﾞｯｸﾞﾃｷｽﾄｸﾗｽ.															//
-	CDebugText*		m_pDbgText;													//
-	CDebugText*		m_pDbgText2;												//
-	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.
-
 
 
 	CDepth_Stencil m_CDepth_Stencil;

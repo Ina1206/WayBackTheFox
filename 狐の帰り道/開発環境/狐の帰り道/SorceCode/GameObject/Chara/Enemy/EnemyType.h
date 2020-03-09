@@ -5,12 +5,12 @@
 enum class enEnemy {
 	RaccoonDog = 0,						//タヌキ.
 	Cow_Ghost,							//牛お化け.
-	Kappa,								//カッパ.
+	UpRaccoonDog,						//上がる狸.
 	Big_RaccoonDog,						//デカタヌキ.
 
 	Max,
 	Start = RaccoonDog,
-	NormalEnemyMax = Kappa + 1,	//通常敵の最大値.
+	NormalEnemyMax = UpRaccoonDog + 1,	//通常敵の最大値.
 };
 
 #endif	//#ifndef ENEMY_TYPE_H.

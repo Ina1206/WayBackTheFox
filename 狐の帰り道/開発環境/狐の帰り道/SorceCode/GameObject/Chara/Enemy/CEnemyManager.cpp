@@ -29,19 +29,19 @@ CEnemyManager::CEnemyManager()
 	, m_pCFileManager			(nullptr)
 	, m_pCInput					(nullptr)
 	, m_bMoveUpCamera			(false)
-	, m_Point_WholeSum(0)
-	, m_VegetablesSum(0)
-	, m_VegetablesPoint(0)
-	, m_MeatSum(0)
-	, m_MeatPoint(0)
-	, m_FishSum(0)
-	, m_FishPoint(0)
-	, m_RiceSum(0)
-	, m_RicePoint(0)
-	, m_bCheckItem_Point(false)
-	, m_bCheckItem_Number(false)
+	, m_Point_WholeSum			(0)
+	, m_VegetablesSum			(0)
+	, m_VegetablesPoint			(0)
+	, m_MeatSum					(0)
+	, m_MeatPoint				(0)
+	, m_FishSum					(0)
+	, m_FishPoint				(0)
+	, m_RiceSum					(0)
+	, m_RicePoint				(0)
+	, m_bCheckItem_Point		(false)
+	, m_bCheckItem_Number		(false)
 
-	, m_OldenJudge(nullptr)
+	, m_OldenJudge				(nullptr)
 {
 }
 
@@ -61,7 +61,7 @@ void CEnemyManager::InitProcess()
 
 	//====================敵の列挙体====================//.
 	const enEnemy m_enRaccoonDog	= enEnemy::RaccoonDog;		
-	const enEnemy m_enKappa			= enEnemy::Kappa;			
+	const enEnemy m_enKappa			= enEnemy::UpRaccoonDog;
 	const enEnemy m_enCowGhost		= enEnemy::Cow_Ghost;		
 
 	//=====================敵の番号======================//.
@@ -159,7 +159,7 @@ void CEnemyManager::InitProcess()
 	for (int enemy = EnemyMax; enemy < m_pEnemyMax[KappaNum] + EnemyMax; enemy++) {
 		m_ppCNormalEnemy[enemy] = new CUpRaccoonDog();
 		//アイテムの設定.
-		m_pCItemManager[enemy].SetEnemyType(enEnemy::Kappa);
+		m_pCItemManager[enemy].SetEnemyType(enEnemy::UpRaccoonDog);
 	}
 	//次の敵の開始番号.
 	EnemyMax += m_pEnemyMax[KappaNum];
@@ -613,7 +613,7 @@ void CEnemyManager::ItemUpDate()
 		{
 			m_pCItemManager[item].SetItemSum(itemType, GetItem_Sum(itemType));
 			//コマンド判定結果を取得.
-			if (item >= Enemy && item < Enemy + m_pEnemyMax[static_cast<int>(enEnemy::Kappa)])
+			if (item >= Enemy && item < Enemy + m_pEnemyMax[static_cast<int>(enEnemy::UpRaccoonDog)])
 			{
 				//カッパのみ別判定.
 				m_pCItemManager[item].SetInput_Decision(GetEnemyInputDecision(item, 1));
@@ -658,7 +658,7 @@ void CEnemyManager::Point_WholeSum(int item)
 			//牛お化けアイテム.
 			m_MeatPoint += m_pCItemManager[item].GetPointSum(1);
 			break;
-		case enEnemy::Kappa:
+		case enEnemy::UpRaccoonDog:
 			//カッパ用アイテムクラス.
 			m_FishPoint += m_pCItemManager[item].GetPointSum(2);
 			break;
@@ -683,7 +683,7 @@ void CEnemyManager::Point_WholeSum(int item)
 			m_MeatPoint -= m_pCItemManager[item].GetPointSum(1);
 			if (m_MeatPoint < 0) { m_MeatPoint = 0; }
 			break;
-		case enEnemy::Kappa:
+		case enEnemy::UpRaccoonDog:
 			//カッパ用アイテムクラス.
 			m_FishPoint -= m_pCItemManager[item].GetPointSum(2);
 			if (m_FishPoint < 0) { m_FishPoint = 0; }
@@ -737,7 +737,7 @@ void CEnemyManager::Item_WholeSum(int item)
 				//牛お化けアイテム.
 				m_OldMeatSum += m_pCItemManager[num].GetCollitionNum(1);
 				break;
-			case enEnemy::Kappa:
+			case enEnemy::UpRaccoonDog:
 				//カッパ用アイテムクラス.
 				m_OldFishSum += m_pCItemManager[num].GetCollitionNum(2);
 				break;
@@ -772,7 +772,7 @@ void CEnemyManager::Item_WholeSum(int item)
 				//牛お化けアイテム.
 				m_OldMeatSum -= m_pCItemManager[num].GetDropNum(1);
 				break;
-			case enEnemy::Kappa:
+			case enEnemy::UpRaccoonDog:
 				//カッパ用アイテムクラス.
 				m_OldFishSum -= m_pCItemManager[num].GetDropNum(2);
 				break;

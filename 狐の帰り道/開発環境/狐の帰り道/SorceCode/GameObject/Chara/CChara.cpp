@@ -1,5 +1,8 @@
 #include "CChara.h"
 
+/********************************************
+*		キャラクタクラス.
+*****/
 CChara::CChara()
 	: m_ppCCollision_Detection(nullptr)
 	, m_ppCDebug_Collision_Sphere(nullptr)
@@ -19,10 +22,10 @@ CChara::~CChara()
 void CChara::Init()
 {
 	//配列自動取得.
-	m_ppCCollision_Detection = new CCollision_Detection*[FOOT_MAX]();		//当たり判定用クラス.
+	m_ppCCollision_Detection = new CCollision_Detection*[FOOT_MAX]();			//当たり判定用クラス.
 	m_ppCDebug_Collision_Sphere = new CDebugCollisionSphere*[FOOT_SPHERE_MAX]();//デバッグ用当たり判定球体描画クラス取得.
-	m_pvFootPos = new D3DXVECTOR3[FOOT_MAX]();					//両足の座標.
-	m_pbGroundHit = new bool[FOOT_MAX]();							//地面に足がついたかのフラグ.
+	m_pvFootPos = new D3DXVECTOR3[FOOT_MAX]();									//両足の座標.
+	m_pbGroundHit = new bool[FOOT_MAX]();										//地面に足がついたかのフラグ.
 
 	//当たり判定のクラス.
 	for (int collision = 0; collision < FOOT_MAX; collision++) {
@@ -84,14 +87,14 @@ void CChara::FootStepSE(CDX9SkinMesh* pSkinMesh, CSoundResource::enSoundSE enSou
 		//配置.
 		m_ppCDebug_Collision_Sphere[foot]->SetPos(m_pvFootPos[foot]);
 		//大きさ.
-		m_ppCDebug_Collision_Sphere[foot]->SetScale(0.2f);
+		m_ppCDebug_Collision_Sphere[foot]->SetScale(HIT_FOOT_SCALE);
 	}
 
 	//地面の当たり判定の設定.
 	//配置.
 	m_ppCDebug_Collision_Sphere[HIT_GROUND_NUM]->SetPos(m_vFootDownPos);
 	//大きさ.
-	m_ppCDebug_Collision_Sphere[HIT_GROUND_NUM]->SetScale(0.8f);
+	m_ppCDebug_Collision_Sphere[HIT_GROUND_NUM]->SetScale(HIT_GROUND_NUM);
 
 	for (int foot = 0; foot < FOOT_MAX; foot++) {
 		//プレイヤーの設定.

@@ -1,5 +1,8 @@
 #include "CGameObject.h"
 
+/***************************************
+*		ゲームオブジェクトクラス.
+**/
 CGameObject::CGameObject()
 	: m_vLight					(0.0f, 0.0f, 0.0f)
 	, m_vCameraPos				(0.0f, 0.0f, 0.0f)

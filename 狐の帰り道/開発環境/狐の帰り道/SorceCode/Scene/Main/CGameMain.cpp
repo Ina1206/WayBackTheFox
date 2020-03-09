@@ -230,7 +230,7 @@ void CGameMain::SetCommndDecision(int enemyType, int enemy)
 	}
 
 	//---コマンドの判定---.
-	if (enemyType != static_cast<int>(enEnemy::Kappa))
+	if (enemyType != static_cast<int>(enEnemy::UpRaccoonDog))
 	{
 		//	Switchの文を変更.
 		//switch (m_pCCommandoManager->GetCommandDecision(enemyType, enemy, 0))

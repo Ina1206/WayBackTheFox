@@ -77,7 +77,7 @@ void CItemManager::UpDate()
 	case enEnemy::Cow_Ghost:
 		m_ppCItemBase[MEAT]->UpDate();
 		break;
-	case enEnemy::Kappa:
+	case enEnemy::UpRaccoonDog:
 		m_ppCItemBase[FISH]->UpDate();
 		break;
 	case enEnemy::Big_RaccoonDog:

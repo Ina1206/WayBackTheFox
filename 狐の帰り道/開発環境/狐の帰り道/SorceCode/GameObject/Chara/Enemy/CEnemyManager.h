@@ -3,7 +3,7 @@
 
 //===========敵のヘッダーファイル=========//.
 #include "NormalEnemy/Raccoon_Dog/CRaccoon_Dog.h"
-#include "NormalEnemy/Kappa/CKappa.h"
+#include "NormalEnemy/UpRaccoonDog/CUpRaccoonDog.h"
 #include "NormalEnemy/Cow_Ghost/CCow_Ghost.h"
 #include "Boss/Big_Raccoon_Dog/CBig_Raccoon_Dog.h"
 

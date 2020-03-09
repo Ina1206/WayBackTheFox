@@ -1,6 +1,9 @@
 #include "CSoundResource.h"
 #include <stdio.h>
 
+/**********************************************
+*	サウンド読み込みクラス.
+******/
 CSoundResource::CSoundResource()
 	: m_hWnd		(nullptr)
 	, m_ppCOneSound	(nullptr)
@@ -53,12 +56,12 @@ HRESULT CSoundResource::Init(HWND hWnd)
 //==================================.
 HRESULT CSoundResource::Load()
 {
-	if (FAILED(OneceSELoad())) {
+	if (FAILED(OneceLoadSE())) {
 		_ASSERT_EXPR(false, L"単発SEの読み込み失敗.");
 		return E_FAIL;
 	}
 
-	if (FAILED(LoopSoundLoad())) {
+	if (FAILED(LoopLoadSound())) {
 		_ASSERT_EXPR(false, L"ループSEの読み込み失敗");
 		return E_FAIL;
 	}
@@ -129,7 +132,7 @@ HRESULT CSoundResource::Check(int sound, clsSound* pCSound)
 //==================================.
 //		エイリアス名の結合.
 //==================================.
-void CSoundResource::Add_Alias_Name(char* alias_name, int name)
+void CSoundResource::AddAliasName(char* alias_name, int name)
 {
 	//エイリアス名と番号の結合.
 	char m_Addname[256];	//追加するもの.
@@ -149,7 +152,7 @@ void CSoundResource::Add_Alias_Name(char* alias_name, int name)
 //=================================================.
 //			単発SEの読み込み処理関数.
 //=================================================.
-HRESULT CSoundResource::OneceSELoad()
+HRESULT CSoundResource::OneceLoadSE()
 {
 	//ファイルパス.
 	const char m_filename[][256] =
@@ -215,7 +218,7 @@ HRESULT CSoundResource::OneceSELoad()
 
 	//エイリアス名の結合.
 	for (int name = 0; name < ALL_SE_MAX; name++) {
-		Add_Alias_Name(m_Sound[name / SE_RESEVE], name);
+		AddAliasName(m_Sound[name / SE_RESEVE], name);
 	}
 
 
@@ -241,15 +244,15 @@ HRESULT CSoundResource::OneceSELoad()
 //===============================================.
 //		ループSEの読み込み処理関数.
 //===============================================.
-HRESULT CSoundResource::LoopSoundLoad()
+HRESULT CSoundResource::LoopLoadSound()
 {
 	//ファイル名.
 	const char filename[][256]=
 	{
-		"Data\\Sound\\SE\\LongPush.mp3",	//長押し時.
-		"Data\\Sound\\BGM\\Title_Part1.mp3",//タイトルBGM.
-		"Data\\Sound\\BGM\\GameMain.mp3",	//ゲーム中BGM.
-		"Data\\Sound\\BGM\\BossWar.mp3",	//ボス戦のBGM.
+		"Data\\Sound\\SE\\LongPush.mp3",			//長押し時.
+		"Data\\Sound\\BGM\\Title_Part1.mp3",		//タイトルBGM.
+		"Data\\Sound\\BGM\\GameMain.mp3",			//ゲーム中BGM.
+		"Data\\Sound\\BGM\\BossWar.mp3",			//ボス戦のBGM.
 		"Data\\Sound\\BGM\\Clear_Hight.mp3",		//クリア優BGM.
 		"Data\\Sound\\BGM\\Clear_Middle_Part1.mp3",	//クリア良BGM.
 		"Data\\Sound\\BGM\\Clear_Low.mp3",			//クリア可BGM.
@@ -258,13 +261,13 @@ HRESULT CSoundResource::LoopSoundLoad()
 	//エイリアス名.
 	const char alias_name[][256]=
 	{
-		"Long_Push",	//長押し時.
-		"Title_BGM",	//タイトルBGM.
-		"GameMain_BGM",	//ゲーム中BGM.
-		"Ending_BGM",	//エンディングBGM.
+		"Long_Push",		//長押し時.
+		"Title_BGM",		//タイトルBGM.
+		"GameMain_BGM",		//ゲーム中BGM.
+		"Ending_BGM",		//エンディングBGM.
 		"EndingHight_BGM",	//エンディング優BGM.
 		"EndingMiddle_BGM",	//エンディング良BGM.
-		"EndingLow_BGM",		//エンディング可BGM.
+		"EndingLow_BGM",	//エンディング可BGM.
 
 		"TestTilte_Part2",	//テストタイトル.
 		"TestClear_Middle",	//テストクリア中.
