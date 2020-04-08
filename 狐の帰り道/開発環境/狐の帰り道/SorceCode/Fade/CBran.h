@@ -4,10 +4,7 @@
 #include "..\Drawing\Resource\CResourceManager.h"
 #include "..\Drawing\Bord_Polygon\CDepth_Stencil.h"
 
-//=========================================.
-//		’Ç‰Á.
 #include "..\Sound\CSEPlayManager.h"
-//=========================================.
 
 /*******************************************
 *	‚Ó‚·‚ÜƒNƒ‰ƒX.
@@ -37,7 +34,7 @@ public:
 	void SetBran_Close();
 
 	//`î•ñæ“¾ˆ—ŠÖ”`.
-	float GetBran_OpenEnd() { return m_bBran_OpenEndFlag; }
+	bool GetBran_OpenEnd() { return m_bBran_OpenEndFlag; }
 	bool GetBran_OpenFlag()	{ return m_bBran_OpenFlag; }
 	bool GetBran_CloseFlag(){ return m_bBran_CloseFlag; }
 
@@ -71,10 +68,7 @@ private:
 	bool				m_bBran_CloseFlag;
 	int					m_WaitTime;
 
-	//==================================.
-	//		’Ç‰Á.
 	CSEPlayManager*		m_pCSEPlayManager;
-	//==================================.
 };
 
 #endif//##ifndef CBRAN_H.

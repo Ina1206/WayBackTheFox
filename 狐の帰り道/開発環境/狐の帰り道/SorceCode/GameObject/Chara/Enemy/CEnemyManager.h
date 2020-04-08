@@ -38,6 +38,7 @@ public:
 	const int	COMMAND_DECISION_MAX	= 2;											//コマンド判定結果最大数.
 	const float	DECISION_START_WIDTH	= 0.8f;											//判定開始幅の半分.
 	const float	DECISION_END_BACK		= 0.5f;											//判定終了のplayerの座標からの奥行.
+	const int	BOSS_COMMAND_MAX		= 3;											//ボスのコマンド最大数.
 
 	//=====================関数=======================//.
 	void InitProcess();																					//初期化処理関数.

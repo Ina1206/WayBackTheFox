@@ -179,7 +179,7 @@ void CEnemyManager::InitProcess()
 	//ボスの初期位置設定.
 	m_pCBigRaccoon_Dog->SetInitPosition(m_pCFileManager->GetEnemyPos(EnemyMax + 1));
 	//コマンドボタン設定.
-	for (int button = 0; button < 3; button++) {
+	for (int button = 0; button < BOSS_COMMAND_MAX; button++) {
 		m_pCBigRaccoon_Dog->SetButtonNum(m_pButtonNum[EnemyMax + button], button);
 	}
 
@@ -187,7 +187,7 @@ void CEnemyManager::InitProcess()
 	m_pCBigRaccoon_Dog->InitProcess();
 
 	//アイテムの設定.
-	int Boss_Num = m_AllEnemyMax - 1;
+	const int Boss_Num = m_AllEnemyMax - 1;
 	m_pCItemManager[Boss_Num].SetEnemyType(enEnemy::Big_RaccoonDog);
 
 
@@ -554,16 +554,19 @@ bool CEnemyManager::JudgeCameraUp()
 	const int StartEnemyNum = m_pEnemyMax[static_cast<int>(enEnemy::RaccoonDog)] + m_pEnemyMax[static_cast<int>(enEnemy::Cow_Ghost)];
 	D3DXVECTOR3 m_vPos;
 
+	const int StartDecisionNum = 0;
+	const int EndDecisionNum = 1;
+
 	for (int enemy = StartEnemyNum; enemy < m_AllNormalEnemyMax; enemy++) {
 		m_vPos = m_ppCNormalEnemy[enemy]->GetPostion();
 		//敵キャラが一定の位置まで来る.
 		if (m_vPlayerPos.z + 10.0f > m_vPos.z) {
 			//初めのところでの判定が行われたらカメラ移動.
-			if (m_ppCNormalEnemy[enemy]->GetInputDecision(0) != enInput_Decision::Max) {
+			if (m_ppCNormalEnemy[enemy]->GetInputDecision(StartDecisionNum) != enInput_Decision::Max) {
 				m_bMoveUpCamera = true;
 			}
 			//最後の判定が行われたらカメラ戻る移動.
-			if (m_ppCNormalEnemy[enemy]->GetInputDecision(1) != enInput_Decision::Max) {
+			if (m_ppCNormalEnemy[enemy]->GetInputDecision(EndDecisionNum) != enInput_Decision::Max) {
 				m_bMoveUpCamera = false;
 			}
 		}
