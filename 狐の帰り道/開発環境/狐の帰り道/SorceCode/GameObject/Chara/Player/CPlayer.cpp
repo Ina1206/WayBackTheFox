@@ -82,7 +82,9 @@ void CPlayer::Update()
 		//---自機移動(コントローラ対応)---//.
 		//右移動.
 		if (m_PlayerParam.m_vPos.x != MOVING_RANGE) {
-			if (m_pCInput->IsPress(XINPUT_GAMEPAD_DPAD_RIGHT)|| m_pCInput->GetLThumbX() >= XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE)
+			if (m_pCInput->IsPress(XINPUT_GAMEPAD_DPAD_RIGHT) ||
+				(m_pCInput->GetLThumbX() >= XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE) ||
+				(GetAsyncKeyState('D') & 0x8000))
 			{
 				m_PlayerParam.m_MoveCount_R++;
 				Move(MOVING_RANGE, m_PlayerParam.m_MoveCount_R);
@@ -95,7 +97,9 @@ void CPlayer::Update()
 		}
 		//左移動.
 		if (m_PlayerParam.m_vPos.x != -MOVING_RANGE) {
-			if (m_pCInput->IsPress(XINPUT_GAMEPAD_DPAD_LEFT) || m_pCInput->GetLThumbX() <= -XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE)
+			if ((m_pCInput->IsPress(XINPUT_GAMEPAD_DPAD_LEFT)) || 
+				(m_pCInput->GetLThumbX() <= -XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE) ||
+				(GetAsyncKeyState('A') & 0x8000))
 			{
 				m_PlayerParam.m_MoveCount_L++;
 				Move(-MOVING_RANGE, m_PlayerParam.m_MoveCount_L);

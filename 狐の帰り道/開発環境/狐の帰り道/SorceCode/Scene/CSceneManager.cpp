@@ -49,7 +49,8 @@ void CSceneManager::SceneChange()
 	}
 
 	//Aボタンが押され続けたときに進むのを防ぐ処理.
-	if (m_pCInput->IsPress(XINPUT_GAMEPAD_A)) {
+	if ((m_pCInput->IsPress(XINPUT_GAMEPAD_A)) || 
+		(GetAsyncKeyState(VK_RETURN) & 0x8000)) {
 		m_SceneChangeCnt++;
 	}
 	else {
@@ -64,7 +65,8 @@ void CSceneManager::SceneChange()
 
 			if (m_pCScene->GetUIDrawEndFlag() == true)
 			{
-				if (m_pCInput->IsPress(XINPUT_GAMEPAD_A)
+				if (((m_pCInput->IsPress(XINPUT_GAMEPAD_A)) 
+					|| (GetAsyncKeyState(VK_RETURN) & 0x8000))
 					&& m_SceneChangeCnt == 1)
 				{
 					//再度入力.
