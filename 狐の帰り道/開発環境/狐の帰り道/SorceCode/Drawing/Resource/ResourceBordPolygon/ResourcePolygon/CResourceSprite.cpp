@@ -65,6 +65,10 @@ HRESULT CResourceSprite::Load()
 		"Data\\Texture\\Command\\B.png",				//Bボタン.
 		"Data\\Texture\\Command\\X.png",				//Xボタン.
 		"Data\\Texture\\Command\\Y.png",				//Yボタン.
+		"Data\\Texture\\Command\\Down.png",				//下ボタン.
+		"Data\\Texture\\Command\\Right.png",			//右ボタン.
+		"Data\\Texture\\Command\\Left.png",				//左ボタン.
+		"Data\\Texture\\Command\\Up.png",				//上ボタン.
 		"Data\\Texture\\Command\\WhiteButton.png",		//ボタン押したとき.
 		"Data\\Texture\\Effect\\shock.png",				//当たる時.
 		"Data\\Texture\\Effect\\Punch.png",				//キラキラ.

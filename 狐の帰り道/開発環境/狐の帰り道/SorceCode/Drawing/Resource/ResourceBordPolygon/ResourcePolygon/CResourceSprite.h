@@ -45,6 +45,10 @@ public:
 		BButton,				//Bボタン.
 		XButton,				//Xボタン.
 		YButton,				//Yボタン.
+		DownButton,				//下ボタン.
+		RightButton,			//右ボタン.
+		LeftButton,				//左ボタン.
+		UpButton,				//上ボタン.
 		HitButton,				//ボタンを押したとき.
 		Hit,					//当たる時.
 		Punch,					//パンチ.

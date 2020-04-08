@@ -106,7 +106,7 @@ void CTitle_Particle::ParticleMove()
 			m_pstParticleInfo[i].m_vPos -= m_pstParticleInfo[i].m_vDir * m_pstParticleInfo[i].m_fSpeed;
 
 			//èdóÕ.
-			m_pstParticleInfo[i].m_vDir.y += GRAVITY;
+			m_pstParticleInfo[i].m_vDir.y += static_cast<float>(GRAVITY);
 			//âÒì].
 			if (i % 2 == 0)
 			{

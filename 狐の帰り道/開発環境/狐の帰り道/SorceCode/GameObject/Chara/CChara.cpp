@@ -94,7 +94,7 @@ void CChara::FootStepSE(CDX9SkinMesh* pSkinMesh, CSoundResource::enSoundSE enSou
 	//配置.
 	m_ppCDebug_Collision_Sphere[HIT_GROUND_NUM]->SetPos(m_vFootDownPos);
 	//大きさ.
-	m_ppCDebug_Collision_Sphere[HIT_GROUND_NUM]->SetScale(HIT_GROUND_NUM);
+	m_ppCDebug_Collision_Sphere[HIT_GROUND_NUM]->SetScale(HIT_GROUND_SCALE);
 
 	for (int foot = 0; foot < FOOT_MAX; foot++) {
 		//プレイヤーの設定.
