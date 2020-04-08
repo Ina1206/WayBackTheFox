@@ -458,22 +458,27 @@ HRESULT CEnemyManager::Command_Entry()
 	enCommandType m_enTmpCommandType = enCommandType::Max;
 
 	//Aボタン.
-	if (m_pCInput->IsPress(XINPUT_GAMEPAD_A)) {
+	if ((m_pCInput->IsPress(XINPUT_GAMEPAD_A)) || 
+		(GetAsyncKeyState(VK_DOWN) & 0x8000)) {
 		m_enTmpCommandType = enCommandType::A;
 	}
+	
 
 	//Bボタン.
-	if (m_pCInput->IsPress(XINPUT_GAMEPAD_B)) {
+	if ((m_pCInput->IsPress(XINPUT_GAMEPAD_B)) ||
+		(GetAsyncKeyState(VK_RIGHT) & 0x8000)) {
 		m_enTmpCommandType = enCommandType::B;
 	}
 
 	//Xボタン.
-	if (m_pCInput->IsPress(XINPUT_GAMEPAD_X)) {
+	if ((m_pCInput->IsPress(XINPUT_GAMEPAD_X)) ||
+		(GetAsyncKeyState(VK_LEFT) & 0x8000)) {
 		m_enTmpCommandType = enCommandType::X;
 	}
 
 	//Yボタン.
-	if (m_pCInput->IsPress(XINPUT_GAMEPAD_Y)) {
+	if ((m_pCInput->IsPress(XINPUT_GAMEPAD_Y)) ||
+		(GetAsyncKeyState(VK_UP) & 0x8000)) {
 		m_enTmpCommandType = enCommandType::Y;
 	}
 
@@ -826,4 +831,5 @@ int CEnemyManager::GetItem_Sum(int enItem)
 	default:
 		break;
 	}
+	return 0;
 }
