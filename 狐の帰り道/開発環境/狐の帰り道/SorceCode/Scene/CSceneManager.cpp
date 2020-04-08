@@ -3,23 +3,24 @@
 #include <crtdbg.h>
 
 CSceneManager::CSceneManager()
-	: m_hWnd			(nullptr)
-	, m_pDevice11		(nullptr)
-	, m_pContext11		(nullptr)
-	, m_pCScene			(nullptr)
-	, m_pCInput			(nullptr)
-	, m_pCBran			(nullptr)
-	, m_enScene			(enScene::Title)
-	, m_enOperation		(enOperation::Possible)
-	, m_Frame			(0)
-	, m_BGMnum			()
-	, m_BGM_Volume		(1000)
-	, m_bLoadFinish		(false)
-	, m_pStageTypeNum	(nullptr)
-	, m_OldStageTypeNum	(-1)
-	, m_StageCnt		(0)
-	, m_PushButtonCnt(0)
-	, m_SceneChangeCnt(0)
+	: m_hWnd				(nullptr)
+	, m_pDevice11			(nullptr)
+	, m_pContext11			(nullptr)
+	, m_pCScene				(nullptr)
+	, m_pCInput				(nullptr)
+	, m_pCBran				(nullptr)
+	, m_enScene				(enScene::Title)
+	, m_enOperation			(enOperation::Possible)
+	, m_Frame				(0)
+	, m_BGMnum				()
+	, m_BGM_Volume			(BGM_VOLUME_MAX)
+	, m_bLoadFinish			(false)
+	, m_pStageTypeNum		(nullptr)
+	, m_OldStageTypeNum		(-1)
+	, m_StageCnt			(0)
+	, m_PushButtonCnt		(0)
+	, m_SceneChangeCnt		(0)
+	, m_bSpecialStageFlag	(false)
 {
 	m_pCInput	= new clsXInput();
 	m_pCBran	= new CBran();
@@ -50,7 +51,8 @@ void CSceneManager::SceneChange()
 
 	//Aボタンが押され続けたときに進むのを防ぐ処理.
 	if ((m_pCInput->IsPress(XINPUT_GAMEPAD_A)) || 
-		(GetAsyncKeyState(VK_RETURN) & 0x8000)) {
+		(GetAsyncKeyState(VK_RETURN) & 0x8000) ||
+		(GetAsyncKeyState(VK_SPACE) & 0x8000)) {
 		m_SceneChangeCnt++;
 	}
 	else {
@@ -62,11 +64,11 @@ void CSceneManager::SceneChange()
 		if (m_enScene != enScene::GameMain)
 		{
 			//タイトルのフェードが終わったか.
-
 			if (m_pCScene->GetUIDrawEndFlag() == true)
 			{
 				if (((m_pCInput->IsPress(XINPUT_GAMEPAD_A)) 
-					|| (GetAsyncKeyState(VK_RETURN) & 0x8000))
+					|| (GetAsyncKeyState(VK_RETURN) & 0x8000)
+					|| (GetAsyncKeyState(VK_SPACE) & 0x8000))
 					&& m_SceneChangeCnt == 1)
 				{
 					//再度入力.
@@ -77,6 +79,10 @@ void CSceneManager::SceneChange()
 						}
 						//次のシーンへ.
 						m_pCBran->SetBran_Open();
+
+						if (GetAsyncKeyState(VK_SPACE) & 0x8000) {
+							m_bSpecialStageFlag = true;
+						}
 
 						CSEPlayManager* m_pCSEPlayManager = CSEPlayManager::GetSEPlayManagerInstance();
 						m_pCSEPlayManager->SetSEPlayFlag(CSoundResource::enSoundSE::SceneChange, true);
@@ -89,7 +95,9 @@ void CSceneManager::SceneChange()
 			else
 			{
 				//フェードが終わる前にAボタンが押されたか.
-				if (m_pCInput->IsPress(XINPUT_GAMEPAD_A))
+				if ((m_pCInput->IsPress(XINPUT_GAMEPAD_A))
+					 || (GetAsyncKeyState(VK_RETURN) & 0x8000)
+					|| GetAsyncKeyState(VK_SPACE) & 0x8000)
 				{
 					m_PushButtonCnt++;
 				}
@@ -175,11 +183,21 @@ void CSceneManager::SceneSetting()
 			m_pCScene = new CGameMain();
 
 			//ステージ番号の指定.
-			if (m_StageCnt >= m_pCFielLoadManager->GetFileMax()) {
-				//ステージ選択処理関数.
-				StageSelect();
-				m_StageCnt = 0;
+			{
+				const int NormalStageMax = m_pCFielLoadManager->GetFileMax() - 1;
+				if (m_StageCnt >= NormalStageMax) {
+					//ステージ選択処理関数.
+					StageSelect();
+					m_StageCnt = 0;
+				}
+
+				//特別ステージ番号設定.
+				if (m_bSpecialStageFlag == true) {
+					const int SpecialStageNum = 3;	//特別ステージ番号.
+					m_StageCnt = SpecialStageNum;
+				}
 			}
+
 			m_pCFielLoadManager->SetFileNum(m_pStageTypeNum[m_StageCnt]);
 			m_OldStageTypeNum = m_pStageTypeNum[m_StageCnt];
 

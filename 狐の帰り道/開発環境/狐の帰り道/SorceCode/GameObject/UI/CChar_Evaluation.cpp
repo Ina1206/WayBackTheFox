@@ -54,14 +54,19 @@ void CChar_Evaluation::UpDate()
 	m_frame++;
 	//タイトル画面ですぐタイトルが表示されないようにする処理.
 	if (m_frame < INPUT_OK || g_BranOpenFlag == false) {
-		if (m_pCInput->IsPress(XINPUT_GAMEPAD_A)) {
+		if ((m_pCInput->IsPress(XINPUT_GAMEPAD_A)) ||
+			(GetAsyncKeyState(VK_RETURN) & 0x8000) ||
+			(GetAsyncKeyState(VK_SPACE) & 0x8000)){
 			pushCnt++;
 		}
 	}
 
 	m_pCInput->UpdateStatus();//これ入れないと動かない.
 
-	if (m_pCInput->IsPress(XINPUT_GAMEPAD_A) && g_BranOpenFlag == true)
+	if (((m_pCInput->IsPress(XINPUT_GAMEPAD_A)) ||
+		(GetAsyncKeyState(VK_RETURN) & 0x8000) ||
+		(GetAsyncKeyState(VK_SPACE) & 0x8000)) && 
+		g_BranOpenFlag == true)
 	{
 		if (m_frame >= INPUT_OK && pushCnt == 0) {
 			m_bMoveEndFlag = true;

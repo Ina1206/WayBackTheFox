@@ -50,7 +50,8 @@ public:
 	bool GetLoadFinish() { return m_bLoadFinish; }
 private:
 	//============定数==============//.		
-	const float ALPHA_MAX = 1.0f;
+	const float ALPHA_MAX		= 1.0f;	//透過値最大数.
+	const int	BGM_VOLUME_MAX	= 1000;	//BGMの音量最大値.
 
 	//============列挙体==============//.
 	//行動制御用.
@@ -92,6 +93,7 @@ private:
 
 	int						m_PushButtonCnt;	//ボタンカウント.
 	int						m_SceneChangeCnt;	//シーン切り替え時のボタンカウント.
+	bool					m_bSpecialStageFlag;//特別ステージフラグ.
 };
 
 #endif //#ifndef CSCENEMANAGER_H.

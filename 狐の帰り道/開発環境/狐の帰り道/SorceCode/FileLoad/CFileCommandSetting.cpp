@@ -38,6 +38,7 @@ void CFileCommandSetting::Load()
 		"Data\\File\\Stage1_CommandDate.csv",
 		"Data\\File\\Stage2_CommandDate.csv",
 		"Data\\File\\Stage3_CommandDate.csv",
+		"Data\\File\\Extra_CommandDate.csv",
 	};
 
 	//ƒtƒ@ƒCƒ‹‚ÌÅ‘å”æ“¾s.

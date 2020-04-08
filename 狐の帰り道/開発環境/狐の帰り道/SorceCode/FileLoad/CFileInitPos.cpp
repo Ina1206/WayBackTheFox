@@ -38,6 +38,7 @@ void CFileInitPos::LoadFile()
 		"Data\\File\\Stage1_EnemyData.csv",
 		"Data\\File\\Stage2_EnemyData.csv",
 		"Data\\File\\Stage3_EnemyData.csv",
+		"Data\\File\\Extra_EnemyData.csv",
 	};
 
 	//ƒtƒ@ƒCƒ‹‚ÌÅ‘å”æ“¾.
