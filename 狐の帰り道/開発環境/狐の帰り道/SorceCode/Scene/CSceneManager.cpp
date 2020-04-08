@@ -21,6 +21,7 @@ CSceneManager::CSceneManager()
 	, m_PushButtonCnt		(0)
 	, m_SceneChangeCnt		(0)
 	, m_bSpecialStageFlag	(false)
+	, m_bControllerFlag		(false)
 {
 	m_pCInput	= new clsXInput();
 	m_pCBran	= new CBran();
@@ -80,8 +81,14 @@ void CSceneManager::SceneChange()
 						//次のシーンへ.
 						m_pCBran->SetBran_Open();
 
+						//特別ステージへ.
 						if (GetAsyncKeyState(VK_SPACE) & 0x8000) {
 							m_bSpecialStageFlag = true;
+						}
+
+						//コントローラで操作.
+						if (m_pCInput->IsPress(XINPUT_GAMEPAD_A)) {
+							m_bControllerFlag = true;
 						}
 
 						CSEPlayManager* m_pCSEPlayManager = CSEPlayManager::GetSEPlayManagerInstance();
@@ -181,7 +188,7 @@ void CSceneManager::SceneSetting()
 		case enScene::Title:
 			m_enScene = enScene::GameMain;
 			m_pCScene = new CGameMain();
-
+			m_pCScene->SetControllerFlag(m_bControllerFlag);
 			//ステージ番号の指定.
 			{
 				const int NormalStageMax = m_pCFielLoadManager->GetFileMax() - 1;

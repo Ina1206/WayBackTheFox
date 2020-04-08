@@ -30,6 +30,8 @@ public:
 	void SetPointSum(int num) { m_PointSum = num; }
 	int  GetPointSum() { return m_PointSum; };
 	bool GetUIDrawEndFlag() { return m_bUIDrawEnd; }
+
+	void SetControllerFlag(bool flag) {	m_bControllerFlag = flag; }//コントローラフラグ取得処理関数.
 protected:
 	D3DXVECTOR3		m_vLight;		//ライトの方向.
 	D3DXVECTOR3		m_vCamPos;		//カメラ位置.
@@ -39,6 +41,8 @@ protected:
 	bool			m_bEndGameMainFlag;
 	static int		m_PointSum;
 	bool			m_bUIDrawEnd;
+
+	bool			m_bControllerFlag;	//コントローラフラグ.
 
 private:
 

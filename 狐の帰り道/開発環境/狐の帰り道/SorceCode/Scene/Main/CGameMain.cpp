@@ -67,10 +67,8 @@ void CGameMain::Init_Process()
 		}
 	}
 
-	//================================.
-	//試し.
+	//------------ エフェクト ------------//.
 	m_pCEffectBase = new CHitEffect();
-	//================================.
 }
 
 //=====================================.
@@ -78,6 +76,9 @@ void CGameMain::Init_Process()
 //=====================================.
 void CGameMain::UpDate()
 {
+	//コントローラフラグ.
+	m_pCEnemyManager->SetControllerFlag(m_bControllerFlag);
+
 	//-----------カメラ-----------//.
 	//長押しを押したかどうかのフラグ.
 	m_pCEnemyManager->JudgeCameraUp();
@@ -152,7 +153,7 @@ void CGameMain::UpDate()
 	m_pCUIManager->SetItemPointSum(m_pCEnemyManager->GetPoint_WholeSum());
 	m_PointSum = m_pCEnemyManager->GetPoint_WholeSum();
 
-	//------------ エフェクト試し ------------//.
+	//------------ エフェクト ------------//.
 	m_pCEffectBase->Update();
 }
 
@@ -173,10 +174,8 @@ void CGameMain::Render()
 	m_pCGround->Value_Set(m_mView, m_mProj, m_vLight, m_vCamPos);
 	m_pCGround->Render();
 
-	//===============================.
-	//	エフェクト試し.
+	//------------エフェクト------------.
 	m_pCEffectBase->Render(m_mView, m_mProj, m_vCamPos);
-	//===============================.
 
 	//-------------敵-------------//.
 	m_pCEnemyManager->Render(m_mView, m_mProj, m_vLight, m_vCamPos);

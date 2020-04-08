@@ -94,6 +94,7 @@ private:
 	int						m_PushButtonCnt;	//ボタンカウント.
 	int						m_SceneChangeCnt;	//シーン切り替え時のボタンカウント.
 	bool					m_bSpecialStageFlag;//特別ステージフラグ.
+	bool					m_bControllerFlag;	//コントローラフラグ.
 };
 
 #endif //#ifndef CSCENEMANAGER_H.

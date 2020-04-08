@@ -285,13 +285,27 @@ void CBarrageCommand::ChangeButton()
 void CBarrageCommand::RenderButton()
 {
 	//画像の列挙体のコマンド開始番号.
-	int m_SpriteStart = static_cast<int>(CResourceSprite::enSprite::CommandStart);
+	int m_SpriteStart;
+	if (m_bControllerFlag == true) {
+		m_SpriteStart = static_cast<int>(CResourceSprite::enSprite::ControllerCommandStart);
+	}
+	else {
+		m_SpriteStart = static_cast<int>(CResourceSprite::enSprite::KeybordCommandStart);
+	}
+
 	//ボタン番号と画像開始番号を足して画像列挙体と同一にする.
 	int m_CommandSprite = m_ButtonNum + m_SpriteStart;
 
 	//現在作られていないボタンでエラーが起こらないように.
-	if (m_CommandSprite >= static_cast<int>(CResourceSprite::enSprite::YButton)) {
-		m_CommandSprite = static_cast<int>(CResourceSprite::enSprite::YButton);
+	if (m_bControllerFlag == true) {
+		if (m_CommandSprite >= static_cast<int>(CResourceSprite::enSprite::YButton)) {
+			m_CommandSprite = static_cast<int>(CResourceSprite::enSprite::YButton);
+		}
+	}
+	else {
+		if (m_CommandSprite >= static_cast<int>(CResourceSprite::enSprite::UpButton)) {
+			m_CommandSprite = static_cast<int>(CResourceSprite::enSprite::UpButton);
+		}
 	}
 
 	//クラス.

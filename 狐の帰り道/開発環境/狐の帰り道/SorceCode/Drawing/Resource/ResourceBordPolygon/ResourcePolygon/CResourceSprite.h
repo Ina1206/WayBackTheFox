@@ -34,37 +34,38 @@ public:
 	//===================列挙体======================//.
 	//Spriteの種類.
 	enum class enSprite {
-		Vegetable = 0,			//野菜.
-		Meat,					//肉.
-		Fish,					//魚.
-		Rice,					//米.
-		TimingCommand,			//タイミングコマンド用.
-		LongPushCircle,			//長押しコマンドの円.
-		Long_Square,			//長押しコマンド中央の真ん中四角.
-		AButton,				//Aボタン.
-		BButton,				//Bボタン.
-		XButton,				//Xボタン.
-		YButton,				//Yボタン.
-		DownButton,				//下ボタン.
-		RightButton,			//右ボタン.
-		LeftButton,				//左ボタン.
-		UpButton,				//上ボタン.
-		HitButton,				//ボタンを押したとき.
-		Hit,					//当たる時.
-		Punch,					//パンチ.
-		Sparkle,				//キラキラ.
-		Sparkle_Blue,			//キラキラ(青).
-		Smoke,					//煙.
-		Char_High,				//高.
-		Char_Middle,			//中.
-		Char_Low,				//低.
-		Char_Evaluation,		//評価.
-		Shadow,					//影.
+		Vegetable = 0,							//野菜.
+		Meat,									//肉.
+		Fish,									//魚.
+		Rice,									//米.
+		TimingCommand,							//タイミングコマンド用.
+		LongPushCircle,							//長押しコマンドの円.
+		Long_Square,							//長押しコマンド中央の真ん中四角.
+		AButton,								//Aボタン.
+		BButton,								//Bボタン.
+		XButton,								//Xボタン.
+		YButton,								//Yボタン.
+		DownButton,								//下ボタン.
+		RightButton,							//右ボタン.
+		LeftButton,								//左ボタン.
+		UpButton,								//上ボタン.
+		HitButton,								//ボタンを押したとき.
+		Hit,									//当たる時.
+		Punch,									//パンチ.
+		Sparkle,								//キラキラ.
+		Sparkle_Blue,							//キラキラ(青).
+		Smoke,									//煙.
+		Char_High,								//高.
+		Char_Middle,							//中.
+		Char_Low,								//低.
+		Char_Evaluation,						//評価.
+		Shadow,									//影.
 
-		Max,					//最大数.
-		Start = Vegetable,		//地面2つ目.//最初.
-		ItemStart = Vegetable,	//アイテム画像の最初.
-		CommandStart = AButton, //コマンドの画像の最初.
+		Max,									//最大数.
+		Start = Vegetable,						//地面2つ目.//最初.
+		ItemStart = Vegetable,					//アイテム画像の最初.
+		ControllerCommandStart	= AButton,		//コントローラのコマンドの画像の最初.
+		KeybordCommandStart		= DownButton,	//キーボードのコマンド画像の最初.
 	};
 
 	//====================関数======================//.

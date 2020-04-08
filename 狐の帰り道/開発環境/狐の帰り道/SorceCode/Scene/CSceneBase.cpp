@@ -10,6 +10,7 @@ CSceneBase::CSceneBase()
 	, m_mProj			()
 	, m_bEndGameMainFlag(false)
 	, m_bUIDrawEnd		(false)
+	, m_bControllerFlag	(false)
 {
 }
 

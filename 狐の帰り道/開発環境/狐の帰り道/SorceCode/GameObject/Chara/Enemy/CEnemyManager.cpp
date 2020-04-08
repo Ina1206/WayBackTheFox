@@ -581,6 +581,19 @@ bool CEnemyManager::JudgeCameraUp()
 }
 
 //======================================.
+//		コントローラフラグ.
+//======================================.
+void CEnemyManager::SetControllerFlag(bool flag)
+{
+	//通常敵.
+	for (int enemy = 0; enemy < m_AllNormalEnemyMax; enemy++) {
+		m_ppCNormalEnemy[enemy]->SetControllerFlag(flag);
+	}
+	//ボス.
+	m_pCBigRaccoon_Dog->SetControllerFlag(flag);
+}
+
+//======================================.
 //		アイテムの設定処理関数.
 //======================================.
 void CEnemyManager::SetItem(int enemyType, int num, enItemJudge enJudge)

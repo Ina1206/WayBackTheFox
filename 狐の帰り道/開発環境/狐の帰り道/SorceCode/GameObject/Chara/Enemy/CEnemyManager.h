@@ -46,7 +46,7 @@ public:
 	void Render(D3DXMATRIX& mView, D3DXMATRIX& mProj, D3DXVECTOR3& vLight, D3DXVECTOR3& vCameraPos);	//•`‰æˆ—ŠÖ”.
 	void Release();																						//‰ğ•úˆ—ŠÖ”.
 	bool JudgeCameraUp();																				//ƒJƒƒ‰‚Ìã‚ª‚é‚©”»’èˆ—ŠÖ”.
-
+	
 	//``î•ñŠl“¾ˆ—ŠÖ”``.
 	//“G‚ÌÅ‘å”.
 	int	GetEnemyMax(int enemyType) { return m_pEnemyMax[enemyType]; }
@@ -70,6 +70,8 @@ public:
 	bool GetMoveUpCamera() { return m_bMoveUpCamera; }
 
 	//``î•ñ’uŠ·ˆ—ŠÖ”``.
+	//ƒRƒ“ƒgƒ[ƒ‰ƒtƒ‰ƒO.
+	void SetControllerFlag(bool flag);
 	//ˆÚ“®‘¬“x.
 	void SetSpeed(float Speed) { m_fMoveSpeed = Speed; }						
 	//ˆÚ“®‹——£.

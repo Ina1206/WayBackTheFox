@@ -25,17 +25,17 @@ public:
 
 
 	//～情報獲得処理関数～.
-	D3DXVECTOR3			GetPostion()	{ return m_vPos; }												//位置獲得処理.			//Boss.
-	bool				GetDispFlag()		{ return m_bDispFlag; }											//表示フラグ獲得処理.
+	D3DXVECTOR3			GetPostion()	{ return m_vPos; }			//位置獲得処理.			
+	bool				GetDispFlag()	{ return m_bDispFlag; }		//表示フラグ獲得処理.
 
 	//～情報置換処理関数～.
-	void SetInitPosition	(D3DXVECTOR3 vPos)							{ m_vInitPos = vPos; }					//初期位置.
-	void SetPlayerPos		(D3DXVECTOR3 vPlayerPos)					{ m_vPlayerPos = vPlayerPos; }			//プレイヤー座標.
-	void SetSpeed			(float Speed)								{ m_fSpeed = Speed; }					//地面のスクロール速度.
-	void SetCommandType		(enCommandType enType)						{ m_enCommandType = enType; }			//入力ボタン情報.
-	void SetJudgePossible	(bool JudgePossible)						{ m_bJudgePossible = JudgePossible; }	//判定可能フラグ.
-	void SetLongPushCnt		(int LongPush)								{ m_LongPushCnt = LongPush; }			//長押しカウント.
-	
+	void SetInitPosition	(const D3DXVECTOR3 vPos)		{ m_vInitPos = vPos; }							//初期位置.
+	void SetPlayerPos		(const D3DXVECTOR3 vPlayerPos)	{ m_vPlayerPos = vPlayerPos; }					//プレイヤー座標.
+	void SetSpeed			(const float Speed)				{ m_fSpeed = Speed; }							//地面のスクロール速度.
+	void SetCommandType		(const enCommandType enType)	{ m_enCommandType = enType; }					//入力ボタン情報.
+	void SetJudgePossible	(const bool JudgePossible)		{ m_bJudgePossible = JudgePossible; }			//判定可能フラグ.
+	void SetLongPushCnt		(const int LongPush)			{ m_LongPushCnt = LongPush; }					//長押しカウント.
+	void SetControllerFlag	(const bool Flag)				{ m_pCCommand_Base->SetControllerFlag(Flag); }	//コントローラフラグ.
 protected:
 	
 	D3DXVECTOR3			m_vPos;				//位置座標.

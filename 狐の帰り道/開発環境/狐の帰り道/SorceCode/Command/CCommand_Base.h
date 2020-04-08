@@ -53,6 +53,8 @@ public:
 	void	SetDispHight(float Pos) { m_fDispHight = Pos; }											
 	//長押しカウント.
 	void	SetLongPushCnt(int Cnt) { m_LongPushCnt = Cnt; }										
+	//コントローラフラグ.
+	void	SetControllerFlag(bool flag) { m_bControllerFlag = flag; }
 	//～情報取得処理関数～.
 	enInput_Decision GetInputDeision(int command = 0) { return m_penInput_Decision[command]; }		
 	bool GetButtonLightFinish() { return m_bButtonLightFinish; }
@@ -98,6 +100,7 @@ protected:
 	float				m_fButtonLightScale;	//ボタンの光大きさ.
 
 	bool				m_bButtonLightFinish;	//ボタンの光終了.
+	bool				m_bControllerFlag;		//コントローラフラグ.
 
 private:
 };
