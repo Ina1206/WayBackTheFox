@@ -165,47 +165,6 @@ void CPlayer::Update()
 	//-------------------------------.
 	Jump();
 
-#ifdef _DEBUG
-	if (m_OperationFlag == true)
-	{
-		if (GetAsyncKeyState('A') & 0x0001)
-		{
-			m_PlayerParam.m_vPos.x -= MOVING_RANGE;
-			SetAnim(enPlyAct::Run);
-			m_pCSEPlayManager->SetSEPlayFlag(CSoundResource::enSoundSE::Player_Move, true);
-		}
-		if (GetAsyncKeyState('D') & 0x0001)
-		{
-			m_PlayerParam.m_vPos.x += MOVING_RANGE;
-			SetAnim(enPlyAct::Run);
-			m_pCSEPlayManager->SetSEPlayFlag(CSoundResource::enSoundSE::Player_Move, true);
-		}
-	}
-
-	//---ジャンプ---//.
-	if (GetAsyncKeyState(VK_SPACE) & 0x0001)
-	{
-		if (m_PlayerParam.m_bJumpFlag == false) {
-			//ジャンプ中でないとき.
-			m_PlayerParam.m_bJumpFlag = true;		//ジャンプ開始.
-			m_PlayerParam.m_fAcc = 0.0f;			//加速初期化.
-		}
-	}
-
-	//--------------------------------
-	//	アニメーション切り替え.
-	//--------------------------------
-	static int anim_no = 0;
-	if (GetAsyncKeyState('C') & 0x0001)
-	{
-		anim_no++;
-		if (anim_no >= m_pCPlayerAnim->GetAnimMax()) {
-			anim_no = 0;
-		}
-		m_pCPlayerAnim->ChangeAnimSet(anim_no);
-	}
-
-#endif
 
 	if (m_pCPlayerAnim != nullptr) {
 		//プレイヤーの足元の座標.

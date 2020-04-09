@@ -200,32 +200,24 @@ CSprite::SPRITE_STATE CResourceSprite::stSpriteState(CResourceSprite::enSprite S
 	int MeatNum = static_cast<int>(enSprite::Meat);
 	m_pSprite_State[MeatNum].Base.w = 200.0f;
 	m_pSprite_State[MeatNum].Base.h = 200.0f;
-	m_pSprite_State[MeatNum].Stride.w = m_pSprite_State[MeatNum].Base.w;
-	m_pSprite_State[MeatNum].Stride.h = m_pSprite_State[MeatNum].Base.h;
 	m_pSprite_State[MeatNum].Disp.w = 1;
 	m_pSprite_State[MeatNum].Disp.h = 1;
 
 	int FishNum = static_cast<int>(enSprite::Fish);
 	m_pSprite_State[FishNum].Base.w = 200.0f;
 	m_pSprite_State[FishNum].Base.h = 200.0f;
-	m_pSprite_State[FishNum].Stride.w = m_pSprite_State[FishNum].Base.w;
-	m_pSprite_State[FishNum].Stride.h = m_pSprite_State[FishNum].Base.h;
 	m_pSprite_State[FishNum].Disp.w = 1;
 	m_pSprite_State[FishNum].Disp.h = 1;
 
 	int VegetableNum = static_cast<int>(enSprite::Vegetable);
 	m_pSprite_State[VegetableNum].Base.w = 200.0f;
 	m_pSprite_State[VegetableNum].Base.h = 200.0f;
-	m_pSprite_State[VegetableNum].Stride.w = m_pSprite_State[VegetableNum].Base.w;
-	m_pSprite_State[VegetableNum].Stride.h = m_pSprite_State[VegetableNum].Base.h;
 	m_pSprite_State[VegetableNum].Disp.w = 1;
 	m_pSprite_State[VegetableNum].Disp.h = 1;
 
 	int RiceNum = static_cast<int>(enSprite::Rice);
 	m_pSprite_State[RiceNum].Base.w = 200.0f;
 	m_pSprite_State[RiceNum].Base.h = 200.0f;
-	m_pSprite_State[RiceNum].Stride.w = m_pSprite_State[RiceNum].Base.w;
-	m_pSprite_State[RiceNum].Stride.h = m_pSprite_State[RiceNum].Base.h;
 	m_pSprite_State[RiceNum].Disp.w = 1;
 	m_pSprite_State[RiceNum].Disp.h = 1;
 
@@ -233,27 +225,21 @@ CSprite::SPRITE_STATE CResourceSprite::stSpriteState(CResourceSprite::enSprite S
 	int MaruNum = static_cast<int>(enSprite::TimingCommand);
 	m_pSprite_State[MaruNum].Base.w		= MARU_BASE_SIZE;
 	m_pSprite_State[MaruNum].Base.h		= MARU_BASE_SIZE;
-	m_pSprite_State[MaruNum].Stride.w	= m_pSprite_State[MaruNum].Base.w;
-	m_pSprite_State[MaruNum].Stride.h	= m_pSprite_State[MaruNum].Base.h;
 	m_pSprite_State[MaruNum].Disp.w		= MARU_DISP_SIZE;
 	m_pSprite_State[MaruNum].Disp.h		= MARU_DISP_SIZE;
 
 	//-----------------長押し両端-----------------//.
 	int Circle = static_cast<int>(enSprite::LongPushCircle);
-	m_pSprite_State[Circle].Base.w = MARU_BASE_SIZE;
-	m_pSprite_State[Circle].Base.h = MARU_BASE_SIZE;
-	m_pSprite_State[Circle].Stride.w = m_pSprite_State[Circle].Base.w;
-	m_pSprite_State[Circle].Stride.h = m_pSprite_State[Circle].Base.h;
-	m_pSprite_State[Circle].Disp.w = MARU_DISP_SIZE * 1.2f;
-	m_pSprite_State[Circle].Disp.z = MARU_DISP_SIZE * 1.2f;
+	m_pSprite_State[Circle].Base.w		= MARU_BASE_SIZE;
+	m_pSprite_State[Circle].Base.h		= MARU_BASE_SIZE;
+	m_pSprite_State[Circle].Disp.w		= MARU_DISP_SIZE * 1.2f;
+	m_pSprite_State[Circle].Disp.z		= MARU_DISP_SIZE * 1.2f;
 	
 
 	//-----------------長押し四角-----------------//.
 	int Square = static_cast<int>(enSprite::Long_Square);
 	m_pSprite_State[Square].Base.w		= LONG_SQUARE_BASE.x;
 	m_pSprite_State[Square].Base.h		= LONG_SQUARE_BASE.y;
-	m_pSprite_State[Square].Stride.w	= m_pSprite_State[Square].Base.w;
-	m_pSprite_State[Square].Stride.h	= m_pSprite_State[Square].Base.h;
 	m_pSprite_State[Square].Disp.w		= LONG_SQUARE_DISP.x;
 	m_pSprite_State[Square].Disp.z		= LONG_SQUARE_DISP.y;
 
@@ -262,8 +248,6 @@ CSprite::SPRITE_STATE CResourceSprite::stSpriteState(CResourceSprite::enSprite S
 	for (int ButtonNum = static_cast<int>(enSprite::AButton); ButtonNum <= static_cast<int>(enSprite::HitButton); ButtonNum++) {
 		m_pSprite_State[ButtonNum].Base.w	= BUTTON_BASE_SIZE;
 		m_pSprite_State[ButtonNum].Base.h	= BUTTON_BASE_SIZE;
-		m_pSprite_State[ButtonNum].Stride.w = m_pSprite_State[ButtonNum].Base.w;
-		m_pSprite_State[ButtonNum].Stride.h = m_pSprite_State[ButtonNum].Base.h;
 		m_pSprite_State[ButtonNum].Disp.w	= BUTTON_DISP_SIZE;
 		m_pSprite_State[ButtonNum].Disp.h	= BUTTON_DISP_SIZE;
 	}
@@ -272,19 +256,15 @@ CSprite::SPRITE_STATE CResourceSprite::stSpriteState(CResourceSprite::enSprite S
 	int Hit = static_cast<int>(enSprite::Hit);
 	m_pSprite_State[Hit].Base.w		= HIT_BASE_SIZE.x;
 	m_pSprite_State[Hit].Base.h		= HIT_BASE_SIZE.y;
-	m_pSprite_State[Hit].Stride.w	= m_pSprite_State[Hit].Base.w;
-	m_pSprite_State[Hit].Stride.h	= m_pSprite_State[Hit].Base.h;
 	m_pSprite_State[Hit].Disp.w		= HIT_DISP_SIZE.x;
 	m_pSprite_State[Hit].Disp.h		= HIT_DISP_SIZE.y;
 
 	//-------------------エフェクト---------------------//.
 	for (int EffectType = static_cast<int>(enSprite::Punch); EffectType <= static_cast<int>(enSprite::Smoke); EffectType++) {
-		m_pSprite_State[EffectType].Base.w = EFFECT_BASE_SIZE;
-		m_pSprite_State[EffectType].Base.h = EFFECT_BASE_SIZE;
-		m_pSprite_State[EffectType].Stride.w = m_pSprite_State[EffectType].Base.w;
-		m_pSprite_State[EffectType].Stride.h = m_pSprite_State[EffectType].Base.h;
-		m_pSprite_State[EffectType].Disp.w = EFFECT_DISP_SIZE;
-		m_pSprite_State[EffectType].Disp.h = EFFECT_DISP_SIZE;
+		m_pSprite_State[EffectType].Base.w		= EFFECT_BASE_SIZE;
+		m_pSprite_State[EffectType].Base.h		= EFFECT_BASE_SIZE;
+		m_pSprite_State[EffectType].Disp.w		= EFFECT_DISP_SIZE;
+		m_pSprite_State[EffectType].Disp.h		= EFFECT_DISP_SIZE;
 	}
 
 	//----------------評価文字-------------------//.
@@ -292,8 +272,6 @@ CSprite::SPRITE_STATE CResourceSprite::stSpriteState(CResourceSprite::enSprite S
 	int Char_HighNum = static_cast<int>(enSprite::Char_High);
 	m_pSprite_State[Char_HighNum].Base.w = 262;
 	m_pSprite_State[Char_HighNum].Base.h = 300;
-	m_pSprite_State[Char_HighNum].Stride.w = m_pSprite_State[Char_HighNum].Base.w;
-	m_pSprite_State[Char_HighNum].Stride.h = m_pSprite_State[Char_HighNum].Base.h;
 	m_pSprite_State[Char_HighNum].Disp.w = CCHAR_HIGH_DISP_SIZE;
 	m_pSprite_State[Char_HighNum].Disp.h = CCHAR_HIGH_DISP_SIZE;
 
@@ -301,8 +279,6 @@ CSprite::SPRITE_STATE CResourceSprite::stSpriteState(CResourceSprite::enSprite S
 	int Char_MiddleNum = static_cast<int>(enSprite::Char_Middle);
 	m_pSprite_State[Char_MiddleNum].Base.w = 252;
 	m_pSprite_State[Char_MiddleNum].Base.h = 303;
-	m_pSprite_State[Char_MiddleNum].Stride.w = m_pSprite_State[Char_MiddleNum].Base.w;
-	m_pSprite_State[Char_MiddleNum].Stride.h = m_pSprite_State[Char_MiddleNum].Base.h;
 	m_pSprite_State[Char_MiddleNum].Disp.w = CCHAR_DISP_SIZE;
 	m_pSprite_State[Char_MiddleNum].Disp.h = CCHAR_DISP_SIZE;
 
@@ -310,8 +286,6 @@ CSprite::SPRITE_STATE CResourceSprite::stSpriteState(CResourceSprite::enSprite S
 	int Char_LowNum = static_cast<int>(enSprite::Char_Low);
 	m_pSprite_State[Char_LowNum].Base.w = 305;
 	m_pSprite_State[Char_LowNum].Base.h = 290;
-	m_pSprite_State[Char_LowNum].Stride.w = m_pSprite_State[Char_LowNum].Base.w;
-	m_pSprite_State[Char_LowNum].Stride.h = m_pSprite_State[Char_LowNum].Base.h;
 	m_pSprite_State[Char_LowNum].Disp.w = CCHAR_DISP_SIZE;
 	m_pSprite_State[Char_LowNum].Disp.h = CCHAR_DISP_SIZE;
 
@@ -319,19 +293,21 @@ CSprite::SPRITE_STATE CResourceSprite::stSpriteState(CResourceSprite::enSprite S
 	int Char_EvaluationNum = static_cast<int>(enSprite::Char_Evaluation);
 	m_pSprite_State[Char_EvaluationNum].Base.w = 428;
 	m_pSprite_State[Char_EvaluationNum].Base.h = 227;
-	m_pSprite_State[Char_EvaluationNum].Stride.w = m_pSprite_State[Char_EvaluationNum].Base.w;
-	m_pSprite_State[Char_EvaluationNum].Stride.h = m_pSprite_State[Char_EvaluationNum].Base.h;
 	m_pSprite_State[Char_EvaluationNum].Disp.w = 0.028f;
 	m_pSprite_State[Char_EvaluationNum].Disp.h = 0.015f;
 
 	//影.
 	int ShadowNum = static_cast<int>(enSprite::Shadow);
-	m_pSprite_State[ShadowNum].Base.w = SHADOW_BASE_SIZE;
-	m_pSprite_State[ShadowNum].Base.h = SHADOW_BASE_SIZE;
-	m_pSprite_State[ShadowNum].Stride.w = m_pSprite_State[ShadowNum].Base.w;
-	m_pSprite_State[ShadowNum].Stride.h = m_pSprite_State[ShadowNum].Base.h;
-	m_pSprite_State[ShadowNum].Disp.w = SHADOW_DISP_SIZE;
-	m_pSprite_State[ShadowNum].Disp.z = SHADOW_DISP_SIZE;
+	m_pSprite_State[ShadowNum].Base.w	= SHADOW_BASE_SIZE;
+	m_pSprite_State[ShadowNum].Base.h	= SHADOW_BASE_SIZE;
+	m_pSprite_State[ShadowNum].Disp.w	= SHADOW_DISP_SIZE;
+	m_pSprite_State[ShadowNum].Disp.z	= SHADOW_DISP_SIZE;
+
+	//全sprite共通設定.
+	for (int sprite = 0; sprite < static_cast<int>(enSprite::Max); sprite++) {
+		m_pSprite_State[sprite].Stride.w = m_pSprite_State[sprite].Base.w;
+		m_pSprite_State[sprite].Stride.h = m_pSprite_State[sprite].Base.h;
+	}
 
 	return m_pSprite_State[static_cast<int>(Sprite)];
 }
