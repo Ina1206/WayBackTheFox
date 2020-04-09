@@ -69,9 +69,9 @@ public:
 	};
 
 	//====================関数======================//.
-	HRESULT Init();													//初期設定処理関数.
-	HRESULT Load();													//読み込み処理関数.
-	HRESULT ReleaseCalling();										//解放処理呼び出し関数.
+	HRESULT Init();											//初期設定処理関数.
+	HRESULT Load();											//読み込み処理関数.
+	HRESULT ReleaseCalling();								//解放処理呼び出し関数.
 
 	//===============情報獲得処理関数================//.
 	CSprite*	GetSprite(enSprite Sprite);
@@ -80,11 +80,11 @@ private:
 	HRESULT Create(enSprite Sprite, const char* pfileName);	//作成処理関数.
 	HRESULT Release(enSprite Sprite);						//解放処理関数.
 	HRESULT Check_SpriteRnge(enSprite Sprite);				//スプライトの範囲を調べる関数.
-	CSprite::SPRITE_STATE stSpriteState(enSprite Sprite);		//スプライト情報設定.
+	CSprite::SPRITE_STATE stSpriteState(enSprite Sprite);	//スプライト情報設定.
 
 	//===================クラス=====================//.
-	CSprite**	m_ppSprite;										//スプライトクラス.
-	CSprite::SPRITE_STATE* m_pSprite_State;						//スプライトの状態.
+	CSprite**	m_ppSprite;									//スプライトクラス.
+	CSprite::SPRITE_STATE* m_pSprite_State;					//スプライトの状態.
 
 };
 
